@@ -12,6 +12,7 @@ import 'core/database/connection.dart';
 import 'core/di/core_providers.dart';
 import 'core/logging/app_logger.dart';
 import 'core/security/database_key_store.dart';
+import 'core/sync/sync_providers.dart';
 import 'features/settings/data/settings_repository.dart';
 import 'features/settings/presentation/settings_providers.dart';
 
@@ -35,8 +36,16 @@ Future<void> bootstrap() async {
   final db = AppDatabase(openAppDatabase(encryptionKey: key));
   final settings = await SettingsRepository(db).load();
 
+  // Cloud is optional: if it is not configured, or cannot start (e.g. first
+  // launch offline), the app simply runs local-only.
+  SupabaseClient? supabase;
   if (AppConfig.isCloudConfigured) {
-    await Supabase.initialize(url: AppConfig.supabaseUrl, publishableKey: AppConfig.supabasePublishableKey);
+    try {
+      await Supabase.initialize(url: AppConfig.supabaseUrl, publishableKey: AppConfig.supabasePublishableKey);
+      supabase = Supabase.instance.client;
+    } catch (e, st) {
+      AppLogger.error('Supabase init failed; running local-only', error: e, stackTrace: st);
+    }
   }
 
   runApp(
@@ -44,6 +53,7 @@ Future<void> bootstrap() async {
       overrides: [
         appDatabaseProvider.overrideWithValue(db),
         initialSettingsProvider.overrideWithValue(settings),
+        supabaseClientProvider.overrideWithValue(supabase),
       ],
       child: const ParichitApp(),
     ),

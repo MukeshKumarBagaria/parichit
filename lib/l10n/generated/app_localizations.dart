@@ -527,8 +527,188 @@ abstract class AppLocalizations {
   /// No description provided for @syncLocalOnly.
   ///
   /// In en, this message translates to:
-  /// **'Saved on this phone only. Cloud sync arrives in a later milestone.'**
+  /// **'Saved on this phone only. Cloud backup is not configured in this build.'**
   String get syncLocalOnly;
+
+  /// No description provided for @syncSignedOutBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to back up your family data and use it on other phones. The app keeps working offline.'**
+  String get syncSignedOutBody;
+
+  /// No description provided for @syncSignInButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in to back up'**
+  String get syncSignInButton;
+
+  /// No description provided for @syncSignedInAs.
+  ///
+  /// In en, this message translates to:
+  /// **'Signed in as {email}'**
+  String syncSignedInAs(String email);
+
+  /// No description provided for @syncSignOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign out'**
+  String get syncSignOut;
+
+  /// No description provided for @syncNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync now'**
+  String get syncNow;
+
+  /// No description provided for @syncStatusSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Synced'**
+  String get syncStatusSynced;
+
+  /// No description provided for @syncStatusSyncing.
+  ///
+  /// In en, this message translates to:
+  /// **'Syncing…'**
+  String get syncStatusSyncing;
+
+  /// No description provided for @syncStatusPending.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} waiting to sync'**
+  String syncStatusPending(int count);
+
+  /// No description provided for @syncStatusOffline.
+  ///
+  /// In en, this message translates to:
+  /// **'Offline'**
+  String get syncStatusOffline;
+
+  /// No description provided for @syncStatusError.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync problem'**
+  String get syncStatusError;
+
+  /// No description provided for @syncStatusSignedOut.
+  ///
+  /// In en, this message translates to:
+  /// **'Not backed up'**
+  String get syncStatusSignedOut;
+
+  /// No description provided for @syncLastSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Last synced {time}'**
+  String syncLastSynced(String time);
+
+  /// No description provided for @syncNeverSynced.
+  ///
+  /// In en, this message translates to:
+  /// **'Not synced yet'**
+  String get syncNeverSynced;
+
+  /// No description provided for @syncIssuesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sync issues'**
+  String get syncIssuesTitle;
+
+  /// No description provided for @syncIssuesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =0{No sync issues} =1{1 change was rejected} other{{count} changes were rejected}}'**
+  String syncIssuesCount(int count);
+
+  /// No description provided for @syncIssuesEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing to fix. All changes were accepted.'**
+  String get syncIssuesEmpty;
+
+  /// No description provided for @syncIssuesHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'The cloud refused these changes. They stay on this phone and are not lost; discard them once you have checked.'**
+  String get syncIssuesHelp;
+
+  /// No description provided for @syncDiscard.
+  ///
+  /// In en, this message translates to:
+  /// **'Discard'**
+  String get syncDiscard;
+
+  /// No description provided for @signInTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Sign in'**
+  String get signInTitle;
+
+  /// No description provided for @signInBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your email. We will send you a sign-in code.'**
+  String get signInBody;
+
+  /// No description provided for @signInEmailLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Email'**
+  String get signInEmailLabel;
+
+  /// No description provided for @signInEmailInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a valid email address'**
+  String get signInEmailInvalid;
+
+  /// No description provided for @signInSendCode.
+  ///
+  /// In en, this message translates to:
+  /// **'Send code'**
+  String get signInSendCode;
+
+  /// No description provided for @signInCodeSent.
+  ///
+  /// In en, this message translates to:
+  /// **'We sent a code to {email}.'**
+  String signInCodeSent(String email);
+
+  /// No description provided for @signInCodeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Code from the email'**
+  String get signInCodeLabel;
+
+  /// No description provided for @signInCodeInvalid.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the code from the email'**
+  String get signInCodeInvalid;
+
+  /// No description provided for @signInVerify.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify and sign in'**
+  String get signInVerify;
+
+  /// No description provided for @signInChangeEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Use a different email'**
+  String get signInChangeEmail;
+
+  /// No description provided for @signInFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not sign in: {error}'**
+  String signInFailed(String error);
+
+  /// No description provided for @onboardingRestore.
+  ///
+  /// In en, this message translates to:
+  /// **'Already use Parichit? Sign in to restore'**
+  String get onboardingRestore;
 
   /// No description provided for @settingsAbout.
   ///

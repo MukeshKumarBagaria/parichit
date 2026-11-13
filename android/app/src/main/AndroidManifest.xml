@@ -1,4 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cloud sync (Supabase). The app still works fully offline. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:label="Parichit"
         android:name="${applicationName}"

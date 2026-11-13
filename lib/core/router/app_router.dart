@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/auth/presentation/sign_in_screen.dart';
 import '../../features/family/presentation/family_screen.dart';
 import '../../features/home/presentation/home_screen.dart';
 import '../../features/meetings/presentation/meetings_screen.dart';
@@ -11,6 +12,7 @@ import '../../features/people/presentation/screens/person_detail_screen.dart';
 import '../../features/people/presentation/screens/quick_add_screen.dart';
 import '../../features/settings/presentation/more_screen.dart';
 import '../../features/settings/presentation/settings_providers.dart';
+import '../../features/sync/presentation/sync_issues_screen.dart';
 import 'app_shell.dart';
 import 'routes.dart';
 
@@ -31,7 +33,10 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     refreshListenable: onboardingDone,
     redirect: (context, state) {
       final atOnboarding = state.matchedLocation == Routes.onboarding;
-      if (!onboardingDone.value) return atOnboarding ? null : Routes.onboarding;
+      // Signing in is allowed during onboarding so a new phone can restore.
+      if (!onboardingDone.value) {
+        return (atOnboarding || state.matchedLocation == Routes.signIn) ? null : Routes.onboarding;
+      }
       if (atOnboarding) return Routes.home;
       return null;
     },
@@ -47,6 +52,16 @@ final appRouterProvider = Provider<GoRouter>((ref) {
           fullscreenDialog: true,
           child: QuickAddScreen(),
         ),
+      ),
+      GoRoute(
+        path: Routes.signIn,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const SignInScreen(),
+      ),
+      GoRoute(
+        path: Routes.syncIssues,
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const SyncIssuesScreen(),
       ),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => AppShell(navigationShell: shell),

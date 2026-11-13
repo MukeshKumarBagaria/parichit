@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:kinship/kinship.dart';
 
 import '../../../core/l10n/l10n.dart';
+import '../../../core/router/routes.dart';
+import '../../../core/sync/sync_providers.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../people/domain/person.dart';
 import '../../people/presentation/people_providers.dart';
@@ -101,6 +104,11 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             onPressed: () => setState(() => _step = 1),
             child: Text(l10n.actionContinue),
           ),
+          if (ref.watch(supabaseClientProvider) != null)
+            TextButton(
+              onPressed: () => context.push(Routes.signIn),
+              child: Text(l10n.onboardingRestore, textAlign: TextAlign.center),
+            ),
         ],
       ),
     );

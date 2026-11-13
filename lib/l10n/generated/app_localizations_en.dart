@@ -245,7 +245,118 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsSync => 'Cloud backup';
 
   @override
-  String get syncLocalOnly => 'Saved on this phone only. Cloud sync arrives in a later milestone.';
+  String get syncLocalOnly => 'Saved on this phone only. Cloud backup is not configured in this build.';
+
+  @override
+  String get syncSignedOutBody =>
+      'Sign in to back up your family data and use it on other phones. The app keeps working offline.';
+
+  @override
+  String get syncSignInButton => 'Sign in to back up';
+
+  @override
+  String syncSignedInAs(String email) {
+    return 'Signed in as $email';
+  }
+
+  @override
+  String get syncSignOut => 'Sign out';
+
+  @override
+  String get syncNow => 'Sync now';
+
+  @override
+  String get syncStatusSynced => 'Synced';
+
+  @override
+  String get syncStatusSyncing => 'Syncing…';
+
+  @override
+  String syncStatusPending(int count) {
+    return '$count waiting to sync';
+  }
+
+  @override
+  String get syncStatusOffline => 'Offline';
+
+  @override
+  String get syncStatusError => 'Sync problem';
+
+  @override
+  String get syncStatusSignedOut => 'Not backed up';
+
+  @override
+  String syncLastSynced(String time) {
+    return 'Last synced $time';
+  }
+
+  @override
+  String get syncNeverSynced => 'Not synced yet';
+
+  @override
+  String get syncIssuesTitle => 'Sync issues';
+
+  @override
+  String syncIssuesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count changes were rejected',
+      one: '1 change was rejected',
+      zero: 'No sync issues',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get syncIssuesEmpty => 'Nothing to fix. All changes were accepted.';
+
+  @override
+  String get syncIssuesHelp =>
+      'The cloud refused these changes. They stay on this phone and are not lost; discard them once you have checked.';
+
+  @override
+  String get syncDiscard => 'Discard';
+
+  @override
+  String get signInTitle => 'Sign in';
+
+  @override
+  String get signInBody => 'Enter your email. We will send you a sign-in code.';
+
+  @override
+  String get signInEmailLabel => 'Email';
+
+  @override
+  String get signInEmailInvalid => 'Enter a valid email address';
+
+  @override
+  String get signInSendCode => 'Send code';
+
+  @override
+  String signInCodeSent(String email) {
+    return 'We sent a code to $email.';
+  }
+
+  @override
+  String get signInCodeLabel => 'Code from the email';
+
+  @override
+  String get signInCodeInvalid => 'Enter the code from the email';
+
+  @override
+  String get signInVerify => 'Verify and sign in';
+
+  @override
+  String get signInChangeEmail => 'Use a different email';
+
+  @override
+  String signInFailed(String error) {
+    return 'Could not sign in: $error';
+  }
+
+  @override
+  String get onboardingRestore => 'Already use Parichit? Sign in to restore';
 
   @override
   String get settingsAbout => 'About Parichit';

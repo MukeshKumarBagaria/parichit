@@ -11,6 +11,8 @@ abstract final class Routes {
 
   // Full-screen flows
   static const addPerson = '/add-person';
+  static const signIn = '/sign-in';
+  static const syncIssues = '/sync-issues';
 
   static String person(String id) => '/people/$id';
 }

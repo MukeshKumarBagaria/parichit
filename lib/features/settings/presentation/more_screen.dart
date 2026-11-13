@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../core/l10n/l10n.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../shared/widgets/section_card.dart';
+import '../../sync/presentation/sync_widgets.dart';
 import 'settings_providers.dart';
 
 /// "More" tab: settings now; duplicates, import/export and trash later.
@@ -57,11 +58,7 @@ class MoreScreen extends ConsumerWidget {
           const SizedBox(height: AppSpacing.md),
           SectionCard(
             title: l10n.settingsSync,
-            child: ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: const Icon(Icons.cloud_off_outlined),
-              title: Text(l10n.syncLocalOnly),
-            ),
+            child: const SyncSettingsBody(),
           ),
           const SizedBox(height: AppSpacing.md),
           Card(

@@ -9,6 +9,7 @@ import '../../../shared/widgets/empty_state.dart';
 import '../../../shared/widgets/section_card.dart';
 import '../../people/presentation/people_providers.dart';
 import '../../people/presentation/widgets/person_tile.dart';
+import '../../sync/presentation/sync_widgets.dart';
 
 /// Home dashboard (blueprint §10, screen 1): calm, not overloaded with stats.
 class HomeScreen extends ConsumerWidget {
@@ -41,7 +42,9 @@ class HomeScreen extends ConsumerWidget {
               l10n.homePeopleCount(count),
               style: theme.textTheme.bodyMedium?.copyWith(color: theme.colorScheme.onSurfaceVariant),
             ),
-            const SizedBox(height: AppSpacing.md),
+            const SizedBox(height: AppSpacing.xs),
+            const Align(alignment: Alignment.centerLeft, child: SyncPill()),
+            const SizedBox(height: AppSpacing.sm),
             SearchBar(
               hintText: l10n.homeSearchHint,
               leading: const Icon(Icons.search),

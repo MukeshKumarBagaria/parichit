@@ -244,7 +244,118 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsSync => 'क्लाउड बैकअप';
 
   @override
-  String get syncLocalOnly => 'अभी केवल इसी फ़ोन पर सहेजा गया है। क्लाउड सिंक अगले चरण में आएगा।';
+  String get syncLocalOnly => 'अभी केवल इसी फ़ोन पर सहेजा गया है। इस बिल्ड में क्लाउड बैकअप चालू नहीं है।';
+
+  @override
+  String get syncSignedOutBody =>
+      'अपना पारिवारिक डेटा बैकअप करने और दूसरे फ़ोन पर इस्तेमाल करने के लिए साइन इन करें। ऐप ऑफ़लाइन भी चलता रहेगा।';
+
+  @override
+  String get syncSignInButton => 'बैकअप के लिए साइन इन करें';
+
+  @override
+  String syncSignedInAs(String email) {
+    return '$email से साइन इन';
+  }
+
+  @override
+  String get syncSignOut => 'साइन आउट';
+
+  @override
+  String get syncNow => 'अभी सिंक करें';
+
+  @override
+  String get syncStatusSynced => 'सिंक हो गया';
+
+  @override
+  String get syncStatusSyncing => 'सिंक हो रहा है…';
+
+  @override
+  String syncStatusPending(int count) {
+    return '$count बदलाव सिंक के इंतज़ार में';
+  }
+
+  @override
+  String get syncStatusOffline => 'ऑफ़लाइन';
+
+  @override
+  String get syncStatusError => 'सिंक में समस्या';
+
+  @override
+  String get syncStatusSignedOut => 'बैकअप नहीं हुआ';
+
+  @override
+  String syncLastSynced(String time) {
+    return 'आख़िरी सिंक $time';
+  }
+
+  @override
+  String get syncNeverSynced => 'अभी सिंक नहीं हुआ';
+
+  @override
+  String get syncIssuesTitle => 'सिंक समस्याएँ';
+
+  @override
+  String syncIssuesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count बदलाव अस्वीकार हुए',
+      one: '1 बदलाव अस्वीकार हुआ',
+      zero: 'कोई सिंक समस्या नहीं',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get syncIssuesEmpty => 'कुछ ठीक करने की ज़रूरत नहीं। सभी बदलाव स्वीकार हो गए।';
+
+  @override
+  String get syncIssuesHelp =>
+      'क्लाउड ने ये बदलाव स्वीकार नहीं किए। ये इसी फ़ोन पर सुरक्षित हैं; जाँचने के बाद इन्हें हटा दें।';
+
+  @override
+  String get syncDiscard => 'हटाएँ';
+
+  @override
+  String get signInTitle => 'साइन इन';
+
+  @override
+  String get signInBody => 'अपना ईमेल दर्ज करें। हम आपको साइन-इन कोड भेजेंगे।';
+
+  @override
+  String get signInEmailLabel => 'ईमेल';
+
+  @override
+  String get signInEmailInvalid => 'सही ईमेल पता दर्ज करें';
+
+  @override
+  String get signInSendCode => 'कोड भेजें';
+
+  @override
+  String signInCodeSent(String email) {
+    return 'हमने $email पर कोड भेजा है।';
+  }
+
+  @override
+  String get signInCodeLabel => 'ईमेल में आया कोड';
+
+  @override
+  String get signInCodeInvalid => 'ईमेल में आया कोड दर्ज करें';
+
+  @override
+  String get signInVerify => 'जाँचें और साइन इन करें';
+
+  @override
+  String get signInChangeEmail => 'दूसरा ईमेल इस्तेमाल करें';
+
+  @override
+  String signInFailed(String error) {
+    return 'साइन इन नहीं हो सका: $error';
+  }
+
+  @override
+  String get onboardingRestore => 'पहले से परिचित इस्तेमाल करते हैं? बहाल करने के लिए साइन इन करें';
 
   @override
   String get settingsAbout => 'परिचित के बारे में';
