@@ -5,8 +5,10 @@ import 'package:go_router/go_router.dart';
 import 'package:kinship/kinship.dart';
 
 import '../../../../core/l10n/l10n.dart';
+import '../../../../core/router/routes.dart';
 import '../../../../core/theme/app_tokens.dart';
 import '../../../../core/utils/phone_normalizer.dart';
+import '../../../places/presentation/place_field.dart';
 import '../../domain/person.dart';
 import '../people_providers.dart';
 import '../widgets/gender_selector.dart';
@@ -28,6 +30,7 @@ class _QuickAddScreenState extends ConsumerState<QuickAddScreen> {
   final _notes = TextEditingController();
   final _nameFocus = FocusNode();
   Gender _gender = Gender.unknown;
+  String? _placeId;
   bool _saving = false;
 
   @override
@@ -44,18 +47,50 @@ class _QuickAddScreenState extends ConsumerState<QuickAddScreen> {
     setState(() => _saving = true);
     final messenger = ScaffoldMessenger.of(context);
     final l10n = context.l10n;
+    final repo = ref.read(peopleRepositoryProvider);
     try {
-      final person = await ref
-          .read(peopleRepositoryProvider)
-          .create(
-            NewPerson(
-              fullName: _name.text,
-              fullNameAlt: _nameAlt.text,
-              gender: _gender,
-              phone: _phone.text,
-              notes: _notes.text,
+      // Duplicate warning before saving (blueprint §8).
+      final dupes = await repo.findPossibleDuplicates(fullName: _name.text, phone: _phone.text);
+      if (dupes.isNotEmpty && mounted) {
+        final choice = await showDialog<String>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l10n.duplicateWarningTitle),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                for (final d in dupes)
+                  ListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(d.fullName),
+                    subtitle: Text([?d.fullNameAlt, ?d.primaryPhone].join(' · ')),
+                    trailing: TextButton(onPressed: () => Navigator.pop(ctx, d.id), child: Text(l10n.openProfile)),
+                  ),
+              ],
             ),
-          );
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(ctx), child: Text(l10n.actionCancel)),
+              FilledButton(onPressed: () => Navigator.pop(ctx, ''), child: Text(l10n.duplicateCreateAnyway)),
+            ],
+          ),
+        );
+        if (!mounted || choice == null) return;
+        if (choice.isNotEmpty) {
+          context.pop();
+          await context.push(Routes.person(choice));
+          return;
+        }
+      }
+      final person = await repo.create(
+        NewPerson(
+          fullName: _name.text,
+          fullNameAlt: _nameAlt.text,
+          gender: _gender,
+          phone: _phone.text,
+          notes: _notes.text,
+          nativePlaceId: _placeId,
+        ),
+      );
       await HapticFeedback.lightImpact();
       messenger.showSnackBar(SnackBar(content: Text(l10n.personSaved(person.fullName))));
       if (!mounted) return;
@@ -64,7 +99,10 @@ class _QuickAddScreenState extends ConsumerState<QuickAddScreen> {
         for (final c in [_name, _nameAlt, _phone, _notes]) {
           c.clear();
         }
-        setState(() => _gender = Gender.unknown);
+        setState(() {
+          _gender = Gender.unknown;
+          _placeId = null;
+        });
         _nameFocus.requestFocus();
       } else {
         context.pop();
@@ -118,6 +156,12 @@ class _QuickAddScreenState extends ConsumerState<QuickAddScreen> {
             const SizedBox(height: AppSpacing.xs),
             GenderSelector(value: _gender, onChanged: (g) => setState(() => _gender = g)),
             const SizedBox(height: AppSpacing.lg),
+            PlaceField(
+              label: l10n.fieldNativePlace,
+              placeId: _placeId,
+              onChanged: (id) => setState(() => _placeId = id),
+            ),
+            const SizedBox(height: AppSpacing.md),
             TextFormField(
               controller: _notes,
               minLines: 2,

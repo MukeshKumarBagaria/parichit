@@ -2,13 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/l10n/formatters.dart';
 import '../../../core/l10n/l10n.dart';
 import '../../../core/router/routes.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../shared/widgets/empty_state.dart';
 import '../../../shared/widgets/section_card.dart';
+import '../../interactions/presentation/interaction_widgets.dart';
+import '../../network/presentation/network_providers.dart';
 import '../../people/presentation/people_providers.dart';
 import '../../people/presentation/widgets/person_tile.dart';
+import '../../sync/presentation/sync_pill.dart';
 
 /// Home dashboard (blueprint §10, screen 1): calm, not overloaded with stats.
 class HomeScreen extends ConsumerWidget {
@@ -21,6 +25,8 @@ class HomeScreen extends ConsumerWidget {
     final self = ref.watch(selfPersonProvider).value;
     final count = ref.watch(peopleCountProvider).value ?? 0;
     final recent = ref.watch(recentPeopleProvider).value ?? const [];
+    final agenda = ref.watch(agendaProvider(7));
+    final reconnect = ref.watch(reconnectProvider(90));
 
     return Scaffold(
       floatingActionButton: FloatingActionButton.extended(
@@ -32,9 +38,16 @@ class HomeScreen extends ConsumerWidget {
         child: ListView(
           padding: const EdgeInsets.fromLTRB(AppSpacing.md, AppSpacing.lg, AppSpacing.md, 96),
           children: [
-            Text(
-              l10n.homeGreeting(self?.fullName.split(' ').first ?? ''),
-              style: theme.textTheme.headlineSmall,
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    l10n.homeGreeting(self?.fullName.split(' ').first ?? ''),
+                    style: theme.textTheme.headlineSmall,
+                  ),
+                ),
+                const SyncPill(),
+              ],
             ),
             const SizedBox(height: AppSpacing.xxs),
             Text(
@@ -49,14 +62,34 @@ class HomeScreen extends ConsumerWidget {
               onTap: () => context.go(Routes.people),
             ),
             const SizedBox(height: AppSpacing.lg),
-            _QuickActions(),
+            const _QuickActions(),
             const SizedBox(height: AppSpacing.lg),
+            if (agenda.isNotEmpty) ...[
+              SectionCard(
+                title: l10n.homeToday,
+                trailing: TextButton(onPressed: () => context.go(Routes.meetings), child: Text(l10n.actionSeeAll)),
+                child: const AgendaList(days: 7, limit: 5),
+              ),
+              const SizedBox(height: AppSpacing.md),
+            ],
+            if (reconnect.isNotEmpty) ...[
+              SectionCard(
+                title: l10n.homeReconnect,
+                child: Column(
+                  children: [
+                    for (final (p, last) in reconnect.take(3))
+                      PersonTile(
+                        person: p,
+                        trailing: Text(context.formatDate(last), style: theme.textTheme.bodySmall),
+                        onTap: () => context.push(Routes.person(p.id)),
+                      ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: AppSpacing.md),
+            ],
             if (recent.isEmpty)
-              EmptyState(
-                icon: Icons.diversity_3_outlined,
-                title: l10n.homeEmptyTitle,
-                message: l10n.homeEmptyBody,
-              )
+              EmptyState(icon: Icons.diversity_3_outlined, title: l10n.homeEmptyTitle, message: l10n.homeEmptyBody)
             else
               SectionCard(
                 title: l10n.homeRecentlyAdded,
@@ -74,14 +107,16 @@ class HomeScreen extends ConsumerWidget {
 }
 
 class _QuickActions extends StatelessWidget {
+  const _QuickActions();
+
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
     final actions = [
       (Icons.person_add_alt_1_outlined, l10n.homeQuickAdd, () => context.push(Routes.addPerson)),
-      (Icons.event_note_outlined, l10n.homeLogMeeting, () => context.go(Routes.meetings)),
-      (Icons.route_outlined, l10n.homeFindRelation, () => context.go(Routes.family)),
-      (Icons.account_tree_outlined, l10n.homeFamilyTree, () => context.go(Routes.family)),
+      (Icons.event_note_outlined, l10n.homeLogMeeting, () => context.push(Routes.logMeeting())),
+      (Icons.route_outlined, l10n.homeFindRelation, () => context.push(Routes.finder())),
+      (Icons.account_tree_outlined, l10n.homeFamilyTree, () => context.push(Routes.tree())),
     ];
     return GridView.count(
       crossAxisCount: 2,

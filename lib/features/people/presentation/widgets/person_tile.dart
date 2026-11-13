@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:kinship/kinship.dart';
 
 import '../../../../core/l10n/l10n.dart';
 import '../../../../shared/widgets/person_avatar.dart';
-import '../../../../shared/widgets/relation_chip.dart';
+import '../../../relationships/presentation/widgets/relation_to_me_chip.dart';
 import '../../domain/person.dart';
 
-/// One row in people lists: avatar · name (+ other script) · relation · phone.
+/// One row in people lists: avatar · name (+ other script) · phone · relation to you.
 class PersonTile extends StatelessWidget {
-  const PersonTile({required this.person, this.onTap, super.key});
+  const PersonTile({required this.person, this.onTap, this.trailing, super.key});
 
   final Person person;
   final VoidCallback? onTap;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -31,17 +31,24 @@ class PersonTile extends StatelessWidget {
           isDeceased: person.isDeceased,
         ),
       ),
-      title: Text(name, maxLines: 1, overflow: TextOverflow.ellipsis),
+      title: Row(
+        children: [
+          Flexible(child: Text(name, maxLines: 1, overflow: TextOverflow.ellipsis)),
+          if (person.isFavorite) ...[
+            const SizedBox(width: 4),
+            Icon(Icons.star, size: 16, color: theme.colorScheme.secondary),
+          ],
+        ],
+      ),
       subtitle: subtitle.isEmpty
-          ? null
+          ? (person.isPlaceholder ? Text(l10n.placeholderBadge) : null)
           : Text(
               subtitle,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
             ),
-      // Milestone 3 replaces this with the computed relation-to-me chip.
-      trailing: person.isSelf ? RelationChip(label: l10n.relationYou, side: RelationSide.direct) : null,
+      trailing: trailing ?? RelationToMeChip(personId: person.id, isSelf: person.isSelf),
     );
   }
 }

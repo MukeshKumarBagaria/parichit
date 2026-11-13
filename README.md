@@ -67,7 +67,7 @@ drift_schemas/         # snapshots of each local schema version (migration safet
 ## Quality checks
 
 ```bash
-dart format lib test                  # 120-column style (analysis_options.yaml)
+powershell -File tool/format.ps1      # 120-column style; never formats generated files
 flutter analyze --fatal-infos
 flutter test
 (cd packages/kinship && dart test)

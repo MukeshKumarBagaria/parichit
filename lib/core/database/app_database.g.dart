@@ -380,15 +380,27 @@ class PlaceRow extends DataClass implements Insertable<PlaceRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       name: Value(name),
-      nameAlt: nameAlt == null && nullToAbsent ? const Value.absent() : Value(nameAlt),
+      nameAlt: nameAlt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nameAlt),
       placeType: Value(placeType),
-      parentPlaceId: parentPlaceId == null && nullToAbsent ? const Value.absent() : Value(parentPlaceId),
-      pincode: pincode == null && nullToAbsent ? const Value.absent() : Value(pincode),
-      latitude: latitude == null && nullToAbsent ? const Value.absent() : Value(latitude),
-      longitude: longitude == null && nullToAbsent ? const Value.absent() : Value(longitude),
+      parentPlaceId: parentPlaceId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(parentPlaceId),
+      pincode: pincode == null && nullToAbsent
+          ? const Value.absent()
+          : Value(pincode),
+      latitude: latitude == null && nullToAbsent
+          ? const Value.absent()
+          : Value(latitude),
+      longitude: longitude == null && nullToAbsent
+          ? const Value.absent()
+          : Value(longitude),
     );
   }
 
@@ -453,7 +465,9 @@ class PlaceRow extends DataClass implements Insertable<PlaceRow> {
     name: name ?? this.name,
     nameAlt: nameAlt.present ? nameAlt.value : this.nameAlt,
     placeType: placeType ?? this.placeType,
-    parentPlaceId: parentPlaceId.present ? parentPlaceId.value : this.parentPlaceId,
+    parentPlaceId: parentPlaceId.present
+        ? parentPlaceId.value
+        : this.parentPlaceId,
     pincode: pincode.present ? pincode.value : this.pincode,
     latitude: latitude.present ? latitude.value : this.latitude,
     longitude: longitude.present ? longitude.value : this.longitude,
@@ -468,7 +482,9 @@ class PlaceRow extends DataClass implements Insertable<PlaceRow> {
       name: data.name.present ? data.name.value : this.name,
       nameAlt: data.nameAlt.present ? data.nameAlt.value : this.nameAlt,
       placeType: data.placeType.present ? data.placeType.value : this.placeType,
-      parentPlaceId: data.parentPlaceId.present ? data.parentPlaceId.value : this.parentPlaceId,
+      parentPlaceId: data.parentPlaceId.present
+          ? data.parentPlaceId.value
+          : this.parentPlaceId,
       pincode: data.pincode.present ? data.pincode.value : this.pincode,
       latitude: data.latitude.present ? data.latitude.value : this.latitude,
       longitude: data.longitude.present ? data.longitude.value : this.longitude,
@@ -1680,35 +1696,77 @@ class PersonRow extends DataClass implements Insertable<PersonRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       fullName: Value(fullName),
-      fullNameAlt: fullNameAlt == null && nullToAbsent ? const Value.absent() : Value(fullNameAlt),
-      nickname: nickname == null && nullToAbsent ? const Value.absent() : Value(nickname),
-      surname: surname == null && nullToAbsent ? const Value.absent() : Value(surname),
+      fullNameAlt: fullNameAlt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(fullNameAlt),
+      nickname: nickname == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nickname),
+      surname: surname == null && nullToAbsent
+          ? const Value.absent()
+          : Value(surname),
       gender: Value(gender),
-      isLiving: isLiving == null && nullToAbsent ? const Value.absent() : Value(isLiving),
-      birthYear: birthYear == null && nullToAbsent ? const Value.absent() : Value(birthYear),
-      birthMonth: birthMonth == null && nullToAbsent ? const Value.absent() : Value(birthMonth),
-      birthDay: birthDay == null && nullToAbsent ? const Value.absent() : Value(birthDay),
+      isLiving: isLiving == null && nullToAbsent
+          ? const Value.absent()
+          : Value(isLiving),
+      birthYear: birthYear == null && nullToAbsent
+          ? const Value.absent()
+          : Value(birthYear),
+      birthMonth: birthMonth == null && nullToAbsent
+          ? const Value.absent()
+          : Value(birthMonth),
+      birthDay: birthDay == null && nullToAbsent
+          ? const Value.absent()
+          : Value(birthDay),
       birthDateApprox: Value(birthDateApprox),
-      birthOrder: birthOrder == null && nullToAbsent ? const Value.absent() : Value(birthOrder),
-      deathYear: deathYear == null && nullToAbsent ? const Value.absent() : Value(deathYear),
-      deathMonth: deathMonth == null && nullToAbsent ? const Value.absent() : Value(deathMonth),
-      deathDay: deathDay == null && nullToAbsent ? const Value.absent() : Value(deathDay),
-      birthPlaceId: birthPlaceId == null && nullToAbsent ? const Value.absent() : Value(birthPlaceId),
-      nativePlaceId: nativePlaceId == null && nullToAbsent ? const Value.absent() : Value(nativePlaceId),
-      gotra: gotra == null && nullToAbsent ? const Value.absent() : Value(gotra),
-      occupation: occupation == null && nullToAbsent ? const Value.absent() : Value(occupation),
-      organization: organization == null && nullToAbsent ? const Value.absent() : Value(organization),
-      designation: designation == null && nullToAbsent ? const Value.absent() : Value(designation),
-      education: education == null && nullToAbsent ? const Value.absent() : Value(education),
-      notes: notes == null && nullToAbsent ? const Value.absent() : Value(notes),
+      birthOrder: birthOrder == null && nullToAbsent
+          ? const Value.absent()
+          : Value(birthOrder),
+      deathYear: deathYear == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deathYear),
+      deathMonth: deathMonth == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deathMonth),
+      deathDay: deathDay == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deathDay),
+      birthPlaceId: birthPlaceId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(birthPlaceId),
+      nativePlaceId: nativePlaceId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nativePlaceId),
+      gotra: gotra == null && nullToAbsent
+          ? const Value.absent()
+          : Value(gotra),
+      occupation: occupation == null && nullToAbsent
+          ? const Value.absent()
+          : Value(occupation),
+      organization: organization == null && nullToAbsent
+          ? const Value.absent()
+          : Value(organization),
+      designation: designation == null && nullToAbsent
+          ? const Value.absent()
+          : Value(designation),
+      education: education == null && nullToAbsent
+          ? const Value.absent()
+          : Value(education),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
       isSelf: Value(isSelf),
       isPlaceholder: Value(isPlaceholder),
       isFavorite: Value(isFavorite),
       notifyBirthday: Value(notifyBirthday),
-      mergedIntoId: mergedIntoId == null && nullToAbsent ? const Value.absent() : Value(mergedIntoId),
+      mergedIntoId: mergedIntoId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(mergedIntoId),
       searchText: Value(searchText),
     );
   }
@@ -1849,7 +1907,9 @@ class PersonRow extends DataClass implements Insertable<PersonRow> {
     deathMonth: deathMonth.present ? deathMonth.value : this.deathMonth,
     deathDay: deathDay.present ? deathDay.value : this.deathDay,
     birthPlaceId: birthPlaceId.present ? birthPlaceId.value : this.birthPlaceId,
-    nativePlaceId: nativePlaceId.present ? nativePlaceId.value : this.nativePlaceId,
+    nativePlaceId: nativePlaceId.present
+        ? nativePlaceId.value
+        : this.nativePlaceId,
     gotra: gotra.present ? gotra.value : this.gotra,
     occupation: occupation.present ? occupation.value : this.occupation,
     organization: organization.present ? organization.value : this.organization,
@@ -1871,33 +1931,63 @@ class PersonRow extends DataClass implements Insertable<PersonRow> {
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
       fullName: data.fullName.present ? data.fullName.value : this.fullName,
-      fullNameAlt: data.fullNameAlt.present ? data.fullNameAlt.value : this.fullNameAlt,
+      fullNameAlt: data.fullNameAlt.present
+          ? data.fullNameAlt.value
+          : this.fullNameAlt,
       nickname: data.nickname.present ? data.nickname.value : this.nickname,
       surname: data.surname.present ? data.surname.value : this.surname,
       gender: data.gender.present ? data.gender.value : this.gender,
       isLiving: data.isLiving.present ? data.isLiving.value : this.isLiving,
       birthYear: data.birthYear.present ? data.birthYear.value : this.birthYear,
-      birthMonth: data.birthMonth.present ? data.birthMonth.value : this.birthMonth,
+      birthMonth: data.birthMonth.present
+          ? data.birthMonth.value
+          : this.birthMonth,
       birthDay: data.birthDay.present ? data.birthDay.value : this.birthDay,
-      birthDateApprox: data.birthDateApprox.present ? data.birthDateApprox.value : this.birthDateApprox,
-      birthOrder: data.birthOrder.present ? data.birthOrder.value : this.birthOrder,
+      birthDateApprox: data.birthDateApprox.present
+          ? data.birthDateApprox.value
+          : this.birthDateApprox,
+      birthOrder: data.birthOrder.present
+          ? data.birthOrder.value
+          : this.birthOrder,
       deathYear: data.deathYear.present ? data.deathYear.value : this.deathYear,
-      deathMonth: data.deathMonth.present ? data.deathMonth.value : this.deathMonth,
+      deathMonth: data.deathMonth.present
+          ? data.deathMonth.value
+          : this.deathMonth,
       deathDay: data.deathDay.present ? data.deathDay.value : this.deathDay,
-      birthPlaceId: data.birthPlaceId.present ? data.birthPlaceId.value : this.birthPlaceId,
-      nativePlaceId: data.nativePlaceId.present ? data.nativePlaceId.value : this.nativePlaceId,
+      birthPlaceId: data.birthPlaceId.present
+          ? data.birthPlaceId.value
+          : this.birthPlaceId,
+      nativePlaceId: data.nativePlaceId.present
+          ? data.nativePlaceId.value
+          : this.nativePlaceId,
       gotra: data.gotra.present ? data.gotra.value : this.gotra,
-      occupation: data.occupation.present ? data.occupation.value : this.occupation,
-      organization: data.organization.present ? data.organization.value : this.organization,
-      designation: data.designation.present ? data.designation.value : this.designation,
+      occupation: data.occupation.present
+          ? data.occupation.value
+          : this.occupation,
+      organization: data.organization.present
+          ? data.organization.value
+          : this.organization,
+      designation: data.designation.present
+          ? data.designation.value
+          : this.designation,
       education: data.education.present ? data.education.value : this.education,
       notes: data.notes.present ? data.notes.value : this.notes,
       isSelf: data.isSelf.present ? data.isSelf.value : this.isSelf,
-      isPlaceholder: data.isPlaceholder.present ? data.isPlaceholder.value : this.isPlaceholder,
-      isFavorite: data.isFavorite.present ? data.isFavorite.value : this.isFavorite,
-      notifyBirthday: data.notifyBirthday.present ? data.notifyBirthday.value : this.notifyBirthday,
-      mergedIntoId: data.mergedIntoId.present ? data.mergedIntoId.value : this.mergedIntoId,
-      searchText: data.searchText.present ? data.searchText.value : this.searchText,
+      isPlaceholder: data.isPlaceholder.present
+          ? data.isPlaceholder.value
+          : this.isPlaceholder,
+      isFavorite: data.isFavorite.present
+          ? data.isFavorite.value
+          : this.isFavorite,
+      notifyBirthday: data.notifyBirthday.present
+          ? data.notifyBirthday.value
+          : this.notifyBirthday,
+      mergedIntoId: data.mergedIntoId.present
+          ? data.mergedIntoId.value
+          : this.mergedIntoId,
+      searchText: data.searchText.present
+          ? data.searchText.value
+          : this.searchText,
     );
   }
 
@@ -2424,7 +2514,8 @@ class PeopleCompanion extends UpdateCompanion<PersonRow> {
   }
 }
 
-class $PersonNamesTable extends PersonNames with TableInfo<$PersonNamesTable, PersonNameRow> {
+class $PersonNamesTable extends PersonNames
+    with TableInfo<$PersonNamesTable, PersonNameRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -2690,7 +2781,9 @@ class PersonNameRow extends DataClass implements Insertable<PersonNameRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personId: Value(personId),
       name: Value(name),
@@ -2935,7 +3028,8 @@ class PersonNamesCompanion extends UpdateCompanion<PersonNameRow> {
   }
 }
 
-class $PersonContactsTable extends PersonContacts with TableInfo<$PersonContactsTable, PersonContactRow> {
+class $PersonContactsTable extends PersonContacts
+    with TableInfo<$PersonContactsTable, PersonContactRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -3250,7 +3344,8 @@ class $PersonContactsTable extends PersonContacts with TableInfo<$PersonContacts
   }
 }
 
-class PersonContactRow extends DataClass implements Insertable<PersonContactRow> {
+class PersonContactRow extends DataClass
+    implements Insertable<PersonContactRow> {
   /// UUID v7, generated on the device so records can be created offline.
   final String id;
   final DateTime createdAt;
@@ -3317,13 +3412,19 @@ class PersonContactRow extends DataClass implements Insertable<PersonContactRow>
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personId: Value(personId),
       kind: Value(kind),
       value: Value(value),
-      normalizedValue: normalizedValue == null && nullToAbsent ? const Value.absent() : Value(normalizedValue),
-      label: label == null && nullToAbsent ? const Value.absent() : Value(label),
+      normalizedValue: normalizedValue == null && nullToAbsent
+          ? const Value.absent()
+          : Value(normalizedValue),
+      label: label == null && nullToAbsent
+          ? const Value.absent()
+          : Value(label),
       isWhatsapp: Value(isWhatsapp),
       isPrimary: Value(isPrimary),
     );
@@ -3390,7 +3491,9 @@ class PersonContactRow extends DataClass implements Insertable<PersonContactRow>
     personId: personId ?? this.personId,
     kind: kind ?? this.kind,
     value: value ?? this.value,
-    normalizedValue: normalizedValue.present ? normalizedValue.value : this.normalizedValue,
+    normalizedValue: normalizedValue.present
+        ? normalizedValue.value
+        : this.normalizedValue,
     label: label.present ? label.value : this.label,
     isWhatsapp: isWhatsapp ?? this.isWhatsapp,
     isPrimary: isPrimary ?? this.isPrimary,
@@ -3405,9 +3508,13 @@ class PersonContactRow extends DataClass implements Insertable<PersonContactRow>
       personId: data.personId.present ? data.personId.value : this.personId,
       kind: data.kind.present ? data.kind.value : this.kind,
       value: data.value.present ? data.value.value : this.value,
-      normalizedValue: data.normalizedValue.present ? data.normalizedValue.value : this.normalizedValue,
+      normalizedValue: data.normalizedValue.present
+          ? data.normalizedValue.value
+          : this.normalizedValue,
       label: data.label.present ? data.label.value : this.label,
-      isWhatsapp: data.isWhatsapp.present ? data.isWhatsapp.value : this.isWhatsapp,
+      isWhatsapp: data.isWhatsapp.present
+          ? data.isWhatsapp.value
+          : this.isWhatsapp,
       isPrimary: data.isPrimary.present ? data.isPrimary.value : this.isPrimary,
     );
   }
@@ -3643,7 +3750,8 @@ class PersonContactsCompanion extends UpdateCompanion<PersonContactRow> {
   }
 }
 
-class $PersonAddressesTable extends PersonAddresses with TableInfo<$PersonAddressesTable, PersonAddressRow> {
+class $PersonAddressesTable extends PersonAddresses
+    with TableInfo<$PersonAddressesTable, PersonAddressRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -3977,7 +4085,8 @@ class $PersonAddressesTable extends PersonAddresses with TableInfo<$PersonAddres
   }
 }
 
-class PersonAddressRow extends DataClass implements Insertable<PersonAddressRow> {
+class PersonAddressRow extends DataClass
+    implements Insertable<PersonAddressRow> {
   /// UUID v7, generated on the device so records can be created offline.
   final String id;
   final DateTime createdAt;
@@ -4049,15 +4158,27 @@ class PersonAddressRow extends DataClass implements Insertable<PersonAddressRow>
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personId: Value(personId),
       label: Value(label),
-      addressLine: addressLine == null && nullToAbsent ? const Value.absent() : Value(addressLine),
-      placeId: placeId == null && nullToAbsent ? const Value.absent() : Value(placeId),
-      pincode: pincode == null && nullToAbsent ? const Value.absent() : Value(pincode),
-      latitude: latitude == null && nullToAbsent ? const Value.absent() : Value(latitude),
-      longitude: longitude == null && nullToAbsent ? const Value.absent() : Value(longitude),
+      addressLine: addressLine == null && nullToAbsent
+          ? const Value.absent()
+          : Value(addressLine),
+      placeId: placeId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(placeId),
+      pincode: pincode == null && nullToAbsent
+          ? const Value.absent()
+          : Value(pincode),
+      latitude: latitude == null && nullToAbsent
+          ? const Value.absent()
+          : Value(latitude),
+      longitude: longitude == null && nullToAbsent
+          ? const Value.absent()
+          : Value(longitude),
       isPrimary: Value(isPrimary),
     );
   }
@@ -4141,7 +4262,9 @@ class PersonAddressRow extends DataClass implements Insertable<PersonAddressRow>
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
       personId: data.personId.present ? data.personId.value : this.personId,
       label: data.label.present ? data.label.value : this.label,
-      addressLine: data.addressLine.present ? data.addressLine.value : this.addressLine,
+      addressLine: data.addressLine.present
+          ? data.addressLine.value
+          : this.addressLine,
       placeId: data.placeId.present ? data.placeId.value : this.placeId,
       pincode: data.pincode.present ? data.pincode.value : this.pincode,
       latitude: data.latitude.present ? data.latitude.value : this.latitude,
@@ -4393,7 +4516,8 @@ class PersonAddressesCompanion extends UpdateCompanion<PersonAddressRow> {
   }
 }
 
-class $PersonAttributesTable extends PersonAttributes with TableInfo<$PersonAttributesTable, PersonAttributeRow> {
+class $PersonAttributesTable extends PersonAttributes
+    with TableInfo<$PersonAttributesTable, PersonAttributeRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -4609,7 +4733,8 @@ class $PersonAttributesTable extends PersonAttributes with TableInfo<$PersonAttr
   }
 }
 
-class PersonAttributeRow extends DataClass implements Insertable<PersonAttributeRow> {
+class PersonAttributeRow extends DataClass
+    implements Insertable<PersonAttributeRow> {
   /// UUID v7, generated on the device so records can be created offline.
   final String id;
   final DateTime createdAt;
@@ -4658,11 +4783,15 @@ class PersonAttributeRow extends DataClass implements Insertable<PersonAttribute
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personId: Value(personId),
       key: Value(key),
-      value: value == null && nullToAbsent ? const Value.absent() : Value(value),
+      value: value == null && nullToAbsent
+          ? const Value.absent()
+          : Value(value),
     );
   }
 
@@ -4903,7 +5032,8 @@ class PersonAttributesCompanion extends UpdateCompanion<PersonAttributeRow> {
   }
 }
 
-class $ParentChildTable extends ParentChild with TableInfo<$ParentChildTable, ParentChildRow> {
+class $ParentChildTable extends ParentChild
+    with TableInfo<$ParentChildTable, ParentChildRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -5224,13 +5354,17 @@ class ParentChildRow extends DataClass implements Insertable<ParentChildRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       parentId: Value(parentId),
       childId: Value(childId),
       kind: Value(kind),
       certainty: Value(certainty),
-      notes: notes == null && nullToAbsent ? const Value.absent() : Value(notes),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
     );
   }
 
@@ -5509,7 +5643,8 @@ class ParentChildCompanion extends UpdateCompanion<ParentChildRow> {
   }
 }
 
-class $PartnershipsTable extends Partnerships with TableInfo<$PartnershipsTable, PartnershipRow> {
+class $PartnershipsTable extends Partnerships
+    with TableInfo<$PartnershipsTable, PartnershipRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -5991,19 +6126,33 @@ class PartnershipRow extends DataClass implements Insertable<PartnershipRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personAId: Value(personAId),
       personBId: Value(personBId),
       kind: Value(kind),
       status: Value(status),
-      startYear: startYear == null && nullToAbsent ? const Value.absent() : Value(startYear),
-      startMonth: startMonth == null && nullToAbsent ? const Value.absent() : Value(startMonth),
-      startDay: startDay == null && nullToAbsent ? const Value.absent() : Value(startDay),
+      startYear: startYear == null && nullToAbsent
+          ? const Value.absent()
+          : Value(startYear),
+      startMonth: startMonth == null && nullToAbsent
+          ? const Value.absent()
+          : Value(startMonth),
+      startDay: startDay == null && nullToAbsent
+          ? const Value.absent()
+          : Value(startDay),
       startDateApprox: Value(startDateApprox),
-      endYear: endYear == null && nullToAbsent ? const Value.absent() : Value(endYear),
-      placeId: placeId == null && nullToAbsent ? const Value.absent() : Value(placeId),
-      notes: notes == null && nullToAbsent ? const Value.absent() : Value(notes),
+      endYear: endYear == null && nullToAbsent
+          ? const Value.absent()
+          : Value(endYear),
+      placeId: placeId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(placeId),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
     );
   }
 
@@ -6101,9 +6250,13 @@ class PartnershipRow extends DataClass implements Insertable<PartnershipRow> {
       kind: data.kind.present ? data.kind.value : this.kind,
       status: data.status.present ? data.status.value : this.status,
       startYear: data.startYear.present ? data.startYear.value : this.startYear,
-      startMonth: data.startMonth.present ? data.startMonth.value : this.startMonth,
+      startMonth: data.startMonth.present
+          ? data.startMonth.value
+          : this.startMonth,
       startDay: data.startDay.present ? data.startDay.value : this.startDay,
-      startDateApprox: data.startDateApprox.present ? data.startDateApprox.value : this.startDateApprox,
+      startDateApprox: data.startDateApprox.present
+          ? data.startDateApprox.value
+          : this.startDateApprox,
       endYear: data.endYear.present ? data.endYear.value : this.endYear,
       placeId: data.placeId.present ? data.placeId.value : this.placeId,
       notes: data.notes.present ? data.notes.value : this.notes,
@@ -6396,7 +6549,8 @@ class PartnershipsCompanion extends UpdateCompanion<PartnershipRow> {
   }
 }
 
-class $SocialConnectionsTable extends SocialConnections with TableInfo<$SocialConnectionsTable, SocialConnectionRow> {
+class $SocialConnectionsTable extends SocialConnections
+    with TableInfo<$SocialConnectionsTable, SocialConnectionRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -6671,7 +6825,8 @@ class $SocialConnectionsTable extends SocialConnections with TableInfo<$SocialCo
   }
 }
 
-class SocialConnectionRow extends DataClass implements Insertable<SocialConnectionRow> {
+class SocialConnectionRow extends DataClass
+    implements Insertable<SocialConnectionRow> {
   /// UUID v7, generated on the device so records can be created offline.
   final String id;
   final DateTime createdAt;
@@ -6728,13 +6883,19 @@ class SocialConnectionRow extends DataClass implements Insertable<SocialConnecti
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personId: Value(personId),
       otherPersonId: Value(otherPersonId),
       connectionType: Value(connectionType),
-      description: description == null && nullToAbsent ? const Value.absent() : Value(description),
-      sinceYear: sinceYear == null && nullToAbsent ? const Value.absent() : Value(sinceYear),
+      description: description == null && nullToAbsent
+          ? const Value.absent()
+          : Value(description),
+      sinceYear: sinceYear == null && nullToAbsent
+          ? const Value.absent()
+          : Value(sinceYear),
     );
   }
 
@@ -6804,9 +6965,15 @@ class SocialConnectionRow extends DataClass implements Insertable<SocialConnecti
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
       personId: data.personId.present ? data.personId.value : this.personId,
-      otherPersonId: data.otherPersonId.present ? data.otherPersonId.value : this.otherPersonId,
-      connectionType: data.connectionType.present ? data.connectionType.value : this.connectionType,
-      description: data.description.present ? data.description.value : this.description,
+      otherPersonId: data.otherPersonId.present
+          ? data.otherPersonId.value
+          : this.otherPersonId,
+      connectionType: data.connectionType.present
+          ? data.connectionType.value
+          : this.connectionType,
+      description: data.description.present
+          ? data.description.value
+          : this.description,
       sinceYear: data.sinceYear.present ? data.sinceYear.value : this.sinceYear,
     );
   }
@@ -7014,7 +7181,8 @@ class SocialConnectionsCompanion extends UpdateCompanion<SocialConnectionRow> {
   }
 }
 
-class $FamilyGroupsTable extends FamilyGroups with TableInfo<$FamilyGroupsTable, FamilyGroupRow> {
+class $FamilyGroupsTable extends FamilyGroups
+    with TableInfo<$FamilyGroupsTable, FamilyGroupRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -7391,15 +7559,29 @@ class FamilyGroupRow extends DataClass implements Insertable<FamilyGroupRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       name: Value(name),
-      nameAlt: nameAlt == null && nullToAbsent ? const Value.absent() : Value(nameAlt),
-      gotra: gotra == null && nullToAbsent ? const Value.absent() : Value(gotra),
-      kuldevta: kuldevta == null && nullToAbsent ? const Value.absent() : Value(kuldevta),
-      nativePlaceId: nativePlaceId == null && nullToAbsent ? const Value.absent() : Value(nativePlaceId),
-      headPersonId: headPersonId == null && nullToAbsent ? const Value.absent() : Value(headPersonId),
-      notes: notes == null && nullToAbsent ? const Value.absent() : Value(notes),
+      nameAlt: nameAlt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nameAlt),
+      gotra: gotra == null && nullToAbsent
+          ? const Value.absent()
+          : Value(gotra),
+      kuldevta: kuldevta == null && nullToAbsent
+          ? const Value.absent()
+          : Value(kuldevta),
+      nativePlaceId: nativePlaceId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nativePlaceId),
+      headPersonId: headPersonId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(headPersonId),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
     );
   }
 
@@ -7465,7 +7647,9 @@ class FamilyGroupRow extends DataClass implements Insertable<FamilyGroupRow> {
     nameAlt: nameAlt.present ? nameAlt.value : this.nameAlt,
     gotra: gotra.present ? gotra.value : this.gotra,
     kuldevta: kuldevta.present ? kuldevta.value : this.kuldevta,
-    nativePlaceId: nativePlaceId.present ? nativePlaceId.value : this.nativePlaceId,
+    nativePlaceId: nativePlaceId.present
+        ? nativePlaceId.value
+        : this.nativePlaceId,
     headPersonId: headPersonId.present ? headPersonId.value : this.headPersonId,
     notes: notes.present ? notes.value : this.notes,
   );
@@ -7480,8 +7664,12 @@ class FamilyGroupRow extends DataClass implements Insertable<FamilyGroupRow> {
       nameAlt: data.nameAlt.present ? data.nameAlt.value : this.nameAlt,
       gotra: data.gotra.present ? data.gotra.value : this.gotra,
       kuldevta: data.kuldevta.present ? data.kuldevta.value : this.kuldevta,
-      nativePlaceId: data.nativePlaceId.present ? data.nativePlaceId.value : this.nativePlaceId,
-      headPersonId: data.headPersonId.present ? data.headPersonId.value : this.headPersonId,
+      nativePlaceId: data.nativePlaceId.present
+          ? data.nativePlaceId.value
+          : this.nativePlaceId,
+      headPersonId: data.headPersonId.present
+          ? data.headPersonId.value
+          : this.headPersonId,
       notes: data.notes.present ? data.notes.value : this.notes,
     );
   }
@@ -7937,7 +8125,8 @@ class $FamilyGroupMembersTable extends FamilyGroupMembers
   }
 }
 
-class FamilyGroupMemberRow extends DataClass implements Insertable<FamilyGroupMemberRow> {
+class FamilyGroupMemberRow extends DataClass
+    implements Insertable<FamilyGroupMemberRow> {
   /// UUID v7, generated on the device so records can be created offline.
   final String id;
   final DateTime createdAt;
@@ -7986,7 +8175,9 @@ class FamilyGroupMemberRow extends DataClass implements Insertable<FamilyGroupMe
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       familyGroupId: Value(familyGroupId),
       personId: Value(personId),
@@ -8051,7 +8242,9 @@ class FamilyGroupMemberRow extends DataClass implements Insertable<FamilyGroupMe
       updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
-      familyGroupId: data.familyGroupId.present ? data.familyGroupId.value : this.familyGroupId,
+      familyGroupId: data.familyGroupId.present
+          ? data.familyGroupId.value
+          : this.familyGroupId,
       personId: data.personId.present ? data.personId.value : this.personId,
       role: data.role.present ? data.role.value : this.role,
     );
@@ -8097,7 +8290,8 @@ class FamilyGroupMemberRow extends DataClass implements Insertable<FamilyGroupMe
           other.role == this.role);
 }
 
-class FamilyGroupMembersCompanion extends UpdateCompanion<FamilyGroupMemberRow> {
+class FamilyGroupMembersCompanion
+    extends UpdateCompanion<FamilyGroupMemberRow> {
   final Value<String> id;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
@@ -8231,7 +8425,8 @@ class FamilyGroupMembersCompanion extends UpdateCompanion<FamilyGroupMemberRow> 
   }
 }
 
-class $PersonMergesTable extends PersonMerges with TableInfo<$PersonMergesTable, PersonMergeRow> {
+class $PersonMergesTable extends PersonMerges
+    with TableInfo<$PersonMergesTable, PersonMergeRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -8502,7 +8697,9 @@ class PersonMergeRow extends DataClass implements Insertable<PersonMergeRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       survivorId: Value(survivorId),
       mergedId: Value(mergedId),
@@ -8567,7 +8764,9 @@ class PersonMergeRow extends DataClass implements Insertable<PersonMergeRow> {
       updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
-      survivorId: data.survivorId.present ? data.survivorId.value : this.survivorId,
+      survivorId: data.survivorId.present
+          ? data.survivorId.value
+          : this.survivorId,
       mergedId: data.mergedId.present ? data.mergedId.value : this.mergedId,
       snapshot: data.snapshot.present ? data.snapshot.value : this.snapshot,
     );
@@ -9038,11 +9237,17 @@ class TagRow extends DataClass implements Insertable<TagRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       name: Value(name),
-      nameAlt: nameAlt == null && nullToAbsent ? const Value.absent() : Value(nameAlt),
-      color: color == null && nullToAbsent ? const Value.absent() : Value(color),
+      nameAlt: nameAlt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nameAlt),
+      color: color == null && nullToAbsent
+          ? const Value.absent()
+          : Value(color),
       icon: icon == null && nullToAbsent ? const Value.absent() : Value(icon),
     );
   }
@@ -9302,7 +9507,8 @@ class TagsCompanion extends UpdateCompanion<TagRow> {
   }
 }
 
-class $PersonTagsTable extends PersonTags with TableInfo<$PersonTagsTable, PersonTagRow> {
+class $PersonTagsTable extends PersonTags
+    with TableInfo<$PersonTagsTable, PersonTagRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -9542,7 +9748,9 @@ class PersonTagRow extends DataClass implements Insertable<PersonTagRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       personId: Value(personId),
       tagId: Value(tagId),
@@ -9767,7 +9975,8 @@ class PersonTagsCompanion extends UpdateCompanion<PersonTagRow> {
   }
 }
 
-class $InteractionsTable extends Interactions with TableInfo<$InteractionsTable, InteractionRow> {
+class $InteractionsTable extends Interactions
+    with TableInfo<$InteractionsTable, InteractionRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -10236,18 +10445,36 @@ class InteractionRow extends DataClass implements Insertable<InteractionRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
-      title: title == null && nullToAbsent ? const Value.absent() : Value(title),
+      title: title == null && nullToAbsent
+          ? const Value.absent()
+          : Value(title),
       interactionType: Value(interactionType),
       occurredAt: Value(occurredAt),
-      durationMinutes: durationMinutes == null && nullToAbsent ? const Value.absent() : Value(durationMinutes),
-      placeId: placeId == null && nullToAbsent ? const Value.absent() : Value(placeId),
-      locationText: locationText == null && nullToAbsent ? const Value.absent() : Value(locationText),
-      latitude: latitude == null && nullToAbsent ? const Value.absent() : Value(latitude),
-      longitude: longitude == null && nullToAbsent ? const Value.absent() : Value(longitude),
-      notes: notes == null && nullToAbsent ? const Value.absent() : Value(notes),
-      followUpOn: followUpOn == null && nullToAbsent ? const Value.absent() : Value(followUpOn),
+      durationMinutes: durationMinutes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(durationMinutes),
+      placeId: placeId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(placeId),
+      locationText: locationText == null && nullToAbsent
+          ? const Value.absent()
+          : Value(locationText),
+      latitude: latitude == null && nullToAbsent
+          ? const Value.absent()
+          : Value(latitude),
+      longitude: longitude == null && nullToAbsent
+          ? const Value.absent()
+          : Value(longitude),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
+      followUpOn: followUpOn == null && nullToAbsent
+          ? const Value.absent()
+          : Value(followUpOn),
     );
   }
 
@@ -10321,7 +10548,9 @@ class InteractionRow extends DataClass implements Insertable<InteractionRow> {
     title: title.present ? title.value : this.title,
     interactionType: interactionType ?? this.interactionType,
     occurredAt: occurredAt ?? this.occurredAt,
-    durationMinutes: durationMinutes.present ? durationMinutes.value : this.durationMinutes,
+    durationMinutes: durationMinutes.present
+        ? durationMinutes.value
+        : this.durationMinutes,
     placeId: placeId.present ? placeId.value : this.placeId,
     locationText: locationText.present ? locationText.value : this.locationText,
     latitude: latitude.present ? latitude.value : this.latitude,
@@ -10337,15 +10566,25 @@ class InteractionRow extends DataClass implements Insertable<InteractionRow> {
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
       title: data.title.present ? data.title.value : this.title,
-      interactionType: data.interactionType.present ? data.interactionType.value : this.interactionType,
-      occurredAt: data.occurredAt.present ? data.occurredAt.value : this.occurredAt,
-      durationMinutes: data.durationMinutes.present ? data.durationMinutes.value : this.durationMinutes,
+      interactionType: data.interactionType.present
+          ? data.interactionType.value
+          : this.interactionType,
+      occurredAt: data.occurredAt.present
+          ? data.occurredAt.value
+          : this.occurredAt,
+      durationMinutes: data.durationMinutes.present
+          ? data.durationMinutes.value
+          : this.durationMinutes,
       placeId: data.placeId.present ? data.placeId.value : this.placeId,
-      locationText: data.locationText.present ? data.locationText.value : this.locationText,
+      locationText: data.locationText.present
+          ? data.locationText.value
+          : this.locationText,
       latitude: data.latitude.present ? data.latitude.value : this.latitude,
       longitude: data.longitude.present ? data.longitude.value : this.longitude,
       notes: data.notes.present ? data.notes.value : this.notes,
-      followUpOn: data.followUpOn.present ? data.followUpOn.value : this.followUpOn,
+      followUpOn: data.followUpOn.present
+          ? data.followUpOn.value
+          : this.followUpOn,
     );
   }
 
@@ -10846,7 +11085,8 @@ class $InteractionParticipantsTable extends InteractionParticipants
   }
 }
 
-class InteractionParticipantRow extends DataClass implements Insertable<InteractionParticipantRow> {
+class InteractionParticipantRow extends DataClass
+    implements Insertable<InteractionParticipantRow> {
   /// UUID v7, generated on the device so records can be created offline.
   final String id;
   final DateTime createdAt;
@@ -10893,7 +11133,9 @@ class InteractionParticipantRow extends DataClass implements Insertable<Interact
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
       interactionId: Value(interactionId),
       personId: Value(personId),
@@ -10960,7 +11202,9 @@ class InteractionParticipantRow extends DataClass implements Insertable<Interact
       updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
-      interactionId: data.interactionId.present ? data.interactionId.value : this.interactionId,
+      interactionId: data.interactionId.present
+          ? data.interactionId.value
+          : this.interactionId,
       personId: data.personId.present ? data.personId.value : this.personId,
       role: data.role.present ? data.role.value : this.role,
     );
@@ -11006,7 +11250,8 @@ class InteractionParticipantRow extends DataClass implements Insertable<Interact
           other.role == this.role);
 }
 
-class InteractionParticipantsCompanion extends UpdateCompanion<InteractionParticipantRow> {
+class InteractionParticipantsCompanion
+    extends UpdateCompanion<InteractionParticipantRow> {
   final Value<String> id;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
@@ -11140,7 +11385,8 @@ class InteractionParticipantsCompanion extends UpdateCompanion<InteractionPartic
   }
 }
 
-class $RemindersTable extends Reminders with TableInfo<$RemindersTable, ReminderRow> {
+class $RemindersTable extends Reminders
+    with TableInfo<$RemindersTable, ReminderRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -11545,16 +11791,26 @@ class ReminderRow extends DataClass implements Insertable<ReminderRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
-      personId: personId == null && nullToAbsent ? const Value.absent() : Value(personId),
-      interactionId: interactionId == null && nullToAbsent ? const Value.absent() : Value(interactionId),
+      personId: personId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(personId),
+      interactionId: interactionId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(interactionId),
       reminderType: Value(reminderType),
       title: Value(title),
       dueAt: Value(dueAt),
       recurrence: Value(recurrence),
-      notes: notes == null && nullToAbsent ? const Value.absent() : Value(notes),
-      completedAt: completedAt == null && nullToAbsent ? const Value.absent() : Value(completedAt),
+      notes: notes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(notes),
+      completedAt: completedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(completedAt),
     );
   }
 
@@ -11620,7 +11876,9 @@ class ReminderRow extends DataClass implements Insertable<ReminderRow> {
     deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
     serverSeq: serverSeq ?? this.serverSeq,
     personId: personId.present ? personId.value : this.personId,
-    interactionId: interactionId.present ? interactionId.value : this.interactionId,
+    interactionId: interactionId.present
+        ? interactionId.value
+        : this.interactionId,
     reminderType: reminderType ?? this.reminderType,
     title: title ?? this.title,
     dueAt: dueAt ?? this.dueAt,
@@ -11636,13 +11894,21 @@ class ReminderRow extends DataClass implements Insertable<ReminderRow> {
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
       personId: data.personId.present ? data.personId.value : this.personId,
-      interactionId: data.interactionId.present ? data.interactionId.value : this.interactionId,
-      reminderType: data.reminderType.present ? data.reminderType.value : this.reminderType,
+      interactionId: data.interactionId.present
+          ? data.interactionId.value
+          : this.interactionId,
+      reminderType: data.reminderType.present
+          ? data.reminderType.value
+          : this.reminderType,
       title: data.title.present ? data.title.value : this.title,
       dueAt: data.dueAt.present ? data.dueAt.value : this.dueAt,
-      recurrence: data.recurrence.present ? data.recurrence.value : this.recurrence,
+      recurrence: data.recurrence.present
+          ? data.recurrence.value
+          : this.recurrence,
       notes: data.notes.present ? data.notes.value : this.notes,
-      completedAt: data.completedAt.present ? data.completedAt.value : this.completedAt,
+      completedAt: data.completedAt.present
+          ? data.completedAt.value
+          : this.completedAt,
     );
   }
 
@@ -12399,20 +12665,40 @@ class MediaRow extends DataClass implements Insertable<MediaRow> {
       id: Value(id),
       createdAt: Value(createdAt),
       updatedAt: Value(updatedAt),
-      deletedAt: deletedAt == null && nullToAbsent ? const Value.absent() : Value(deletedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
       serverSeq: Value(serverSeq),
-      personId: personId == null && nullToAbsent ? const Value.absent() : Value(personId),
-      interactionId: interactionId == null && nullToAbsent ? const Value.absent() : Value(interactionId),
+      personId: personId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(personId),
+      interactionId: interactionId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(interactionId),
       kind: Value(kind),
       fileName: Value(fileName),
       mimeType: Value(mimeType),
-      sizeBytes: sizeBytes == null && nullToAbsent ? const Value.absent() : Value(sizeBytes),
-      width: width == null && nullToAbsent ? const Value.absent() : Value(width),
-      height: height == null && nullToAbsent ? const Value.absent() : Value(height),
-      durationMs: durationMs == null && nullToAbsent ? const Value.absent() : Value(durationMs),
-      sha256: sha256 == null && nullToAbsent ? const Value.absent() : Value(sha256),
-      caption: caption == null && nullToAbsent ? const Value.absent() : Value(caption),
-      takenAt: takenAt == null && nullToAbsent ? const Value.absent() : Value(takenAt),
+      sizeBytes: sizeBytes == null && nullToAbsent
+          ? const Value.absent()
+          : Value(sizeBytes),
+      width: width == null && nullToAbsent
+          ? const Value.absent()
+          : Value(width),
+      height: height == null && nullToAbsent
+          ? const Value.absent()
+          : Value(height),
+      durationMs: durationMs == null && nullToAbsent
+          ? const Value.absent()
+          : Value(durationMs),
+      sha256: sha256 == null && nullToAbsent
+          ? const Value.absent()
+          : Value(sha256),
+      caption: caption == null && nullToAbsent
+          ? const Value.absent()
+          : Value(caption),
+      takenAt: takenAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(takenAt),
     );
   }
 
@@ -12490,7 +12776,9 @@ class MediaRow extends DataClass implements Insertable<MediaRow> {
     deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
     serverSeq: serverSeq ?? this.serverSeq,
     personId: personId.present ? personId.value : this.personId,
-    interactionId: interactionId.present ? interactionId.value : this.interactionId,
+    interactionId: interactionId.present
+        ? interactionId.value
+        : this.interactionId,
     kind: kind ?? this.kind,
     fileName: fileName ?? this.fileName,
     mimeType: mimeType ?? this.mimeType,
@@ -12510,14 +12798,18 @@ class MediaRow extends DataClass implements Insertable<MediaRow> {
       deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
       serverSeq: data.serverSeq.present ? data.serverSeq.value : this.serverSeq,
       personId: data.personId.present ? data.personId.value : this.personId,
-      interactionId: data.interactionId.present ? data.interactionId.value : this.interactionId,
+      interactionId: data.interactionId.present
+          ? data.interactionId.value
+          : this.interactionId,
       kind: data.kind.present ? data.kind.value : this.kind,
       fileName: data.fileName.present ? data.fileName.value : this.fileName,
       mimeType: data.mimeType.present ? data.mimeType.value : this.mimeType,
       sizeBytes: data.sizeBytes.present ? data.sizeBytes.value : this.sizeBytes,
       width: data.width.present ? data.width.value : this.width,
       height: data.height.present ? data.height.value : this.height,
-      durationMs: data.durationMs.present ? data.durationMs.value : this.durationMs,
+      durationMs: data.durationMs.present
+          ? data.durationMs.value
+          : this.durationMs,
       sha256: data.sha256.present ? data.sha256.value : this.sha256,
       caption: data.caption.present ? data.caption.value : this.caption,
       takenAt: data.takenAt.present ? data.takenAt.value : this.takenAt,
@@ -12825,7 +13117,8 @@ class MediaCompanion extends UpdateCompanion<MediaRow> {
   }
 }
 
-class $SyncOutboxTable extends SyncOutbox with TableInfo<$SyncOutboxTable, OutboxEntry> {
+class $SyncOutboxTable extends SyncOutbox
+    with TableInfo<$SyncOutboxTable, OutboxEntry> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -12901,13 +13194,14 @@ class $SyncOutboxTable extends SyncOutbox with TableInfo<$SyncOutboxTable, Outbo
     'nextAttemptAt',
   );
   @override
-  late final GeneratedColumn<DateTime> nextAttemptAt = GeneratedColumn<DateTime>(
-    'next_attempt_at',
-    aliasedName,
-    true,
-    type: DriftSqlType.dateTime,
-    requiredDuringInsert: false,
-  );
+  late final GeneratedColumn<DateTime> nextAttemptAt =
+      GeneratedColumn<DateTime>(
+        'next_attempt_at',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
   static const VerificationMeta _lastErrorMeta = const VerificationMeta(
     'lastError',
   );
@@ -13100,8 +13394,12 @@ class OutboxEntry extends DataClass implements Insertable<OutboxEntry> {
       payload: Value(payload),
       createdAt: Value(createdAt),
       attempts: Value(attempts),
-      nextAttemptAt: nextAttemptAt == null && nullToAbsent ? const Value.absent() : Value(nextAttemptAt),
-      lastError: lastError == null && nullToAbsent ? const Value.absent() : Value(lastError),
+      nextAttemptAt: nextAttemptAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(nextAttemptAt),
+      lastError: lastError == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastError),
     );
   }
 
@@ -13152,7 +13450,9 @@ class OutboxEntry extends DataClass implements Insertable<OutboxEntry> {
     payload: payload ?? this.payload,
     createdAt: createdAt ?? this.createdAt,
     attempts: attempts ?? this.attempts,
-    nextAttemptAt: nextAttemptAt.present ? nextAttemptAt.value : this.nextAttemptAt,
+    nextAttemptAt: nextAttemptAt.present
+        ? nextAttemptAt.value
+        : this.nextAttemptAt,
     lastError: lastError.present ? lastError.value : this.lastError,
   );
   OutboxEntry copyWithCompanion(SyncOutboxCompanion data) {
@@ -13163,7 +13463,9 @@ class OutboxEntry extends DataClass implements Insertable<OutboxEntry> {
       payload: data.payload.present ? data.payload.value : this.payload,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
       attempts: data.attempts.present ? data.attempts.value : this.attempts,
-      nextAttemptAt: data.nextAttemptAt.present ? data.nextAttemptAt.value : this.nextAttemptAt,
+      nextAttemptAt: data.nextAttemptAt.present
+          ? data.nextAttemptAt.value
+          : this.nextAttemptAt,
       lastError: data.lastError.present ? data.lastError.value : this.lastError,
     );
   }
@@ -13330,7 +13632,8 @@ class SyncOutboxCompanion extends UpdateCompanion<OutboxEntry> {
   }
 }
 
-class $SyncCursorsTable extends SyncCursors with TableInfo<$SyncCursorsTable, SyncCursorRow> {
+class $SyncCursorsTable extends SyncCursors
+    with TableInfo<$SyncCursorsTable, SyncCursorRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -13461,7 +13764,9 @@ class SyncCursorRow extends DataClass implements Insertable<SyncCursorRow> {
     return SyncCursorsCompanion(
       entity: Value(entity),
       lastServerSeq: Value(lastServerSeq),
-      lastPulledAt: lastPulledAt == null && nullToAbsent ? const Value.absent() : Value(lastPulledAt),
+      lastPulledAt: lastPulledAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastPulledAt),
     );
   }
 
@@ -13498,8 +13803,12 @@ class SyncCursorRow extends DataClass implements Insertable<SyncCursorRow> {
   SyncCursorRow copyWithCompanion(SyncCursorsCompanion data) {
     return SyncCursorRow(
       entity: data.entity.present ? data.entity.value : this.entity,
-      lastServerSeq: data.lastServerSeq.present ? data.lastServerSeq.value : this.lastServerSeq,
-      lastPulledAt: data.lastPulledAt.present ? data.lastPulledAt.value : this.lastPulledAt,
+      lastServerSeq: data.lastServerSeq.present
+          ? data.lastServerSeq.value
+          : this.lastServerSeq,
+      lastPulledAt: data.lastPulledAt.present
+          ? data.lastPulledAt.value
+          : this.lastPulledAt,
     );
   }
 
@@ -13599,7 +13908,8 @@ class SyncCursorsCompanion extends UpdateCompanion<SyncCursorRow> {
   }
 }
 
-class $SyncIssuesTable extends SyncIssues with TableInfo<$SyncIssuesTable, SyncIssueRow> {
+class $SyncIssuesTable extends SyncIssues
+    with TableInfo<$SyncIssuesTable, SyncIssueRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -13863,10 +14173,16 @@ class SyncIssueRow extends DataClass implements Insertable<SyncIssueRow> {
       entity: Value(entity),
       recordId: Value(recordId),
       payload: Value(payload),
-      errorCode: errorCode == null && nullToAbsent ? const Value.absent() : Value(errorCode),
-      message: message == null && nullToAbsent ? const Value.absent() : Value(message),
+      errorCode: errorCode == null && nullToAbsent
+          ? const Value.absent()
+          : Value(errorCode),
+      message: message == null && nullToAbsent
+          ? const Value.absent()
+          : Value(message),
       createdAt: Value(createdAt),
-      resolvedAt: resolvedAt == null && nullToAbsent ? const Value.absent() : Value(resolvedAt),
+      resolvedAt: resolvedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(resolvedAt),
     );
   }
 
@@ -13929,7 +14245,9 @@ class SyncIssueRow extends DataClass implements Insertable<SyncIssueRow> {
       errorCode: data.errorCode.present ? data.errorCode.value : this.errorCode,
       message: data.message.present ? data.message.value : this.message,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
-      resolvedAt: data.resolvedAt.present ? data.resolvedAt.value : this.resolvedAt,
+      resolvedAt: data.resolvedAt.present
+          ? data.resolvedAt.value
+          : this.resolvedAt,
     );
   }
 
@@ -14095,7 +14413,8 @@ class SyncIssuesCompanion extends UpdateCompanion<SyncIssueRow> {
   }
 }
 
-class $MediaFilesTable extends MediaFiles with TableInfo<$MediaFilesTable, MediaFileRow> {
+class $MediaFilesTable extends MediaFiles
+    with TableInfo<$MediaFilesTable, MediaFileRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -14286,8 +14605,12 @@ class MediaFileRow extends DataClass implements Insertable<MediaFileRow> {
   MediaFilesCompanion toCompanion(bool nullToAbsent) {
     return MediaFilesCompanion(
       mediaId: Value(mediaId),
-      localPath: localPath == null && nullToAbsent ? const Value.absent() : Value(localPath),
-      thumbPath: thumbPath == null && nullToAbsent ? const Value.absent() : Value(thumbPath),
+      localPath: localPath == null && nullToAbsent
+          ? const Value.absent()
+          : Value(localPath),
+      thumbPath: thumbPath == null && nullToAbsent
+          ? const Value.absent()
+          : Value(thumbPath),
       uploadState: Value(uploadState),
       downloadState: Value(downloadState),
     );
@@ -14336,8 +14659,12 @@ class MediaFileRow extends DataClass implements Insertable<MediaFileRow> {
       mediaId: data.mediaId.present ? data.mediaId.value : this.mediaId,
       localPath: data.localPath.present ? data.localPath.value : this.localPath,
       thumbPath: data.thumbPath.present ? data.thumbPath.value : this.thumbPath,
-      uploadState: data.uploadState.present ? data.uploadState.value : this.uploadState,
-      downloadState: data.downloadState.present ? data.downloadState.value : this.downloadState,
+      uploadState: data.uploadState.present
+          ? data.uploadState.value
+          : this.uploadState,
+      downloadState: data.downloadState.present
+          ? data.downloadState.value
+          : this.downloadState,
     );
   }
 
@@ -14354,7 +14681,8 @@ class MediaFileRow extends DataClass implements Insertable<MediaFileRow> {
   }
 
   @override
-  int get hashCode => Object.hash(mediaId, localPath, thumbPath, uploadState, downloadState);
+  int get hashCode =>
+      Object.hash(mediaId, localPath, thumbPath, uploadState, downloadState);
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -14463,7 +14791,8 @@ class MediaFilesCompanion extends UpdateCompanion<MediaFileRow> {
   }
 }
 
-class $RelationCacheTable extends RelationCache with TableInfo<$RelationCacheTable, RelationCacheRow> {
+class $RelationCacheTable extends RelationCache
+    with TableInfo<$RelationCacheTable, RelationCacheRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -14712,7 +15041,8 @@ class $RelationCacheTable extends RelationCache with TableInfo<$RelationCacheTab
   }
 }
 
-class RelationCacheRow extends DataClass implements Insertable<RelationCacheRow> {
+class RelationCacheRow extends DataClass
+    implements Insertable<RelationCacheRow> {
   final String personId;
   final String pathKey;
   final String termEn;
@@ -14826,9 +15156,13 @@ class RelationCacheRow extends DataClass implements Insertable<RelationCacheRow>
       termHi: data.termHi.present ? data.termHi.value : this.termHi,
       side: data.side.present ? data.side.value : this.side,
       distance: data.distance.present ? data.distance.value : this.distance,
-      generation: data.generation.present ? data.generation.value : this.generation,
+      generation: data.generation.present
+          ? data.generation.value
+          : this.generation,
       viaIds: data.viaIds.present ? data.viaIds.value : this.viaIds,
-      graphVersion: data.graphVersion.present ? data.graphVersion.value : this.graphVersion,
+      graphVersion: data.graphVersion.present
+          ? data.graphVersion.value
+          : this.graphVersion,
     );
   }
 
@@ -15024,7 +15358,8 @@ class RelationCacheCompanion extends UpdateCompanion<RelationCacheRow> {
   }
 }
 
-class $KvSettingsTable extends KvSettings with TableInfo<$KvSettingsTable, KvSettingRow> {
+class $KvSettingsTable extends KvSettings
+    with TableInfo<$KvSettingsTable, KvSettingRow> {
   @override
   final GeneratedDatabase attachedDatabase;
   final String? _alias;
@@ -15138,7 +15473,8 @@ class KvSettingRow extends DataClass implements Insertable<KvSettingRow> {
     };
   }
 
-  KvSettingRow copyWith({String? key, String? value}) => KvSettingRow(key: key ?? this.key, value: value ?? this.value);
+  KvSettingRow copyWith({String? key, String? value}) =>
+      KvSettingRow(key: key ?? this.key, value: value ?? this.value);
   KvSettingRow copyWithCompanion(KvSettingsCompanion data) {
     return KvSettingRow(
       key: data.key.present ? data.key.value : this.key,
@@ -15159,7 +15495,10 @@ class KvSettingRow extends DataClass implements Insertable<KvSettingRow> {
   int get hashCode => Object.hash(key, value);
   @override
   bool operator ==(Object other) =>
-      identical(this, other) || (other is KvSettingRow && other.key == this.key && other.value == this.value);
+      identical(this, other) ||
+      (other is KvSettingRow &&
+          other.key == this.key &&
+          other.value == this.value);
 }
 
 class KvSettingsCompanion extends UpdateCompanion<KvSettingRow> {
@@ -15242,14 +15581,17 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   );
   late final $ParentChildTable parentChild = $ParentChildTable(this);
   late final $PartnershipsTable partnerships = $PartnershipsTable(this);
-  late final $SocialConnectionsTable socialConnections = $SocialConnectionsTable(this);
+  late final $SocialConnectionsTable socialConnections =
+      $SocialConnectionsTable(this);
   late final $FamilyGroupsTable familyGroups = $FamilyGroupsTable(this);
-  late final $FamilyGroupMembersTable familyGroupMembers = $FamilyGroupMembersTable(this);
+  late final $FamilyGroupMembersTable familyGroupMembers =
+      $FamilyGroupMembersTable(this);
   late final $PersonMergesTable personMerges = $PersonMergesTable(this);
   late final $TagsTable tags = $TagsTable(this);
   late final $PersonTagsTable personTags = $PersonTagsTable(this);
   late final $InteractionsTable interactions = $InteractionsTable(this);
-  late final $InteractionParticipantsTable interactionParticipants = $InteractionParticipantsTable(this);
+  late final $InteractionParticipantsTable interactionParticipants =
+      $InteractionParticipantsTable(this);
   late final $RemindersTable reminders = $RemindersTable(this);
   late final $MediaTable media = $MediaTable(this);
   late final $SyncOutboxTable syncOutbox = $SyncOutboxTable(this);
@@ -15347,7 +15689,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     'CREATE INDEX media_person_idx ON media (person_id)',
   );
   @override
-  Iterable<TableInfo<Table, Object?>> get allTables => allSchemaEntities.whereType<TableInfo<Table, Object?>>();
+  Iterable<TableInfo<Table, Object?>> get allTables =>
+      allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [
     places,
@@ -15398,7 +15741,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     mediaPersonIdx,
   ];
   @override
-  DriftDatabaseOptions get options => const DriftDatabaseOptions(storeDateTimeAsText: true);
+  DriftDatabaseOptions get options =>
+      const DriftDatabaseOptions(storeDateTimeAsText: true);
 }
 
 typedef $$PlacesTableCreateCompanionBuilder = PlacesCompanion Function({
@@ -15432,7 +15776,8 @@ typedef $$PlacesTableUpdateCompanionBuilder = PlacesCompanion Function({
   Value<int> rowid,
 });
 
-class $$PlacesTableFilterComposer extends Composer<_$AppDatabase, $PlacesTable> {
+class $$PlacesTableFilterComposer
+    extends Composer<_$AppDatabase, $PlacesTable> {
   $$PlacesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -15501,7 +15846,8 @@ class $$PlacesTableFilterComposer extends Composer<_$AppDatabase, $PlacesTable> 
   );
 }
 
-class $$PlacesTableOrderingComposer extends Composer<_$AppDatabase, $PlacesTable> {
+class $$PlacesTableOrderingComposer
+    extends Composer<_$AppDatabase, $PlacesTable> {
   $$PlacesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -15570,7 +15916,8 @@ class $$PlacesTableOrderingComposer extends Composer<_$AppDatabase, $PlacesTable
   );
 }
 
-class $$PlacesTableAnnotationComposer extends Composer<_$AppDatabase, $PlacesTable> {
+class $$PlacesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PlacesTable> {
   $$PlacesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -15578,32 +15925,43 @@ class $$PlacesTableAnnotationComposer extends Composer<_$AppDatabase, $PlacesTab
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get name => $composableBuilder(column: $table.name, builder: (column) => column);
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
 
-  GeneratedColumn<String> get nameAlt => $composableBuilder(column: $table.nameAlt, builder: (column) => column);
+  GeneratedColumn<String> get nameAlt =>
+      $composableBuilder(column: $table.nameAlt, builder: (column) => column);
 
-  GeneratedColumn<String> get placeType => $composableBuilder(column: $table.placeType, builder: (column) => column);
+  GeneratedColumn<String> get placeType =>
+      $composableBuilder(column: $table.placeType, builder: (column) => column);
 
   GeneratedColumn<String> get parentPlaceId => $composableBuilder(
     column: $table.parentPlaceId,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get pincode => $composableBuilder(column: $table.pincode, builder: (column) => column);
+  GeneratedColumn<String> get pincode =>
+      $composableBuilder(column: $table.pincode, builder: (column) => column);
 
-  GeneratedColumn<double> get latitude => $composableBuilder(column: $table.latitude, builder: (column) => column);
+  GeneratedColumn<double> get latitude =>
+      $composableBuilder(column: $table.latitude, builder: (column) => column);
 
-  GeneratedColumn<double> get longitude => $composableBuilder(column: $table.longitude, builder: (column) => column);
+  GeneratedColumn<double> get longitude =>
+      $composableBuilder(column: $table.longitude, builder: (column) => column);
 }
 
 class $$PlacesTableTableManager
@@ -15626,9 +15984,12 @@ class $$PlacesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PlacesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PlacesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PlacesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PlacesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PlacesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PlacesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -15793,7 +16154,8 @@ typedef $$PeopleTableUpdateCompanionBuilder = PeopleCompanion Function({
   Value<int> rowid,
 });
 
-class $$PeopleTableFilterComposer extends Composer<_$AppDatabase, $PeopleTable> {
+class $$PeopleTableFilterComposer
+    extends Composer<_$AppDatabase, $PeopleTable> {
   $$PeopleTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -15967,7 +16329,8 @@ class $$PeopleTableFilterComposer extends Composer<_$AppDatabase, $PeopleTable> 
   );
 }
 
-class $$PeopleTableOrderingComposer extends Composer<_$AppDatabase, $PeopleTable> {
+class $$PeopleTableOrderingComposer
+    extends Composer<_$AppDatabase, $PeopleTable> {
   $$PeopleTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -16141,7 +16504,8 @@ class $$PeopleTableOrderingComposer extends Composer<_$AppDatabase, $PeopleTable
   );
 }
 
-class $$PeopleTableAnnotationComposer extends Composer<_$AppDatabase, $PeopleTable> {
+class $$PeopleTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PeopleTable> {
   $$PeopleTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -16149,39 +16513,51 @@ class $$PeopleTableAnnotationComposer extends Composer<_$AppDatabase, $PeopleTab
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get fullName => $composableBuilder(column: $table.fullName, builder: (column) => column);
+  GeneratedColumn<String> get fullName =>
+      $composableBuilder(column: $table.fullName, builder: (column) => column);
 
   GeneratedColumn<String> get fullNameAlt => $composableBuilder(
     column: $table.fullNameAlt,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get nickname => $composableBuilder(column: $table.nickname, builder: (column) => column);
+  GeneratedColumn<String> get nickname =>
+      $composableBuilder(column: $table.nickname, builder: (column) => column);
 
-  GeneratedColumn<String> get surname => $composableBuilder(column: $table.surname, builder: (column) => column);
+  GeneratedColumn<String> get surname =>
+      $composableBuilder(column: $table.surname, builder: (column) => column);
 
-  GeneratedColumn<String> get gender => $composableBuilder(column: $table.gender, builder: (column) => column);
+  GeneratedColumn<String> get gender =>
+      $composableBuilder(column: $table.gender, builder: (column) => column);
 
-  GeneratedColumn<bool> get isLiving => $composableBuilder(column: $table.isLiving, builder: (column) => column);
+  GeneratedColumn<bool> get isLiving =>
+      $composableBuilder(column: $table.isLiving, builder: (column) => column);
 
-  GeneratedColumn<int> get birthYear => $composableBuilder(column: $table.birthYear, builder: (column) => column);
+  GeneratedColumn<int> get birthYear =>
+      $composableBuilder(column: $table.birthYear, builder: (column) => column);
 
   GeneratedColumn<int> get birthMonth => $composableBuilder(
     column: $table.birthMonth,
     builder: (column) => column,
   );
 
-  GeneratedColumn<int> get birthDay => $composableBuilder(column: $table.birthDay, builder: (column) => column);
+  GeneratedColumn<int> get birthDay =>
+      $composableBuilder(column: $table.birthDay, builder: (column) => column);
 
   GeneratedColumn<bool> get birthDateApprox => $composableBuilder(
     column: $table.birthDateApprox,
@@ -16193,14 +16569,16 @@ class $$PeopleTableAnnotationComposer extends Composer<_$AppDatabase, $PeopleTab
     builder: (column) => column,
   );
 
-  GeneratedColumn<int> get deathYear => $composableBuilder(column: $table.deathYear, builder: (column) => column);
+  GeneratedColumn<int> get deathYear =>
+      $composableBuilder(column: $table.deathYear, builder: (column) => column);
 
   GeneratedColumn<int> get deathMonth => $composableBuilder(
     column: $table.deathMonth,
     builder: (column) => column,
   );
 
-  GeneratedColumn<int> get deathDay => $composableBuilder(column: $table.deathDay, builder: (column) => column);
+  GeneratedColumn<int> get deathDay =>
+      $composableBuilder(column: $table.deathDay, builder: (column) => column);
 
   GeneratedColumn<String> get birthPlaceId => $composableBuilder(
     column: $table.birthPlaceId,
@@ -16212,7 +16590,8 @@ class $$PeopleTableAnnotationComposer extends Composer<_$AppDatabase, $PeopleTab
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get gotra => $composableBuilder(column: $table.gotra, builder: (column) => column);
+  GeneratedColumn<String> get gotra =>
+      $composableBuilder(column: $table.gotra, builder: (column) => column);
 
   GeneratedColumn<String> get occupation => $composableBuilder(
     column: $table.occupation,
@@ -16229,11 +16608,14 @@ class $$PeopleTableAnnotationComposer extends Composer<_$AppDatabase, $PeopleTab
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get education => $composableBuilder(column: $table.education, builder: (column) => column);
+  GeneratedColumn<String> get education =>
+      $composableBuilder(column: $table.education, builder: (column) => column);
 
-  GeneratedColumn<String> get notes => $composableBuilder(column: $table.notes, builder: (column) => column);
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
 
-  GeneratedColumn<bool> get isSelf => $composableBuilder(column: $table.isSelf, builder: (column) => column);
+  GeneratedColumn<bool> get isSelf =>
+      $composableBuilder(column: $table.isSelf, builder: (column) => column);
 
   GeneratedColumn<bool> get isPlaceholder => $composableBuilder(
     column: $table.isPlaceholder,
@@ -16281,9 +16663,12 @@ class $$PeopleTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PeopleTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PeopleTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PeopleTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PeopleTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PeopleTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PeopleTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -16459,30 +16844,33 @@ typedef $$PeopleTableProcessedTableManager =
       PersonRow,
       PrefetchHooks Function()
     >;
-typedef $$PersonNamesTableCreateCompanionBuilder = PersonNamesCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String personId,
-  required String name,
-  Value<String> nameType,
-  Value<int> rowid,
-});
-typedef $$PersonNamesTableUpdateCompanionBuilder = PersonNamesCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> personId,
-  Value<String> name,
-  Value<String> nameType,
-  Value<int> rowid,
-});
+typedef $$PersonNamesTableCreateCompanionBuilder =
+    PersonNamesCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String personId,
+      required String name,
+      Value<String> nameType,
+      Value<int> rowid,
+    });
+typedef $$PersonNamesTableUpdateCompanionBuilder =
+    PersonNamesCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> personId,
+      Value<String> name,
+      Value<String> nameType,
+      Value<int> rowid,
+    });
 
-class $$PersonNamesTableFilterComposer extends Composer<_$AppDatabase, $PersonNamesTable> {
+class $$PersonNamesTableFilterComposer
+    extends Composer<_$AppDatabase, $PersonNamesTable> {
   $$PersonNamesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -16531,7 +16919,8 @@ class $$PersonNamesTableFilterComposer extends Composer<_$AppDatabase, $PersonNa
   );
 }
 
-class $$PersonNamesTableOrderingComposer extends Composer<_$AppDatabase, $PersonNamesTable> {
+class $$PersonNamesTableOrderingComposer
+    extends Composer<_$AppDatabase, $PersonNamesTable> {
   $$PersonNamesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -16580,7 +16969,8 @@ class $$PersonNamesTableOrderingComposer extends Composer<_$AppDatabase, $Person
   );
 }
 
-class $$PersonNamesTableAnnotationComposer extends Composer<_$AppDatabase, $PersonNamesTable> {
+class $$PersonNamesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PersonNamesTable> {
   $$PersonNamesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -16588,21 +16978,29 @@ class $$PersonNamesTableAnnotationComposer extends Composer<_$AppDatabase, $Pers
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get name => $composableBuilder(column: $table.name, builder: (column) => column);
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
 
-  GeneratedColumn<String> get nameType => $composableBuilder(column: $table.nameType, builder: (column) => column);
+  GeneratedColumn<String> get nameType =>
+      $composableBuilder(column: $table.nameType, builder: (column) => column);
 }
 
 class $$PersonNamesTableTableManager
@@ -16628,9 +17026,12 @@ class $$PersonNamesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PersonNamesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PersonNamesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PersonNamesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PersonNamesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PersonNamesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PersonNamesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -16679,7 +17080,11 @@ class $$PersonNamesTableTableManager
               .map(
                 (e) => (
                   e.readTable<$PersonNamesTable, PersonNameRow>(table),
-                  BaseReferences<_$AppDatabase, $PersonNamesTable, PersonNameRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $PersonNamesTable,
+                    PersonNameRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -16705,38 +17110,41 @@ typedef $$PersonNamesTableProcessedTableManager =
       PersonNameRow,
       PrefetchHooks Function()
     >;
-typedef $$PersonContactsTableCreateCompanionBuilder = PersonContactsCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String personId,
-  required String kind,
-  required String value,
-  Value<String?> normalizedValue,
-  Value<String?> label,
-  Value<bool> isWhatsapp,
-  Value<bool> isPrimary,
-  Value<int> rowid,
-});
-typedef $$PersonContactsTableUpdateCompanionBuilder = PersonContactsCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> personId,
-  Value<String> kind,
-  Value<String> value,
-  Value<String?> normalizedValue,
-  Value<String?> label,
-  Value<bool> isWhatsapp,
-  Value<bool> isPrimary,
-  Value<int> rowid,
-});
+typedef $$PersonContactsTableCreateCompanionBuilder =
+    PersonContactsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String personId,
+      required String kind,
+      required String value,
+      Value<String?> normalizedValue,
+      Value<String?> label,
+      Value<bool> isWhatsapp,
+      Value<bool> isPrimary,
+      Value<int> rowid,
+    });
+typedef $$PersonContactsTableUpdateCompanionBuilder =
+    PersonContactsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> personId,
+      Value<String> kind,
+      Value<String> value,
+      Value<String?> normalizedValue,
+      Value<String?> label,
+      Value<bool> isWhatsapp,
+      Value<bool> isPrimary,
+      Value<int> rowid,
+    });
 
-class $$PersonContactsTableFilterComposer extends Composer<_$AppDatabase, $PersonContactsTable> {
+class $$PersonContactsTableFilterComposer
+    extends Composer<_$AppDatabase, $PersonContactsTable> {
   $$PersonContactsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -16805,7 +17213,8 @@ class $$PersonContactsTableFilterComposer extends Composer<_$AppDatabase, $Perso
   );
 }
 
-class $$PersonContactsTableOrderingComposer extends Composer<_$AppDatabase, $PersonContactsTable> {
+class $$PersonContactsTableOrderingComposer
+    extends Composer<_$AppDatabase, $PersonContactsTable> {
   $$PersonContactsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -16874,7 +17283,8 @@ class $$PersonContactsTableOrderingComposer extends Composer<_$AppDatabase, $Per
   );
 }
 
-class $$PersonContactsTableAnnotationComposer extends Composer<_$AppDatabase, $PersonContactsTable> {
+class $$PersonContactsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PersonContactsTable> {
   $$PersonContactsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -16882,35 +17292,45 @@ class $$PersonContactsTableAnnotationComposer extends Composer<_$AppDatabase, $P
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get kind => $composableBuilder(column: $table.kind, builder: (column) => column);
+  GeneratedColumn<String> get kind =>
+      $composableBuilder(column: $table.kind, builder: (column) => column);
 
-  GeneratedColumn<String> get value => $composableBuilder(column: $table.value, builder: (column) => column);
+  GeneratedColumn<String> get value =>
+      $composableBuilder(column: $table.value, builder: (column) => column);
 
   GeneratedColumn<String> get normalizedValue => $composableBuilder(
     column: $table.normalizedValue,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get label => $composableBuilder(column: $table.label, builder: (column) => column);
+  GeneratedColumn<String> get label =>
+      $composableBuilder(column: $table.label, builder: (column) => column);
 
   GeneratedColumn<bool> get isWhatsapp => $composableBuilder(
     column: $table.isWhatsapp,
     builder: (column) => column,
   );
 
-  GeneratedColumn<bool> get isPrimary => $composableBuilder(column: $table.isPrimary, builder: (column) => column);
+  GeneratedColumn<bool> get isPrimary =>
+      $composableBuilder(column: $table.isPrimary, builder: (column) => column);
 }
 
 class $$PersonContactsTableTableManager
@@ -16926,7 +17346,11 @@ class $$PersonContactsTableTableManager
           $$PersonContactsTableUpdateCompanionBuilder,
           (
             PersonContactRow,
-            BaseReferences<_$AppDatabase, $PersonContactsTable, PersonContactRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $PersonContactsTable,
+              PersonContactRow
+            >,
           ),
           PersonContactRow,
           PrefetchHooks Function()
@@ -16938,9 +17362,12 @@ class $$PersonContactsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PersonContactsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PersonContactsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PersonContactsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PersonContactsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PersonContactsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PersonContactsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -17005,7 +17432,11 @@ class $$PersonContactsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$PersonContactsTable, PersonContactRow>(table),
-                  BaseReferences<_$AppDatabase, $PersonContactsTable, PersonContactRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $PersonContactsTable,
+                    PersonContactRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -17031,40 +17462,43 @@ typedef $$PersonContactsTableProcessedTableManager =
       PersonContactRow,
       PrefetchHooks Function()
     >;
-typedef $$PersonAddressesTableCreateCompanionBuilder = PersonAddressesCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String personId,
-  Value<String> label,
-  Value<String?> addressLine,
-  Value<String?> placeId,
-  Value<String?> pincode,
-  Value<double?> latitude,
-  Value<double?> longitude,
-  Value<bool> isPrimary,
-  Value<int> rowid,
-});
-typedef $$PersonAddressesTableUpdateCompanionBuilder = PersonAddressesCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> personId,
-  Value<String> label,
-  Value<String?> addressLine,
-  Value<String?> placeId,
-  Value<String?> pincode,
-  Value<double?> latitude,
-  Value<double?> longitude,
-  Value<bool> isPrimary,
-  Value<int> rowid,
-});
+typedef $$PersonAddressesTableCreateCompanionBuilder =
+    PersonAddressesCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String personId,
+      Value<String> label,
+      Value<String?> addressLine,
+      Value<String?> placeId,
+      Value<String?> pincode,
+      Value<double?> latitude,
+      Value<double?> longitude,
+      Value<bool> isPrimary,
+      Value<int> rowid,
+    });
+typedef $$PersonAddressesTableUpdateCompanionBuilder =
+    PersonAddressesCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> personId,
+      Value<String> label,
+      Value<String?> addressLine,
+      Value<String?> placeId,
+      Value<String?> pincode,
+      Value<double?> latitude,
+      Value<double?> longitude,
+      Value<bool> isPrimary,
+      Value<int> rowid,
+    });
 
-class $$PersonAddressesTableFilterComposer extends Composer<_$AppDatabase, $PersonAddressesTable> {
+class $$PersonAddressesTableFilterComposer
+    extends Composer<_$AppDatabase, $PersonAddressesTable> {
   $$PersonAddressesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -17138,7 +17572,8 @@ class $$PersonAddressesTableFilterComposer extends Composer<_$AppDatabase, $Pers
   );
 }
 
-class $$PersonAddressesTableOrderingComposer extends Composer<_$AppDatabase, $PersonAddressesTable> {
+class $$PersonAddressesTableOrderingComposer
+    extends Composer<_$AppDatabase, $PersonAddressesTable> {
   $$PersonAddressesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -17212,7 +17647,8 @@ class $$PersonAddressesTableOrderingComposer extends Composer<_$AppDatabase, $Pe
   );
 }
 
-class $$PersonAddressesTableAnnotationComposer extends Composer<_$AppDatabase, $PersonAddressesTable> {
+class $$PersonAddressesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PersonAddressesTable> {
   $$PersonAddressesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -17220,34 +17656,46 @@ class $$PersonAddressesTableAnnotationComposer extends Composer<_$AppDatabase, $
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get label => $composableBuilder(column: $table.label, builder: (column) => column);
+  GeneratedColumn<String> get label =>
+      $composableBuilder(column: $table.label, builder: (column) => column);
 
   GeneratedColumn<String> get addressLine => $composableBuilder(
     column: $table.addressLine,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get placeId => $composableBuilder(column: $table.placeId, builder: (column) => column);
+  GeneratedColumn<String> get placeId =>
+      $composableBuilder(column: $table.placeId, builder: (column) => column);
 
-  GeneratedColumn<String> get pincode => $composableBuilder(column: $table.pincode, builder: (column) => column);
+  GeneratedColumn<String> get pincode =>
+      $composableBuilder(column: $table.pincode, builder: (column) => column);
 
-  GeneratedColumn<double> get latitude => $composableBuilder(column: $table.latitude, builder: (column) => column);
+  GeneratedColumn<double> get latitude =>
+      $composableBuilder(column: $table.latitude, builder: (column) => column);
 
-  GeneratedColumn<double> get longitude => $composableBuilder(column: $table.longitude, builder: (column) => column);
+  GeneratedColumn<double> get longitude =>
+      $composableBuilder(column: $table.longitude, builder: (column) => column);
 
-  GeneratedColumn<bool> get isPrimary => $composableBuilder(column: $table.isPrimary, builder: (column) => column);
+  GeneratedColumn<bool> get isPrimary =>
+      $composableBuilder(column: $table.isPrimary, builder: (column) => column);
 }
 
 class $$PersonAddressesTableTableManager
@@ -17263,7 +17711,11 @@ class $$PersonAddressesTableTableManager
           $$PersonAddressesTableUpdateCompanionBuilder,
           (
             PersonAddressRow,
-            BaseReferences<_$AppDatabase, $PersonAddressesTable, PersonAddressRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $PersonAddressesTable,
+              PersonAddressRow
+            >,
           ),
           PersonAddressRow,
           PrefetchHooks Function()
@@ -17275,9 +17727,12 @@ class $$PersonAddressesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PersonAddressesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PersonAddressesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PersonAddressesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PersonAddressesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PersonAddressesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PersonAddressesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -17346,7 +17801,11 @@ class $$PersonAddressesTableTableManager
               .map(
                 (e) => (
                   e.readTable<$PersonAddressesTable, PersonAddressRow>(table),
-                  BaseReferences<_$AppDatabase, $PersonAddressesTable, PersonAddressRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $PersonAddressesTable,
+                    PersonAddressRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -17372,30 +17831,33 @@ typedef $$PersonAddressesTableProcessedTableManager =
       PersonAddressRow,
       PrefetchHooks Function()
     >;
-typedef $$PersonAttributesTableCreateCompanionBuilder = PersonAttributesCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String personId,
-  required String key,
-  Value<String?> value,
-  Value<int> rowid,
-});
-typedef $$PersonAttributesTableUpdateCompanionBuilder = PersonAttributesCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> personId,
-  Value<String> key,
-  Value<String?> value,
-  Value<int> rowid,
-});
+typedef $$PersonAttributesTableCreateCompanionBuilder =
+    PersonAttributesCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String personId,
+      required String key,
+      Value<String?> value,
+      Value<int> rowid,
+    });
+typedef $$PersonAttributesTableUpdateCompanionBuilder =
+    PersonAttributesCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> personId,
+      Value<String> key,
+      Value<String?> value,
+      Value<int> rowid,
+    });
 
-class $$PersonAttributesTableFilterComposer extends Composer<_$AppDatabase, $PersonAttributesTable> {
+class $$PersonAttributesTableFilterComposer
+    extends Composer<_$AppDatabase, $PersonAttributesTable> {
   $$PersonAttributesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -17444,7 +17906,8 @@ class $$PersonAttributesTableFilterComposer extends Composer<_$AppDatabase, $Per
   );
 }
 
-class $$PersonAttributesTableOrderingComposer extends Composer<_$AppDatabase, $PersonAttributesTable> {
+class $$PersonAttributesTableOrderingComposer
+    extends Composer<_$AppDatabase, $PersonAttributesTable> {
   $$PersonAttributesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -17493,7 +17956,8 @@ class $$PersonAttributesTableOrderingComposer extends Composer<_$AppDatabase, $P
   );
 }
 
-class $$PersonAttributesTableAnnotationComposer extends Composer<_$AppDatabase, $PersonAttributesTable> {
+class $$PersonAttributesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PersonAttributesTable> {
   $$PersonAttributesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -17501,21 +17965,29 @@ class $$PersonAttributesTableAnnotationComposer extends Composer<_$AppDatabase, 
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get key => $composableBuilder(column: $table.key, builder: (column) => column);
+  GeneratedColumn<String> get key =>
+      $composableBuilder(column: $table.key, builder: (column) => column);
 
-  GeneratedColumn<String> get value => $composableBuilder(column: $table.value, builder: (column) => column);
+  GeneratedColumn<String> get value =>
+      $composableBuilder(column: $table.value, builder: (column) => column);
 }
 
 class $$PersonAttributesTableTableManager
@@ -17531,7 +18003,11 @@ class $$PersonAttributesTableTableManager
           $$PersonAttributesTableUpdateCompanionBuilder,
           (
             PersonAttributeRow,
-            BaseReferences<_$AppDatabase, $PersonAttributesTable, PersonAttributeRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $PersonAttributesTable,
+              PersonAttributeRow
+            >,
           ),
           PersonAttributeRow,
           PrefetchHooks Function()
@@ -17543,9 +18019,12 @@ class $$PersonAttributesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PersonAttributesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PersonAttributesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PersonAttributesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PersonAttributesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PersonAttributesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PersonAttributesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -17596,7 +18075,11 @@ class $$PersonAttributesTableTableManager
                   e.readTable<$PersonAttributesTable, PersonAttributeRow>(
                     table,
                   ),
-                  BaseReferences<_$AppDatabase, $PersonAttributesTable, PersonAttributeRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $PersonAttributesTable,
+                    PersonAttributeRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -17617,39 +18100,46 @@ typedef $$PersonAttributesTableProcessedTableManager =
       $$PersonAttributesTableUpdateCompanionBuilder,
       (
         PersonAttributeRow,
-        BaseReferences<_$AppDatabase, $PersonAttributesTable, PersonAttributeRow>,
+        BaseReferences<
+          _$AppDatabase,
+          $PersonAttributesTable,
+          PersonAttributeRow
+        >,
       ),
       PersonAttributeRow,
       PrefetchHooks Function()
     >;
-typedef $$ParentChildTableCreateCompanionBuilder = ParentChildCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String parentId,
-  required String childId,
-  Value<String> kind,
-  Value<String> certainty,
-  Value<String?> notes,
-  Value<int> rowid,
-});
-typedef $$ParentChildTableUpdateCompanionBuilder = ParentChildCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> parentId,
-  Value<String> childId,
-  Value<String> kind,
-  Value<String> certainty,
-  Value<String?> notes,
-  Value<int> rowid,
-});
+typedef $$ParentChildTableCreateCompanionBuilder =
+    ParentChildCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String parentId,
+      required String childId,
+      Value<String> kind,
+      Value<String> certainty,
+      Value<String?> notes,
+      Value<int> rowid,
+    });
+typedef $$ParentChildTableUpdateCompanionBuilder =
+    ParentChildCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> parentId,
+      Value<String> childId,
+      Value<String> kind,
+      Value<String> certainty,
+      Value<String?> notes,
+      Value<int> rowid,
+    });
 
-class $$ParentChildTableFilterComposer extends Composer<_$AppDatabase, $ParentChildTable> {
+class $$ParentChildTableFilterComposer
+    extends Composer<_$AppDatabase, $ParentChildTable> {
   $$ParentChildTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -17708,7 +18198,8 @@ class $$ParentChildTableFilterComposer extends Composer<_$AppDatabase, $ParentCh
   );
 }
 
-class $$ParentChildTableOrderingComposer extends Composer<_$AppDatabase, $ParentChildTable> {
+class $$ParentChildTableOrderingComposer
+    extends Composer<_$AppDatabase, $ParentChildTable> {
   $$ParentChildTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -17767,7 +18258,8 @@ class $$ParentChildTableOrderingComposer extends Composer<_$AppDatabase, $Parent
   );
 }
 
-class $$ParentChildTableAnnotationComposer extends Composer<_$AppDatabase, $ParentChildTable> {
+class $$ParentChildTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ParentChildTable> {
   $$ParentChildTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -17775,25 +18267,35 @@ class $$ParentChildTableAnnotationComposer extends Composer<_$AppDatabase, $Pare
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get parentId => $composableBuilder(column: $table.parentId, builder: (column) => column);
+  GeneratedColumn<String> get parentId =>
+      $composableBuilder(column: $table.parentId, builder: (column) => column);
 
-  GeneratedColumn<String> get childId => $composableBuilder(column: $table.childId, builder: (column) => column);
+  GeneratedColumn<String> get childId =>
+      $composableBuilder(column: $table.childId, builder: (column) => column);
 
-  GeneratedColumn<String> get kind => $composableBuilder(column: $table.kind, builder: (column) => column);
+  GeneratedColumn<String> get kind =>
+      $composableBuilder(column: $table.kind, builder: (column) => column);
 
-  GeneratedColumn<String> get certainty => $composableBuilder(column: $table.certainty, builder: (column) => column);
+  GeneratedColumn<String> get certainty =>
+      $composableBuilder(column: $table.certainty, builder: (column) => column);
 
-  GeneratedColumn<String> get notes => $composableBuilder(column: $table.notes, builder: (column) => column);
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
 }
 
 class $$ParentChildTableTableManager
@@ -17819,9 +18321,12 @@ class $$ParentChildTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$ParentChildTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$ParentChildTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$ParentChildTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$ParentChildTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ParentChildTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ParentChildTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -17878,7 +18383,11 @@ class $$ParentChildTableTableManager
               .map(
                 (e) => (
                   e.readTable<$ParentChildTable, ParentChildRow>(table),
-                  BaseReferences<_$AppDatabase, $ParentChildTable, ParentChildRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $ParentChildTable,
+                    ParentChildRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -17904,46 +18413,49 @@ typedef $$ParentChildTableProcessedTableManager =
       ParentChildRow,
       PrefetchHooks Function()
     >;
-typedef $$PartnershipsTableCreateCompanionBuilder = PartnershipsCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String personAId,
-  required String personBId,
-  Value<String> kind,
-  Value<String> status,
-  Value<int?> startYear,
-  Value<int?> startMonth,
-  Value<int?> startDay,
-  Value<bool> startDateApprox,
-  Value<int?> endYear,
-  Value<String?> placeId,
-  Value<String?> notes,
-  Value<int> rowid,
-});
-typedef $$PartnershipsTableUpdateCompanionBuilder = PartnershipsCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> personAId,
-  Value<String> personBId,
-  Value<String> kind,
-  Value<String> status,
-  Value<int?> startYear,
-  Value<int?> startMonth,
-  Value<int?> startDay,
-  Value<bool> startDateApprox,
-  Value<int?> endYear,
-  Value<String?> placeId,
-  Value<String?> notes,
-  Value<int> rowid,
-});
+typedef $$PartnershipsTableCreateCompanionBuilder =
+    PartnershipsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String personAId,
+      required String personBId,
+      Value<String> kind,
+      Value<String> status,
+      Value<int?> startYear,
+      Value<int?> startMonth,
+      Value<int?> startDay,
+      Value<bool> startDateApprox,
+      Value<int?> endYear,
+      Value<String?> placeId,
+      Value<String?> notes,
+      Value<int> rowid,
+    });
+typedef $$PartnershipsTableUpdateCompanionBuilder =
+    PartnershipsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> personAId,
+      Value<String> personBId,
+      Value<String> kind,
+      Value<String> status,
+      Value<int?> startYear,
+      Value<int?> startMonth,
+      Value<int?> startDay,
+      Value<bool> startDateApprox,
+      Value<int?> endYear,
+      Value<String?> placeId,
+      Value<String?> notes,
+      Value<int> rowid,
+    });
 
-class $$PartnershipsTableFilterComposer extends Composer<_$AppDatabase, $PartnershipsTable> {
+class $$PartnershipsTableFilterComposer
+    extends Composer<_$AppDatabase, $PartnershipsTable> {
   $$PartnershipsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -18032,7 +18544,8 @@ class $$PartnershipsTableFilterComposer extends Composer<_$AppDatabase, $Partner
   );
 }
 
-class $$PartnershipsTableOrderingComposer extends Composer<_$AppDatabase, $PartnershipsTable> {
+class $$PartnershipsTableOrderingComposer
+    extends Composer<_$AppDatabase, $PartnershipsTable> {
   $$PartnershipsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -18121,7 +18634,8 @@ class $$PartnershipsTableOrderingComposer extends Composer<_$AppDatabase, $Partn
   );
 }
 
-class $$PartnershipsTableAnnotationComposer extends Composer<_$AppDatabase, $PartnershipsTable> {
+class $$PartnershipsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PartnershipsTable> {
   $$PartnershipsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -18129,43 +18643,57 @@ class $$PartnershipsTableAnnotationComposer extends Composer<_$AppDatabase, $Par
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personAId => $composableBuilder(column: $table.personAId, builder: (column) => column);
+  GeneratedColumn<String> get personAId =>
+      $composableBuilder(column: $table.personAId, builder: (column) => column);
 
-  GeneratedColumn<String> get personBId => $composableBuilder(column: $table.personBId, builder: (column) => column);
+  GeneratedColumn<String> get personBId =>
+      $composableBuilder(column: $table.personBId, builder: (column) => column);
 
-  GeneratedColumn<String> get kind => $composableBuilder(column: $table.kind, builder: (column) => column);
+  GeneratedColumn<String> get kind =>
+      $composableBuilder(column: $table.kind, builder: (column) => column);
 
-  GeneratedColumn<String> get status => $composableBuilder(column: $table.status, builder: (column) => column);
+  GeneratedColumn<String> get status =>
+      $composableBuilder(column: $table.status, builder: (column) => column);
 
-  GeneratedColumn<int> get startYear => $composableBuilder(column: $table.startYear, builder: (column) => column);
+  GeneratedColumn<int> get startYear =>
+      $composableBuilder(column: $table.startYear, builder: (column) => column);
 
   GeneratedColumn<int> get startMonth => $composableBuilder(
     column: $table.startMonth,
     builder: (column) => column,
   );
 
-  GeneratedColumn<int> get startDay => $composableBuilder(column: $table.startDay, builder: (column) => column);
+  GeneratedColumn<int> get startDay =>
+      $composableBuilder(column: $table.startDay, builder: (column) => column);
 
   GeneratedColumn<bool> get startDateApprox => $composableBuilder(
     column: $table.startDateApprox,
     builder: (column) => column,
   );
 
-  GeneratedColumn<int> get endYear => $composableBuilder(column: $table.endYear, builder: (column) => column);
+  GeneratedColumn<int> get endYear =>
+      $composableBuilder(column: $table.endYear, builder: (column) => column);
 
-  GeneratedColumn<String> get placeId => $composableBuilder(column: $table.placeId, builder: (column) => column);
+  GeneratedColumn<String> get placeId =>
+      $composableBuilder(column: $table.placeId, builder: (column) => column);
 
-  GeneratedColumn<String> get notes => $composableBuilder(column: $table.notes, builder: (column) => column);
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
 }
 
 class $$PartnershipsTableTableManager
@@ -18191,9 +18719,12 @@ class $$PartnershipsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PartnershipsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PartnershipsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PartnershipsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PartnershipsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PartnershipsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PartnershipsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -18274,7 +18805,11 @@ class $$PartnershipsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$PartnershipsTable, PartnershipRow>(table),
-                  BaseReferences<_$AppDatabase, $PartnershipsTable, PartnershipRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $PartnershipsTable,
+                    PartnershipRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -18300,34 +18835,37 @@ typedef $$PartnershipsTableProcessedTableManager =
       PartnershipRow,
       PrefetchHooks Function()
     >;
-typedef $$SocialConnectionsTableCreateCompanionBuilder = SocialConnectionsCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String personId,
-  required String otherPersonId,
-  required String connectionType,
-  Value<String?> description,
-  Value<int?> sinceYear,
-  Value<int> rowid,
-});
-typedef $$SocialConnectionsTableUpdateCompanionBuilder = SocialConnectionsCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> personId,
-  Value<String> otherPersonId,
-  Value<String> connectionType,
-  Value<String?> description,
-  Value<int?> sinceYear,
-  Value<int> rowid,
-});
+typedef $$SocialConnectionsTableCreateCompanionBuilder =
+    SocialConnectionsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String personId,
+      required String otherPersonId,
+      required String connectionType,
+      Value<String?> description,
+      Value<int?> sinceYear,
+      Value<int> rowid,
+    });
+typedef $$SocialConnectionsTableUpdateCompanionBuilder =
+    SocialConnectionsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> personId,
+      Value<String> otherPersonId,
+      Value<String> connectionType,
+      Value<String?> description,
+      Value<int?> sinceYear,
+      Value<int> rowid,
+    });
 
-class $$SocialConnectionsTableFilterComposer extends Composer<_$AppDatabase, $SocialConnectionsTable> {
+class $$SocialConnectionsTableFilterComposer
+    extends Composer<_$AppDatabase, $SocialConnectionsTable> {
   $$SocialConnectionsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -18386,7 +18924,8 @@ class $$SocialConnectionsTableFilterComposer extends Composer<_$AppDatabase, $So
   );
 }
 
-class $$SocialConnectionsTableOrderingComposer extends Composer<_$AppDatabase, $SocialConnectionsTable> {
+class $$SocialConnectionsTableOrderingComposer
+    extends Composer<_$AppDatabase, $SocialConnectionsTable> {
   $$SocialConnectionsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -18445,7 +18984,8 @@ class $$SocialConnectionsTableOrderingComposer extends Composer<_$AppDatabase, $
   );
 }
 
-class $$SocialConnectionsTableAnnotationComposer extends Composer<_$AppDatabase, $SocialConnectionsTable> {
+class $$SocialConnectionsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SocialConnectionsTable> {
   $$SocialConnectionsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -18453,17 +18993,23 @@ class $$SocialConnectionsTableAnnotationComposer extends Composer<_$AppDatabase,
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
   GeneratedColumn<String> get otherPersonId => $composableBuilder(
     column: $table.otherPersonId,
@@ -18480,7 +19026,8 @@ class $$SocialConnectionsTableAnnotationComposer extends Composer<_$AppDatabase,
     builder: (column) => column,
   );
 
-  GeneratedColumn<int> get sinceYear => $composableBuilder(column: $table.sinceYear, builder: (column) => column);
+  GeneratedColumn<int> get sinceYear =>
+      $composableBuilder(column: $table.sinceYear, builder: (column) => column);
 }
 
 class $$SocialConnectionsTableTableManager
@@ -18496,7 +19043,11 @@ class $$SocialConnectionsTableTableManager
           $$SocialConnectionsTableUpdateCompanionBuilder,
           (
             SocialConnectionRow,
-            BaseReferences<_$AppDatabase, $SocialConnectionsTable, SocialConnectionRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $SocialConnectionsTable,
+              SocialConnectionRow
+            >,
           ),
           SocialConnectionRow,
           PrefetchHooks Function()
@@ -18508,12 +19059,15 @@ class $$SocialConnectionsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$SocialConnectionsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$SocialConnectionsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$SocialConnectionsTableAnnotationComposer(
-            $db: db,
-            $table: table,
-          ),
+          createFilteringComposer: () =>
+              $$SocialConnectionsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SocialConnectionsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$SocialConnectionsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -18572,7 +19126,11 @@ class $$SocialConnectionsTableTableManager
                   e.readTable<$SocialConnectionsTable, SocialConnectionRow>(
                     table,
                   ),
-                  BaseReferences<_$AppDatabase, $SocialConnectionsTable, SocialConnectionRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $SocialConnectionsTable,
+                    SocialConnectionRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -18593,43 +19151,50 @@ typedef $$SocialConnectionsTableProcessedTableManager =
       $$SocialConnectionsTableUpdateCompanionBuilder,
       (
         SocialConnectionRow,
-        BaseReferences<_$AppDatabase, $SocialConnectionsTable, SocialConnectionRow>,
+        BaseReferences<
+          _$AppDatabase,
+          $SocialConnectionsTable,
+          SocialConnectionRow
+        >,
       ),
       SocialConnectionRow,
       PrefetchHooks Function()
     >;
-typedef $$FamilyGroupsTableCreateCompanionBuilder = FamilyGroupsCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String name,
-  Value<String?> nameAlt,
-  Value<String?> gotra,
-  Value<String?> kuldevta,
-  Value<String?> nativePlaceId,
-  Value<String?> headPersonId,
-  Value<String?> notes,
-  Value<int> rowid,
-});
-typedef $$FamilyGroupsTableUpdateCompanionBuilder = FamilyGroupsCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> name,
-  Value<String?> nameAlt,
-  Value<String?> gotra,
-  Value<String?> kuldevta,
-  Value<String?> nativePlaceId,
-  Value<String?> headPersonId,
-  Value<String?> notes,
-  Value<int> rowid,
-});
+typedef $$FamilyGroupsTableCreateCompanionBuilder =
+    FamilyGroupsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String name,
+      Value<String?> nameAlt,
+      Value<String?> gotra,
+      Value<String?> kuldevta,
+      Value<String?> nativePlaceId,
+      Value<String?> headPersonId,
+      Value<String?> notes,
+      Value<int> rowid,
+    });
+typedef $$FamilyGroupsTableUpdateCompanionBuilder =
+    FamilyGroupsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> name,
+      Value<String?> nameAlt,
+      Value<String?> gotra,
+      Value<String?> kuldevta,
+      Value<String?> nativePlaceId,
+      Value<String?> headPersonId,
+      Value<String?> notes,
+      Value<int> rowid,
+    });
 
-class $$FamilyGroupsTableFilterComposer extends Composer<_$AppDatabase, $FamilyGroupsTable> {
+class $$FamilyGroupsTableFilterComposer
+    extends Composer<_$AppDatabase, $FamilyGroupsTable> {
   $$FamilyGroupsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -18698,7 +19263,8 @@ class $$FamilyGroupsTableFilterComposer extends Composer<_$AppDatabase, $FamilyG
   );
 }
 
-class $$FamilyGroupsTableOrderingComposer extends Composer<_$AppDatabase, $FamilyGroupsTable> {
+class $$FamilyGroupsTableOrderingComposer
+    extends Composer<_$AppDatabase, $FamilyGroupsTable> {
   $$FamilyGroupsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -18767,7 +19333,8 @@ class $$FamilyGroupsTableOrderingComposer extends Composer<_$AppDatabase, $Famil
   );
 }
 
-class $$FamilyGroupsTableAnnotationComposer extends Composer<_$AppDatabase, $FamilyGroupsTable> {
+class $$FamilyGroupsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $FamilyGroupsTable> {
   $$FamilyGroupsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -18775,23 +19342,32 @@ class $$FamilyGroupsTableAnnotationComposer extends Composer<_$AppDatabase, $Fam
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get name => $composableBuilder(column: $table.name, builder: (column) => column);
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
 
-  GeneratedColumn<String> get nameAlt => $composableBuilder(column: $table.nameAlt, builder: (column) => column);
+  GeneratedColumn<String> get nameAlt =>
+      $composableBuilder(column: $table.nameAlt, builder: (column) => column);
 
-  GeneratedColumn<String> get gotra => $composableBuilder(column: $table.gotra, builder: (column) => column);
+  GeneratedColumn<String> get gotra =>
+      $composableBuilder(column: $table.gotra, builder: (column) => column);
 
-  GeneratedColumn<String> get kuldevta => $composableBuilder(column: $table.kuldevta, builder: (column) => column);
+  GeneratedColumn<String> get kuldevta =>
+      $composableBuilder(column: $table.kuldevta, builder: (column) => column);
 
   GeneratedColumn<String> get nativePlaceId => $composableBuilder(
     column: $table.nativePlaceId,
@@ -18803,7 +19379,8 @@ class $$FamilyGroupsTableAnnotationComposer extends Composer<_$AppDatabase, $Fam
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get notes => $composableBuilder(column: $table.notes, builder: (column) => column);
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
 }
 
 class $$FamilyGroupsTableTableManager
@@ -18829,9 +19406,12 @@ class $$FamilyGroupsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$FamilyGroupsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$FamilyGroupsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$FamilyGroupsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$FamilyGroupsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$FamilyGroupsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$FamilyGroupsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -18896,7 +19476,11 @@ class $$FamilyGroupsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$FamilyGroupsTable, FamilyGroupRow>(table),
-                  BaseReferences<_$AppDatabase, $FamilyGroupsTable, FamilyGroupRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $FamilyGroupsTable,
+                    FamilyGroupRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -18922,30 +19506,33 @@ typedef $$FamilyGroupsTableProcessedTableManager =
       FamilyGroupRow,
       PrefetchHooks Function()
     >;
-typedef $$FamilyGroupMembersTableCreateCompanionBuilder = FamilyGroupMembersCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String familyGroupId,
-  required String personId,
-  Value<String?> role,
-  Value<int> rowid,
-});
-typedef $$FamilyGroupMembersTableUpdateCompanionBuilder = FamilyGroupMembersCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> familyGroupId,
-  Value<String> personId,
-  Value<String?> role,
-  Value<int> rowid,
-});
+typedef $$FamilyGroupMembersTableCreateCompanionBuilder =
+    FamilyGroupMembersCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String familyGroupId,
+      required String personId,
+      Value<String?> role,
+      Value<int> rowid,
+    });
+typedef $$FamilyGroupMembersTableUpdateCompanionBuilder =
+    FamilyGroupMembersCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> familyGroupId,
+      Value<String> personId,
+      Value<String?> role,
+      Value<int> rowid,
+    });
 
-class $$FamilyGroupMembersTableFilterComposer extends Composer<_$AppDatabase, $FamilyGroupMembersTable> {
+class $$FamilyGroupMembersTableFilterComposer
+    extends Composer<_$AppDatabase, $FamilyGroupMembersTable> {
   $$FamilyGroupMembersTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -18994,7 +19581,8 @@ class $$FamilyGroupMembersTableFilterComposer extends Composer<_$AppDatabase, $F
   );
 }
 
-class $$FamilyGroupMembersTableOrderingComposer extends Composer<_$AppDatabase, $FamilyGroupMembersTable> {
+class $$FamilyGroupMembersTableOrderingComposer
+    extends Composer<_$AppDatabase, $FamilyGroupMembersTable> {
   $$FamilyGroupMembersTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -19043,7 +19631,8 @@ class $$FamilyGroupMembersTableOrderingComposer extends Composer<_$AppDatabase, 
   );
 }
 
-class $$FamilyGroupMembersTableAnnotationComposer extends Composer<_$AppDatabase, $FamilyGroupMembersTable> {
+class $$FamilyGroupMembersTableAnnotationComposer
+    extends Composer<_$AppDatabase, $FamilyGroupMembersTable> {
   $$FamilyGroupMembersTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -19051,24 +19640,31 @@ class $$FamilyGroupMembersTableAnnotationComposer extends Composer<_$AppDatabase
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
   GeneratedColumn<String> get familyGroupId => $composableBuilder(
     column: $table.familyGroupId,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get role => $composableBuilder(column: $table.role, builder: (column) => column);
+  GeneratedColumn<String> get role =>
+      $composableBuilder(column: $table.role, builder: (column) => column);
 }
 
 class $$FamilyGroupMembersTableTableManager
@@ -19084,7 +19680,11 @@ class $$FamilyGroupMembersTableTableManager
           $$FamilyGroupMembersTableUpdateCompanionBuilder,
           (
             FamilyGroupMemberRow,
-            BaseReferences<_$AppDatabase, $FamilyGroupMembersTable, FamilyGroupMemberRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $FamilyGroupMembersTable,
+              FamilyGroupMemberRow
+            >,
           ),
           FamilyGroupMemberRow,
           PrefetchHooks Function()
@@ -19096,12 +19696,15 @@ class $$FamilyGroupMembersTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$FamilyGroupMembersTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$FamilyGroupMembersTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$FamilyGroupMembersTableAnnotationComposer(
-            $db: db,
-            $table: table,
-          ),
+          createFilteringComposer: () =>
+              $$FamilyGroupMembersTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$FamilyGroupMembersTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$FamilyGroupMembersTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -19152,7 +19755,11 @@ class $$FamilyGroupMembersTableTableManager
                   e.readTable<$FamilyGroupMembersTable, FamilyGroupMemberRow>(
                     table,
                   ),
-                  BaseReferences<_$AppDatabase, $FamilyGroupMembersTable, FamilyGroupMemberRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $FamilyGroupMembersTable,
+                    FamilyGroupMemberRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -19173,35 +19780,42 @@ typedef $$FamilyGroupMembersTableProcessedTableManager =
       $$FamilyGroupMembersTableUpdateCompanionBuilder,
       (
         FamilyGroupMemberRow,
-        BaseReferences<_$AppDatabase, $FamilyGroupMembersTable, FamilyGroupMemberRow>,
+        BaseReferences<
+          _$AppDatabase,
+          $FamilyGroupMembersTable,
+          FamilyGroupMemberRow
+        >,
       ),
       FamilyGroupMemberRow,
       PrefetchHooks Function()
     >;
-typedef $$PersonMergesTableCreateCompanionBuilder = PersonMergesCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String survivorId,
-  required String mergedId,
-  required String snapshot,
-  Value<int> rowid,
-});
-typedef $$PersonMergesTableUpdateCompanionBuilder = PersonMergesCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> survivorId,
-  Value<String> mergedId,
-  Value<String> snapshot,
-  Value<int> rowid,
-});
+typedef $$PersonMergesTableCreateCompanionBuilder =
+    PersonMergesCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String survivorId,
+      required String mergedId,
+      required String snapshot,
+      Value<int> rowid,
+    });
+typedef $$PersonMergesTableUpdateCompanionBuilder =
+    PersonMergesCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> survivorId,
+      Value<String> mergedId,
+      Value<String> snapshot,
+      Value<int> rowid,
+    });
 
-class $$PersonMergesTableFilterComposer extends Composer<_$AppDatabase, $PersonMergesTable> {
+class $$PersonMergesTableFilterComposer
+    extends Composer<_$AppDatabase, $PersonMergesTable> {
   $$PersonMergesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -19250,7 +19864,8 @@ class $$PersonMergesTableFilterComposer extends Composer<_$AppDatabase, $PersonM
   );
 }
 
-class $$PersonMergesTableOrderingComposer extends Composer<_$AppDatabase, $PersonMergesTable> {
+class $$PersonMergesTableOrderingComposer
+    extends Composer<_$AppDatabase, $PersonMergesTable> {
   $$PersonMergesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -19299,7 +19914,8 @@ class $$PersonMergesTableOrderingComposer extends Composer<_$AppDatabase, $Perso
   );
 }
 
-class $$PersonMergesTableAnnotationComposer extends Composer<_$AppDatabase, $PersonMergesTable> {
+class $$PersonMergesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PersonMergesTable> {
   $$PersonMergesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -19307,24 +19923,31 @@ class $$PersonMergesTableAnnotationComposer extends Composer<_$AppDatabase, $Per
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
   GeneratedColumn<String> get survivorId => $composableBuilder(
     column: $table.survivorId,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get mergedId => $composableBuilder(column: $table.mergedId, builder: (column) => column);
+  GeneratedColumn<String> get mergedId =>
+      $composableBuilder(column: $table.mergedId, builder: (column) => column);
 
-  GeneratedColumn<String> get snapshot => $composableBuilder(column: $table.snapshot, builder: (column) => column);
+  GeneratedColumn<String> get snapshot =>
+      $composableBuilder(column: $table.snapshot, builder: (column) => column);
 }
 
 class $$PersonMergesTableTableManager
@@ -19350,9 +19973,12 @@ class $$PersonMergesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PersonMergesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PersonMergesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PersonMergesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PersonMergesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PersonMergesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PersonMergesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -19401,7 +20027,11 @@ class $$PersonMergesTableTableManager
               .map(
                 (e) => (
                   e.readTable<$PersonMergesTable, PersonMergeRow>(table),
-                  BaseReferences<_$AppDatabase, $PersonMergesTable, PersonMergeRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $PersonMergesTable,
+                    PersonMergeRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -19560,7 +20190,8 @@ class $$TagsTableOrderingComposer extends Composer<_$AppDatabase, $TagsTable> {
   );
 }
 
-class $$TagsTableAnnotationComposer extends Composer<_$AppDatabase, $TagsTable> {
+class $$TagsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $TagsTable> {
   $$TagsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -19568,23 +20199,32 @@ class $$TagsTableAnnotationComposer extends Composer<_$AppDatabase, $TagsTable> 
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get name => $composableBuilder(column: $table.name, builder: (column) => column);
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
 
-  GeneratedColumn<String> get nameAlt => $composableBuilder(column: $table.nameAlt, builder: (column) => column);
+  GeneratedColumn<String> get nameAlt =>
+      $composableBuilder(column: $table.nameAlt, builder: (column) => column);
 
-  GeneratedColumn<String> get color => $composableBuilder(column: $table.color, builder: (column) => column);
+  GeneratedColumn<String> get color =>
+      $composableBuilder(column: $table.color, builder: (column) => column);
 
-  GeneratedColumn<String> get icon => $composableBuilder(column: $table.icon, builder: (column) => column);
+  GeneratedColumn<String> get icon =>
+      $composableBuilder(column: $table.icon, builder: (column) => column);
 }
 
 class $$TagsTableTableManager
@@ -19607,9 +20247,12 @@ class $$TagsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$TagsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$TagsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$TagsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$TagsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$TagsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$TagsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -19710,7 +20353,8 @@ typedef $$PersonTagsTableUpdateCompanionBuilder = PersonTagsCompanion Function({
   Value<int> rowid,
 });
 
-class $$PersonTagsTableFilterComposer extends Composer<_$AppDatabase, $PersonTagsTable> {
+class $$PersonTagsTableFilterComposer
+    extends Composer<_$AppDatabase, $PersonTagsTable> {
   $$PersonTagsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -19754,7 +20398,8 @@ class $$PersonTagsTableFilterComposer extends Composer<_$AppDatabase, $PersonTag
   );
 }
 
-class $$PersonTagsTableOrderingComposer extends Composer<_$AppDatabase, $PersonTagsTable> {
+class $$PersonTagsTableOrderingComposer
+    extends Composer<_$AppDatabase, $PersonTagsTable> {
   $$PersonTagsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -19798,7 +20443,8 @@ class $$PersonTagsTableOrderingComposer extends Composer<_$AppDatabase, $PersonT
   );
 }
 
-class $$PersonTagsTableAnnotationComposer extends Composer<_$AppDatabase, $PersonTagsTable> {
+class $$PersonTagsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $PersonTagsTable> {
   $$PersonTagsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -19806,19 +20452,26 @@ class $$PersonTagsTableAnnotationComposer extends Composer<_$AppDatabase, $Perso
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get tagId => $composableBuilder(column: $table.tagId, builder: (column) => column);
+  GeneratedColumn<String> get tagId =>
+      $composableBuilder(column: $table.tagId, builder: (column) => column);
 }
 
 class $$PersonTagsTableTableManager
@@ -19844,9 +20497,12 @@ class $$PersonTagsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$PersonTagsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$PersonTagsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$PersonTagsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$PersonTagsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$PersonTagsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$PersonTagsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -19921,44 +20577,47 @@ typedef $$PersonTagsTableProcessedTableManager =
       PersonTagRow,
       PrefetchHooks Function()
     >;
-typedef $$InteractionsTableCreateCompanionBuilder = InteractionsCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String?> title,
-  Value<String> interactionType,
-  required DateTime occurredAt,
-  Value<int?> durationMinutes,
-  Value<String?> placeId,
-  Value<String?> locationText,
-  Value<double?> latitude,
-  Value<double?> longitude,
-  Value<String?> notes,
-  Value<String?> followUpOn,
-  Value<int> rowid,
-});
-typedef $$InteractionsTableUpdateCompanionBuilder = InteractionsCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String?> title,
-  Value<String> interactionType,
-  Value<DateTime> occurredAt,
-  Value<int?> durationMinutes,
-  Value<String?> placeId,
-  Value<String?> locationText,
-  Value<double?> latitude,
-  Value<double?> longitude,
-  Value<String?> notes,
-  Value<String?> followUpOn,
-  Value<int> rowid,
-});
+typedef $$InteractionsTableCreateCompanionBuilder =
+    InteractionsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String?> title,
+      Value<String> interactionType,
+      required DateTime occurredAt,
+      Value<int?> durationMinutes,
+      Value<String?> placeId,
+      Value<String?> locationText,
+      Value<double?> latitude,
+      Value<double?> longitude,
+      Value<String?> notes,
+      Value<String?> followUpOn,
+      Value<int> rowid,
+    });
+typedef $$InteractionsTableUpdateCompanionBuilder =
+    InteractionsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String?> title,
+      Value<String> interactionType,
+      Value<DateTime> occurredAt,
+      Value<int?> durationMinutes,
+      Value<String?> placeId,
+      Value<String?> locationText,
+      Value<double?> latitude,
+      Value<double?> longitude,
+      Value<String?> notes,
+      Value<String?> followUpOn,
+      Value<int> rowid,
+    });
 
-class $$InteractionsTableFilterComposer extends Composer<_$AppDatabase, $InteractionsTable> {
+class $$InteractionsTableFilterComposer
+    extends Composer<_$AppDatabase, $InteractionsTable> {
   $$InteractionsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -20042,7 +20701,8 @@ class $$InteractionsTableFilterComposer extends Composer<_$AppDatabase, $Interac
   );
 }
 
-class $$InteractionsTableOrderingComposer extends Composer<_$AppDatabase, $InteractionsTable> {
+class $$InteractionsTableOrderingComposer
+    extends Composer<_$AppDatabase, $InteractionsTable> {
   $$InteractionsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -20126,7 +20786,8 @@ class $$InteractionsTableOrderingComposer extends Composer<_$AppDatabase, $Inter
   );
 }
 
-class $$InteractionsTableAnnotationComposer extends Composer<_$AppDatabase, $InteractionsTable> {
+class $$InteractionsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $InteractionsTable> {
   $$InteractionsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -20134,17 +20795,23 @@ class $$InteractionsTableAnnotationComposer extends Composer<_$AppDatabase, $Int
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get title => $composableBuilder(column: $table.title, builder: (column) => column);
+  GeneratedColumn<String> get title =>
+      $composableBuilder(column: $table.title, builder: (column) => column);
 
   GeneratedColumn<String> get interactionType => $composableBuilder(
     column: $table.interactionType,
@@ -20161,18 +20828,22 @@ class $$InteractionsTableAnnotationComposer extends Composer<_$AppDatabase, $Int
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get placeId => $composableBuilder(column: $table.placeId, builder: (column) => column);
+  GeneratedColumn<String> get placeId =>
+      $composableBuilder(column: $table.placeId, builder: (column) => column);
 
   GeneratedColumn<String> get locationText => $composableBuilder(
     column: $table.locationText,
     builder: (column) => column,
   );
 
-  GeneratedColumn<double> get latitude => $composableBuilder(column: $table.latitude, builder: (column) => column);
+  GeneratedColumn<double> get latitude =>
+      $composableBuilder(column: $table.latitude, builder: (column) => column);
 
-  GeneratedColumn<double> get longitude => $composableBuilder(column: $table.longitude, builder: (column) => column);
+  GeneratedColumn<double> get longitude =>
+      $composableBuilder(column: $table.longitude, builder: (column) => column);
 
-  GeneratedColumn<String> get notes => $composableBuilder(column: $table.notes, builder: (column) => column);
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
 
   GeneratedColumn<String> get followUpOn => $composableBuilder(
     column: $table.followUpOn,
@@ -20203,9 +20874,12 @@ class $$InteractionsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$InteractionsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$InteractionsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$InteractionsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$InteractionsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$InteractionsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$InteractionsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -20282,7 +20956,11 @@ class $$InteractionsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$InteractionsTable, InteractionRow>(table),
-                  BaseReferences<_$AppDatabase, $InteractionsTable, InteractionRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $InteractionsTable,
+                    InteractionRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -20308,30 +20986,33 @@ typedef $$InteractionsTableProcessedTableManager =
       InteractionRow,
       PrefetchHooks Function()
     >;
-typedef $$InteractionParticipantsTableCreateCompanionBuilder = InteractionParticipantsCompanion Function({
-  required String id,
-  required DateTime createdAt,
-  required DateTime updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  required String interactionId,
-  required String personId,
-  Value<String> role,
-  Value<int> rowid,
-});
-typedef $$InteractionParticipantsTableUpdateCompanionBuilder = InteractionParticipantsCompanion Function({
-  Value<String> id,
-  Value<DateTime> createdAt,
-  Value<DateTime> updatedAt,
-  Value<DateTime?> deletedAt,
-  Value<int> serverSeq,
-  Value<String> interactionId,
-  Value<String> personId,
-  Value<String> role,
-  Value<int> rowid,
-});
+typedef $$InteractionParticipantsTableCreateCompanionBuilder =
+    InteractionParticipantsCompanion Function({
+      required String id,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      required String interactionId,
+      required String personId,
+      Value<String> role,
+      Value<int> rowid,
+    });
+typedef $$InteractionParticipantsTableUpdateCompanionBuilder =
+    InteractionParticipantsCompanion Function({
+      Value<String> id,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> serverSeq,
+      Value<String> interactionId,
+      Value<String> personId,
+      Value<String> role,
+      Value<int> rowid,
+    });
 
-class $$InteractionParticipantsTableFilterComposer extends Composer<_$AppDatabase, $InteractionParticipantsTable> {
+class $$InteractionParticipantsTableFilterComposer
+    extends Composer<_$AppDatabase, $InteractionParticipantsTable> {
   $$InteractionParticipantsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -20380,7 +21061,8 @@ class $$InteractionParticipantsTableFilterComposer extends Composer<_$AppDatabas
   );
 }
 
-class $$InteractionParticipantsTableOrderingComposer extends Composer<_$AppDatabase, $InteractionParticipantsTable> {
+class $$InteractionParticipantsTableOrderingComposer
+    extends Composer<_$AppDatabase, $InteractionParticipantsTable> {
   $$InteractionParticipantsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -20429,7 +21111,8 @@ class $$InteractionParticipantsTableOrderingComposer extends Composer<_$AppDatab
   );
 }
 
-class $$InteractionParticipantsTableAnnotationComposer extends Composer<_$AppDatabase, $InteractionParticipantsTable> {
+class $$InteractionParticipantsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $InteractionParticipantsTable> {
   $$InteractionParticipantsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -20437,24 +21120,31 @@ class $$InteractionParticipantsTableAnnotationComposer extends Composer<_$AppDat
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
   GeneratedColumn<String> get interactionId => $composableBuilder(
     column: $table.interactionId,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get role => $composableBuilder(column: $table.role, builder: (column) => column);
+  GeneratedColumn<String> get role =>
+      $composableBuilder(column: $table.role, builder: (column) => column);
 }
 
 class $$InteractionParticipantsTableTableManager
@@ -20470,7 +21160,11 @@ class $$InteractionParticipantsTableTableManager
           $$InteractionParticipantsTableUpdateCompanionBuilder,
           (
             InteractionParticipantRow,
-            BaseReferences<_$AppDatabase, $InteractionParticipantsTable, InteractionParticipantRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $InteractionParticipantsTable,
+              InteractionParticipantRow
+            >,
           ),
           InteractionParticipantRow,
           PrefetchHooks Function()
@@ -20482,18 +21176,21 @@ class $$InteractionParticipantsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$InteractionParticipantsTableFilterComposer(
-            $db: db,
-            $table: table,
-          ),
-          createOrderingComposer: () => $$InteractionParticipantsTableOrderingComposer(
-            $db: db,
-            $table: table,
-          ),
-          createComputedFieldComposer: () => $$InteractionParticipantsTableAnnotationComposer(
-            $db: db,
-            $table: table,
-          ),
+          createFilteringComposer: () =>
+              $$InteractionParticipantsTableFilterComposer(
+                $db: db,
+                $table: table,
+              ),
+          createOrderingComposer: () =>
+              $$InteractionParticipantsTableOrderingComposer(
+                $db: db,
+                $table: table,
+              ),
+          createComputedFieldComposer: () =>
+              $$InteractionParticipantsTableAnnotationComposer(
+                $db: db,
+                $table: table,
+              ),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -20541,8 +21238,15 @@ class $$InteractionParticipantsTableTableManager
           withReferenceMapper: (p0) => p0
               .map(
                 (e) => (
-                  e.readTable<$InteractionParticipantsTable, InteractionParticipantRow>(table),
-                  BaseReferences<_$AppDatabase, $InteractionParticipantsTable, InteractionParticipantRow>(db, table, e),
+                  e.readTable<
+                    $InteractionParticipantsTable,
+                    InteractionParticipantRow
+                  >(table),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $InteractionParticipantsTable,
+                    InteractionParticipantRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -20563,7 +21267,11 @@ typedef $$InteractionParticipantsTableProcessedTableManager =
       $$InteractionParticipantsTableUpdateCompanionBuilder,
       (
         InteractionParticipantRow,
-        BaseReferences<_$AppDatabase, $InteractionParticipantsTable, InteractionParticipantRow>,
+        BaseReferences<
+          _$AppDatabase,
+          $InteractionParticipantsTable,
+          InteractionParticipantRow
+        >,
       ),
       InteractionParticipantRow,
       PrefetchHooks Function()
@@ -20601,7 +21309,8 @@ typedef $$RemindersTableUpdateCompanionBuilder = RemindersCompanion Function({
   Value<int> rowid,
 });
 
-class $$RemindersTableFilterComposer extends Composer<_$AppDatabase, $RemindersTable> {
+class $$RemindersTableFilterComposer
+    extends Composer<_$AppDatabase, $RemindersTable> {
   $$RemindersTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -20675,7 +21384,8 @@ class $$RemindersTableFilterComposer extends Composer<_$AppDatabase, $RemindersT
   );
 }
 
-class $$RemindersTableOrderingComposer extends Composer<_$AppDatabase, $RemindersTable> {
+class $$RemindersTableOrderingComposer
+    extends Composer<_$AppDatabase, $RemindersTable> {
   $$RemindersTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -20749,7 +21459,8 @@ class $$RemindersTableOrderingComposer extends Composer<_$AppDatabase, $Reminder
   );
 }
 
-class $$RemindersTableAnnotationComposer extends Composer<_$AppDatabase, $RemindersTable> {
+class $$RemindersTableAnnotationComposer
+    extends Composer<_$AppDatabase, $RemindersTable> {
   $$RemindersTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -20757,17 +21468,23 @@ class $$RemindersTableAnnotationComposer extends Composer<_$AppDatabase, $Remind
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
   GeneratedColumn<String> get interactionId => $composableBuilder(
     column: $table.interactionId,
@@ -20779,16 +21496,19 @@ class $$RemindersTableAnnotationComposer extends Composer<_$AppDatabase, $Remind
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get title => $composableBuilder(column: $table.title, builder: (column) => column);
+  GeneratedColumn<String> get title =>
+      $composableBuilder(column: $table.title, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get dueAt => $composableBuilder(column: $table.dueAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get dueAt =>
+      $composableBuilder(column: $table.dueAt, builder: (column) => column);
 
   GeneratedColumn<String> get recurrence => $composableBuilder(
     column: $table.recurrence,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get notes => $composableBuilder(column: $table.notes, builder: (column) => column);
+  GeneratedColumn<String> get notes =>
+      $composableBuilder(column: $table.notes, builder: (column) => column);
 
   GeneratedColumn<DateTime> get completedAt => $composableBuilder(
     column: $table.completedAt,
@@ -20819,9 +21539,12 @@ class $$RemindersTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$RemindersTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$RemindersTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$RemindersTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$RemindersTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$RemindersTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$RemindersTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -21055,7 +21778,8 @@ class $$MediaTableFilterComposer extends Composer<_$AppDatabase, $MediaTable> {
   );
 }
 
-class $$MediaTableOrderingComposer extends Composer<_$AppDatabase, $MediaTable> {
+class $$MediaTableOrderingComposer
+    extends Composer<_$AppDatabase, $MediaTable> {
   $$MediaTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -21149,7 +21873,8 @@ class $$MediaTableOrderingComposer extends Composer<_$AppDatabase, $MediaTable> 
   );
 }
 
-class $$MediaTableAnnotationComposer extends Composer<_$AppDatabase, $MediaTable> {
+class $$MediaTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MediaTable> {
   $$MediaTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -21157,45 +21882,60 @@ class $$MediaTableAnnotationComposer extends Composer<_$AppDatabase, $MediaTable
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get updatedAt => $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get deletedAt => $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
 
-  GeneratedColumn<int> get serverSeq => $composableBuilder(column: $table.serverSeq, builder: (column) => column);
+  GeneratedColumn<int> get serverSeq =>
+      $composableBuilder(column: $table.serverSeq, builder: (column) => column);
 
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
   GeneratedColumn<String> get interactionId => $composableBuilder(
     column: $table.interactionId,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get kind => $composableBuilder(column: $table.kind, builder: (column) => column);
+  GeneratedColumn<String> get kind =>
+      $composableBuilder(column: $table.kind, builder: (column) => column);
 
-  GeneratedColumn<String> get fileName => $composableBuilder(column: $table.fileName, builder: (column) => column);
+  GeneratedColumn<String> get fileName =>
+      $composableBuilder(column: $table.fileName, builder: (column) => column);
 
-  GeneratedColumn<String> get mimeType => $composableBuilder(column: $table.mimeType, builder: (column) => column);
+  GeneratedColumn<String> get mimeType =>
+      $composableBuilder(column: $table.mimeType, builder: (column) => column);
 
-  GeneratedColumn<int> get sizeBytes => $composableBuilder(column: $table.sizeBytes, builder: (column) => column);
+  GeneratedColumn<int> get sizeBytes =>
+      $composableBuilder(column: $table.sizeBytes, builder: (column) => column);
 
-  GeneratedColumn<int> get width => $composableBuilder(column: $table.width, builder: (column) => column);
+  GeneratedColumn<int> get width =>
+      $composableBuilder(column: $table.width, builder: (column) => column);
 
-  GeneratedColumn<int> get height => $composableBuilder(column: $table.height, builder: (column) => column);
+  GeneratedColumn<int> get height =>
+      $composableBuilder(column: $table.height, builder: (column) => column);
 
   GeneratedColumn<int> get durationMs => $composableBuilder(
     column: $table.durationMs,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get sha256 => $composableBuilder(column: $table.sha256, builder: (column) => column);
+  GeneratedColumn<String> get sha256 =>
+      $composableBuilder(column: $table.sha256, builder: (column) => column);
 
-  GeneratedColumn<String> get caption => $composableBuilder(column: $table.caption, builder: (column) => column);
+  GeneratedColumn<String> get caption =>
+      $composableBuilder(column: $table.caption, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get takenAt => $composableBuilder(column: $table.takenAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get takenAt =>
+      $composableBuilder(column: $table.takenAt, builder: (column) => column);
 }
 
 class $$MediaTableTableManager
@@ -21218,9 +21958,12 @@ class $$MediaTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$MediaTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$MediaTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$MediaTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$MediaTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MediaTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$MediaTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> id = const Value.absent(),
@@ -21353,7 +22096,8 @@ typedef $$SyncOutboxTableUpdateCompanionBuilder = SyncOutboxCompanion Function({
   Value<String?> lastError,
 });
 
-class $$SyncOutboxTableFilterComposer extends Composer<_$AppDatabase, $SyncOutboxTable> {
+class $$SyncOutboxTableFilterComposer
+    extends Composer<_$AppDatabase, $SyncOutboxTable> {
   $$SyncOutboxTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -21402,7 +22146,8 @@ class $$SyncOutboxTableFilterComposer extends Composer<_$AppDatabase, $SyncOutbo
   );
 }
 
-class $$SyncOutboxTableOrderingComposer extends Composer<_$AppDatabase, $SyncOutboxTable> {
+class $$SyncOutboxTableOrderingComposer
+    extends Composer<_$AppDatabase, $SyncOutboxTable> {
   $$SyncOutboxTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -21451,7 +22196,8 @@ class $$SyncOutboxTableOrderingComposer extends Composer<_$AppDatabase, $SyncOut
   );
 }
 
-class $$SyncOutboxTableAnnotationComposer extends Composer<_$AppDatabase, $SyncOutboxTable> {
+class $$SyncOutboxTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SyncOutboxTable> {
   $$SyncOutboxTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -21459,24 +22205,31 @@ class $$SyncOutboxTableAnnotationComposer extends Composer<_$AppDatabase, $SyncO
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<int> get seq => $composableBuilder(column: $table.seq, builder: (column) => column);
+  GeneratedColumn<int> get seq =>
+      $composableBuilder(column: $table.seq, builder: (column) => column);
 
-  GeneratedColumn<String> get entity => $composableBuilder(column: $table.entity, builder: (column) => column);
+  GeneratedColumn<String> get entity =>
+      $composableBuilder(column: $table.entity, builder: (column) => column);
 
-  GeneratedColumn<String> get recordId => $composableBuilder(column: $table.recordId, builder: (column) => column);
+  GeneratedColumn<String> get recordId =>
+      $composableBuilder(column: $table.recordId, builder: (column) => column);
 
-  GeneratedColumn<String> get payload => $composableBuilder(column: $table.payload, builder: (column) => column);
+  GeneratedColumn<String> get payload =>
+      $composableBuilder(column: $table.payload, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
-  GeneratedColumn<int> get attempts => $composableBuilder(column: $table.attempts, builder: (column) => column);
+  GeneratedColumn<int> get attempts =>
+      $composableBuilder(column: $table.attempts, builder: (column) => column);
 
   GeneratedColumn<DateTime> get nextAttemptAt => $composableBuilder(
     column: $table.nextAttemptAt,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get lastError => $composableBuilder(column: $table.lastError, builder: (column) => column);
+  GeneratedColumn<String> get lastError =>
+      $composableBuilder(column: $table.lastError, builder: (column) => column);
 }
 
 class $$SyncOutboxTableTableManager
@@ -21502,9 +22255,12 @@ class $$SyncOutboxTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$SyncOutboxTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$SyncOutboxTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$SyncOutboxTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$SyncOutboxTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SyncOutboxTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$SyncOutboxTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<int> seq = const Value.absent(),
@@ -21579,20 +22335,23 @@ typedef $$SyncOutboxTableProcessedTableManager =
       OutboxEntry,
       PrefetchHooks Function()
     >;
-typedef $$SyncCursorsTableCreateCompanionBuilder = SyncCursorsCompanion Function({
-  required String entity,
-  Value<int> lastServerSeq,
-  Value<DateTime?> lastPulledAt,
-  Value<int> rowid,
-});
-typedef $$SyncCursorsTableUpdateCompanionBuilder = SyncCursorsCompanion Function({
-  Value<String> entity,
-  Value<int> lastServerSeq,
-  Value<DateTime?> lastPulledAt,
-  Value<int> rowid,
-});
+typedef $$SyncCursorsTableCreateCompanionBuilder =
+    SyncCursorsCompanion Function({
+      required String entity,
+      Value<int> lastServerSeq,
+      Value<DateTime?> lastPulledAt,
+      Value<int> rowid,
+    });
+typedef $$SyncCursorsTableUpdateCompanionBuilder =
+    SyncCursorsCompanion Function({
+      Value<String> entity,
+      Value<int> lastServerSeq,
+      Value<DateTime?> lastPulledAt,
+      Value<int> rowid,
+    });
 
-class $$SyncCursorsTableFilterComposer extends Composer<_$AppDatabase, $SyncCursorsTable> {
+class $$SyncCursorsTableFilterComposer
+    extends Composer<_$AppDatabase, $SyncCursorsTable> {
   $$SyncCursorsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -21616,7 +22375,8 @@ class $$SyncCursorsTableFilterComposer extends Composer<_$AppDatabase, $SyncCurs
   );
 }
 
-class $$SyncCursorsTableOrderingComposer extends Composer<_$AppDatabase, $SyncCursorsTable> {
+class $$SyncCursorsTableOrderingComposer
+    extends Composer<_$AppDatabase, $SyncCursorsTable> {
   $$SyncCursorsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -21640,7 +22400,8 @@ class $$SyncCursorsTableOrderingComposer extends Composer<_$AppDatabase, $SyncCu
   );
 }
 
-class $$SyncCursorsTableAnnotationComposer extends Composer<_$AppDatabase, $SyncCursorsTable> {
+class $$SyncCursorsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SyncCursorsTable> {
   $$SyncCursorsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -21648,7 +22409,8 @@ class $$SyncCursorsTableAnnotationComposer extends Composer<_$AppDatabase, $Sync
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get entity => $composableBuilder(column: $table.entity, builder: (column) => column);
+  GeneratedColumn<String> get entity =>
+      $composableBuilder(column: $table.entity, builder: (column) => column);
 
   GeneratedColumn<int> get lastServerSeq => $composableBuilder(
     column: $table.lastServerSeq,
@@ -21684,9 +22446,12 @@ class $$SyncCursorsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$SyncCursorsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$SyncCursorsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$SyncCursorsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$SyncCursorsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SyncCursorsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$SyncCursorsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> entity = const Value.absent(),
@@ -21715,7 +22480,11 @@ class $$SyncCursorsTableTableManager
               .map(
                 (e) => (
                   e.readTable<$SyncCursorsTable, SyncCursorRow>(table),
-                  BaseReferences<_$AppDatabase, $SyncCursorsTable, SyncCursorRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $SyncCursorsTable,
+                    SyncCursorRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -21762,7 +22531,8 @@ typedef $$SyncIssuesTableUpdateCompanionBuilder = SyncIssuesCompanion Function({
   Value<DateTime?> resolvedAt,
 });
 
-class $$SyncIssuesTableFilterComposer extends Composer<_$AppDatabase, $SyncIssuesTable> {
+class $$SyncIssuesTableFilterComposer
+    extends Composer<_$AppDatabase, $SyncIssuesTable> {
   $$SyncIssuesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -21811,7 +22581,8 @@ class $$SyncIssuesTableFilterComposer extends Composer<_$AppDatabase, $SyncIssue
   );
 }
 
-class $$SyncIssuesTableOrderingComposer extends Composer<_$AppDatabase, $SyncIssuesTable> {
+class $$SyncIssuesTableOrderingComposer
+    extends Composer<_$AppDatabase, $SyncIssuesTable> {
   $$SyncIssuesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -21860,7 +22631,8 @@ class $$SyncIssuesTableOrderingComposer extends Composer<_$AppDatabase, $SyncIss
   );
 }
 
-class $$SyncIssuesTableAnnotationComposer extends Composer<_$AppDatabase, $SyncIssuesTable> {
+class $$SyncIssuesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SyncIssuesTable> {
   $$SyncIssuesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -21868,19 +22640,26 @@ class $$SyncIssuesTableAnnotationComposer extends Composer<_$AppDatabase, $SyncI
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<int> get id => $composableBuilder(column: $table.id, builder: (column) => column);
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
 
-  GeneratedColumn<String> get entity => $composableBuilder(column: $table.entity, builder: (column) => column);
+  GeneratedColumn<String> get entity =>
+      $composableBuilder(column: $table.entity, builder: (column) => column);
 
-  GeneratedColumn<String> get recordId => $composableBuilder(column: $table.recordId, builder: (column) => column);
+  GeneratedColumn<String> get recordId =>
+      $composableBuilder(column: $table.recordId, builder: (column) => column);
 
-  GeneratedColumn<String> get payload => $composableBuilder(column: $table.payload, builder: (column) => column);
+  GeneratedColumn<String> get payload =>
+      $composableBuilder(column: $table.payload, builder: (column) => column);
 
-  GeneratedColumn<String> get errorCode => $composableBuilder(column: $table.errorCode, builder: (column) => column);
+  GeneratedColumn<String> get errorCode =>
+      $composableBuilder(column: $table.errorCode, builder: (column) => column);
 
-  GeneratedColumn<String> get message => $composableBuilder(column: $table.message, builder: (column) => column);
+  GeneratedColumn<String> get message =>
+      $composableBuilder(column: $table.message, builder: (column) => column);
 
-  GeneratedColumn<DateTime> get createdAt => $composableBuilder(column: $table.createdAt, builder: (column) => column);
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
   GeneratedColumn<DateTime> get resolvedAt => $composableBuilder(
     column: $table.resolvedAt,
@@ -21911,9 +22690,12 @@ class $$SyncIssuesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$SyncIssuesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$SyncIssuesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$SyncIssuesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$SyncIssuesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SyncIssuesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$SyncIssuesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<int> id = const Value.absent(),
@@ -22005,7 +22787,8 @@ typedef $$MediaFilesTableUpdateCompanionBuilder = MediaFilesCompanion Function({
   Value<int> rowid,
 });
 
-class $$MediaFilesTableFilterComposer extends Composer<_$AppDatabase, $MediaFilesTable> {
+class $$MediaFilesTableFilterComposer
+    extends Composer<_$AppDatabase, $MediaFilesTable> {
   $$MediaFilesTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -22039,7 +22822,8 @@ class $$MediaFilesTableFilterComposer extends Composer<_$AppDatabase, $MediaFile
   );
 }
 
-class $$MediaFilesTableOrderingComposer extends Composer<_$AppDatabase, $MediaFilesTable> {
+class $$MediaFilesTableOrderingComposer
+    extends Composer<_$AppDatabase, $MediaFilesTable> {
   $$MediaFilesTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -22073,7 +22857,8 @@ class $$MediaFilesTableOrderingComposer extends Composer<_$AppDatabase, $MediaFi
   );
 }
 
-class $$MediaFilesTableAnnotationComposer extends Composer<_$AppDatabase, $MediaFilesTable> {
+class $$MediaFilesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MediaFilesTable> {
   $$MediaFilesTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -22081,11 +22866,14 @@ class $$MediaFilesTableAnnotationComposer extends Composer<_$AppDatabase, $Media
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get mediaId => $composableBuilder(column: $table.mediaId, builder: (column) => column);
+  GeneratedColumn<String> get mediaId =>
+      $composableBuilder(column: $table.mediaId, builder: (column) => column);
 
-  GeneratedColumn<String> get localPath => $composableBuilder(column: $table.localPath, builder: (column) => column);
+  GeneratedColumn<String> get localPath =>
+      $composableBuilder(column: $table.localPath, builder: (column) => column);
 
-  GeneratedColumn<String> get thumbPath => $composableBuilder(column: $table.thumbPath, builder: (column) => column);
+  GeneratedColumn<String> get thumbPath =>
+      $composableBuilder(column: $table.thumbPath, builder: (column) => column);
 
   GeneratedColumn<String> get uploadState => $composableBuilder(
     column: $table.uploadState,
@@ -22121,9 +22909,12 @@ class $$MediaFilesTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$MediaFilesTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$MediaFilesTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$MediaFilesTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$MediaFilesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MediaFilesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$MediaFilesTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> mediaId = const Value.absent(),
@@ -22190,32 +22981,35 @@ typedef $$MediaFilesTableProcessedTableManager =
       MediaFileRow,
       PrefetchHooks Function()
     >;
-typedef $$RelationCacheTableCreateCompanionBuilder = RelationCacheCompanion Function({
-  required String personId,
-  required String pathKey,
-  required String termEn,
-  required String termHi,
-  required String side,
-  required int distance,
-  required int generation,
-  required String viaIds,
-  required int graphVersion,
-  Value<int> rowid,
-});
-typedef $$RelationCacheTableUpdateCompanionBuilder = RelationCacheCompanion Function({
-  Value<String> personId,
-  Value<String> pathKey,
-  Value<String> termEn,
-  Value<String> termHi,
-  Value<String> side,
-  Value<int> distance,
-  Value<int> generation,
-  Value<String> viaIds,
-  Value<int> graphVersion,
-  Value<int> rowid,
-});
+typedef $$RelationCacheTableCreateCompanionBuilder =
+    RelationCacheCompanion Function({
+      required String personId,
+      required String pathKey,
+      required String termEn,
+      required String termHi,
+      required String side,
+      required int distance,
+      required int generation,
+      required String viaIds,
+      required int graphVersion,
+      Value<int> rowid,
+    });
+typedef $$RelationCacheTableUpdateCompanionBuilder =
+    RelationCacheCompanion Function({
+      Value<String> personId,
+      Value<String> pathKey,
+      Value<String> termEn,
+      Value<String> termHi,
+      Value<String> side,
+      Value<int> distance,
+      Value<int> generation,
+      Value<String> viaIds,
+      Value<int> graphVersion,
+      Value<int> rowid,
+    });
 
-class $$RelationCacheTableFilterComposer extends Composer<_$AppDatabase, $RelationCacheTable> {
+class $$RelationCacheTableFilterComposer
+    extends Composer<_$AppDatabase, $RelationCacheTable> {
   $$RelationCacheTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -22269,7 +23063,8 @@ class $$RelationCacheTableFilterComposer extends Composer<_$AppDatabase, $Relati
   );
 }
 
-class $$RelationCacheTableOrderingComposer extends Composer<_$AppDatabase, $RelationCacheTable> {
+class $$RelationCacheTableOrderingComposer
+    extends Composer<_$AppDatabase, $RelationCacheTable> {
   $$RelationCacheTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -22323,7 +23118,8 @@ class $$RelationCacheTableOrderingComposer extends Composer<_$AppDatabase, $Rela
   );
 }
 
-class $$RelationCacheTableAnnotationComposer extends Composer<_$AppDatabase, $RelationCacheTable> {
+class $$RelationCacheTableAnnotationComposer
+    extends Composer<_$AppDatabase, $RelationCacheTable> {
   $$RelationCacheTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -22331,24 +23127,31 @@ class $$RelationCacheTableAnnotationComposer extends Composer<_$AppDatabase, $Re
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get personId => $composableBuilder(column: $table.personId, builder: (column) => column);
+  GeneratedColumn<String> get personId =>
+      $composableBuilder(column: $table.personId, builder: (column) => column);
 
-  GeneratedColumn<String> get pathKey => $composableBuilder(column: $table.pathKey, builder: (column) => column);
+  GeneratedColumn<String> get pathKey =>
+      $composableBuilder(column: $table.pathKey, builder: (column) => column);
 
-  GeneratedColumn<String> get termEn => $composableBuilder(column: $table.termEn, builder: (column) => column);
+  GeneratedColumn<String> get termEn =>
+      $composableBuilder(column: $table.termEn, builder: (column) => column);
 
-  GeneratedColumn<String> get termHi => $composableBuilder(column: $table.termHi, builder: (column) => column);
+  GeneratedColumn<String> get termHi =>
+      $composableBuilder(column: $table.termHi, builder: (column) => column);
 
-  GeneratedColumn<String> get side => $composableBuilder(column: $table.side, builder: (column) => column);
+  GeneratedColumn<String> get side =>
+      $composableBuilder(column: $table.side, builder: (column) => column);
 
-  GeneratedColumn<int> get distance => $composableBuilder(column: $table.distance, builder: (column) => column);
+  GeneratedColumn<int> get distance =>
+      $composableBuilder(column: $table.distance, builder: (column) => column);
 
   GeneratedColumn<int> get generation => $composableBuilder(
     column: $table.generation,
     builder: (column) => column,
   );
 
-  GeneratedColumn<String> get viaIds => $composableBuilder(column: $table.viaIds, builder: (column) => column);
+  GeneratedColumn<String> get viaIds =>
+      $composableBuilder(column: $table.viaIds, builder: (column) => column);
 
   GeneratedColumn<int> get graphVersion => $composableBuilder(
     column: $table.graphVersion,
@@ -22369,7 +23172,11 @@ class $$RelationCacheTableTableManager
           $$RelationCacheTableUpdateCompanionBuilder,
           (
             RelationCacheRow,
-            BaseReferences<_$AppDatabase, $RelationCacheTable, RelationCacheRow>,
+            BaseReferences<
+              _$AppDatabase,
+              $RelationCacheTable,
+              RelationCacheRow
+            >,
           ),
           RelationCacheRow,
           PrefetchHooks Function()
@@ -22379,9 +23186,12 @@ class $$RelationCacheTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$RelationCacheTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$RelationCacheTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$RelationCacheTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$RelationCacheTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$RelationCacheTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$RelationCacheTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback:
               ({
                 Value<String> personId = const Value.absent(),
@@ -22434,7 +23244,11 @@ class $$RelationCacheTableTableManager
               .map(
                 (e) => (
                   e.readTable<$RelationCacheTable, RelationCacheRow>(table),
-                  BaseReferences<_$AppDatabase, $RelationCacheTable, RelationCacheRow>(db, table, e),
+                  BaseReferences<
+                    _$AppDatabase,
+                    $RelationCacheTable,
+                    RelationCacheRow
+                  >(db, table, e),
                 ),
               )
               .toList(),
@@ -22471,7 +23285,8 @@ typedef $$KvSettingsTableUpdateCompanionBuilder = KvSettingsCompanion Function({
   Value<int> rowid,
 });
 
-class $$KvSettingsTableFilterComposer extends Composer<_$AppDatabase, $KvSettingsTable> {
+class $$KvSettingsTableFilterComposer
+    extends Composer<_$AppDatabase, $KvSettingsTable> {
   $$KvSettingsTableFilterComposer({
     required super.$db,
     required super.$table,
@@ -22490,7 +23305,8 @@ class $$KvSettingsTableFilterComposer extends Composer<_$AppDatabase, $KvSetting
   );
 }
 
-class $$KvSettingsTableOrderingComposer extends Composer<_$AppDatabase, $KvSettingsTable> {
+class $$KvSettingsTableOrderingComposer
+    extends Composer<_$AppDatabase, $KvSettingsTable> {
   $$KvSettingsTableOrderingComposer({
     required super.$db,
     required super.$table,
@@ -22509,7 +23325,8 @@ class $$KvSettingsTableOrderingComposer extends Composer<_$AppDatabase, $KvSetti
   );
 }
 
-class $$KvSettingsTableAnnotationComposer extends Composer<_$AppDatabase, $KvSettingsTable> {
+class $$KvSettingsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $KvSettingsTable> {
   $$KvSettingsTableAnnotationComposer({
     required super.$db,
     required super.$table,
@@ -22517,9 +23334,11 @@ class $$KvSettingsTableAnnotationComposer extends Composer<_$AppDatabase, $KvSet
     super.$addJoinBuilderToRootComposer,
     super.$removeJoinBuilderFromRootComposer,
   });
-  GeneratedColumn<String> get key => $composableBuilder(column: $table.key, builder: (column) => column);
+  GeneratedColumn<String> get key =>
+      $composableBuilder(column: $table.key, builder: (column) => column);
 
-  GeneratedColumn<String> get value => $composableBuilder(column: $table.value, builder: (column) => column);
+  GeneratedColumn<String> get value =>
+      $composableBuilder(column: $table.value, builder: (column) => column);
 }
 
 class $$KvSettingsTableTableManager
@@ -22545,9 +23364,12 @@ class $$KvSettingsTableTableManager
         TableManagerState(
           db: db,
           table: table,
-          createFilteringComposer: () => $$KvSettingsTableFilterComposer($db: db, $table: table),
-          createOrderingComposer: () => $$KvSettingsTableOrderingComposer($db: db, $table: table),
-          createComputedFieldComposer: () => $$KvSettingsTableAnnotationComposer($db: db, $table: table),
+          createFilteringComposer: () =>
+              $$KvSettingsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$KvSettingsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$KvSettingsTableAnnotationComposer($db: db, $table: table),
           updateCompanionCallback: ({
             Value<String> key = const Value.absent(),
             Value<String> value = const Value.absent(),
@@ -22601,35 +23423,54 @@ typedef $$KvSettingsTableProcessedTableManager =
 class $AppDatabaseManager {
   final _$AppDatabase _db;
   $AppDatabaseManager(this._db);
-  $$PlacesTableTableManager get places => $$PlacesTableTableManager(_db, _db.places);
-  $$PeopleTableTableManager get people => $$PeopleTableTableManager(_db, _db.people);
-  $$PersonNamesTableTableManager get personNames => $$PersonNamesTableTableManager(_db, _db.personNames);
-  $$PersonContactsTableTableManager get personContacts => $$PersonContactsTableTableManager(_db, _db.personContacts);
+  $$PlacesTableTableManager get places =>
+      $$PlacesTableTableManager(_db, _db.places);
+  $$PeopleTableTableManager get people =>
+      $$PeopleTableTableManager(_db, _db.people);
+  $$PersonNamesTableTableManager get personNames =>
+      $$PersonNamesTableTableManager(_db, _db.personNames);
+  $$PersonContactsTableTableManager get personContacts =>
+      $$PersonContactsTableTableManager(_db, _db.personContacts);
   $$PersonAddressesTableTableManager get personAddresses =>
       $$PersonAddressesTableTableManager(_db, _db.personAddresses);
   $$PersonAttributesTableTableManager get personAttributes =>
       $$PersonAttributesTableTableManager(_db, _db.personAttributes);
-  $$ParentChildTableTableManager get parentChild => $$ParentChildTableTableManager(_db, _db.parentChild);
-  $$PartnershipsTableTableManager get partnerships => $$PartnershipsTableTableManager(_db, _db.partnerships);
+  $$ParentChildTableTableManager get parentChild =>
+      $$ParentChildTableTableManager(_db, _db.parentChild);
+  $$PartnershipsTableTableManager get partnerships =>
+      $$PartnershipsTableTableManager(_db, _db.partnerships);
   $$SocialConnectionsTableTableManager get socialConnections =>
       $$SocialConnectionsTableTableManager(_db, _db.socialConnections);
-  $$FamilyGroupsTableTableManager get familyGroups => $$FamilyGroupsTableTableManager(_db, _db.familyGroups);
+  $$FamilyGroupsTableTableManager get familyGroups =>
+      $$FamilyGroupsTableTableManager(_db, _db.familyGroups);
   $$FamilyGroupMembersTableTableManager get familyGroupMembers =>
       $$FamilyGroupMembersTableTableManager(_db, _db.familyGroupMembers);
-  $$PersonMergesTableTableManager get personMerges => $$PersonMergesTableTableManager(_db, _db.personMerges);
+  $$PersonMergesTableTableManager get personMerges =>
+      $$PersonMergesTableTableManager(_db, _db.personMerges);
   $$TagsTableTableManager get tags => $$TagsTableTableManager(_db, _db.tags);
-  $$PersonTagsTableTableManager get personTags => $$PersonTagsTableTableManager(_db, _db.personTags);
-  $$InteractionsTableTableManager get interactions => $$InteractionsTableTableManager(_db, _db.interactions);
-  $$InteractionParticipantsTableTableManager get interactionParticipants => $$InteractionParticipantsTableTableManager(
-    _db,
-    _db.interactionParticipants,
-  );
-  $$RemindersTableTableManager get reminders => $$RemindersTableTableManager(_db, _db.reminders);
-  $$MediaTableTableManager get media => $$MediaTableTableManager(_db, _db.media);
-  $$SyncOutboxTableTableManager get syncOutbox => $$SyncOutboxTableTableManager(_db, _db.syncOutbox);
-  $$SyncCursorsTableTableManager get syncCursors => $$SyncCursorsTableTableManager(_db, _db.syncCursors);
-  $$SyncIssuesTableTableManager get syncIssues => $$SyncIssuesTableTableManager(_db, _db.syncIssues);
-  $$MediaFilesTableTableManager get mediaFiles => $$MediaFilesTableTableManager(_db, _db.mediaFiles);
-  $$RelationCacheTableTableManager get relationCache => $$RelationCacheTableTableManager(_db, _db.relationCache);
-  $$KvSettingsTableTableManager get kvSettings => $$KvSettingsTableTableManager(_db, _db.kvSettings);
+  $$PersonTagsTableTableManager get personTags =>
+      $$PersonTagsTableTableManager(_db, _db.personTags);
+  $$InteractionsTableTableManager get interactions =>
+      $$InteractionsTableTableManager(_db, _db.interactions);
+  $$InteractionParticipantsTableTableManager get interactionParticipants =>
+      $$InteractionParticipantsTableTableManager(
+        _db,
+        _db.interactionParticipants,
+      );
+  $$RemindersTableTableManager get reminders =>
+      $$RemindersTableTableManager(_db, _db.reminders);
+  $$MediaTableTableManager get media =>
+      $$MediaTableTableManager(_db, _db.media);
+  $$SyncOutboxTableTableManager get syncOutbox =>
+      $$SyncOutboxTableTableManager(_db, _db.syncOutbox);
+  $$SyncCursorsTableTableManager get syncCursors =>
+      $$SyncCursorsTableTableManager(_db, _db.syncCursors);
+  $$SyncIssuesTableTableManager get syncIssues =>
+      $$SyncIssuesTableTableManager(_db, _db.syncIssues);
+  $$MediaFilesTableTableManager get mediaFiles =>
+      $$MediaFilesTableTableManager(_db, _db.mediaFiles);
+  $$RelationCacheTableTableManager get relationCache =>
+      $$RelationCacheTableTableManager(_db, _db.relationCache);
+  $$KvSettingsTableTableManager get kvSettings =>
+      $$KvSettingsTableTableManager(_db, _db.kvSettings);
 }

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/l10n/l10n.dart';
+import '../../../core/router/routes.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../shared/widgets/section_card.dart';
+import '../../security/app_lock.dart';
+import '../../sync/presentation/sync_pill.dart';
 import 'settings_providers.dart';
 
-/// "More" tab: settings now; duplicates, import/export and trash later.
+/// "More" tab: data tools and settings.
 class MoreScreen extends ConsumerWidget {
   const MoreScreen({super.key});
 
@@ -15,12 +19,33 @@ class MoreScreen extends ConsumerWidget {
     final l10n = context.l10n;
     final settings = ref.watch(appSettingsProvider);
     final controller = ref.read(appSettingsProvider.notifier);
+    final lock = ref.watch(appLockProvider);
+
+    Widget nav(IconData icon, String title, String route, {Widget? trailing}) => ListTile(
+      contentPadding: EdgeInsets.zero,
+      leading: Icon(icon),
+      title: Text(title),
+      trailing: trailing ?? const Icon(Icons.chevron_right),
+      onTap: () => context.push(route),
+    );
 
     return Scaffold(
-      appBar: AppBar(title: Text(l10n.settingsTitle)),
+      appBar: AppBar(title: Text(l10n.navMore)),
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.md),
         children: [
+          SectionCard(
+            title: l10n.moreData,
+            child: Column(
+              children: [
+                nav(Icons.cloud_outlined, l10n.settingsSync, Routes.sync, trailing: const SyncPill()),
+                nav(Icons.save_alt, l10n.backupTitle, Routes.backup),
+                nav(Icons.merge_type, l10n.duplicatesTitle, Routes.duplicates),
+                nav(Icons.delete_outline, l10n.trashTitle, Routes.trash),
+              ],
+            ),
+          ),
+          const SizedBox(height: AppSpacing.md),
           SectionCard(
             title: l10n.settingsLanguage,
             child: SizedBox(
@@ -56,11 +81,23 @@ class MoreScreen extends ConsumerWidget {
           ),
           const SizedBox(height: AppSpacing.md),
           SectionCard(
-            title: l10n.settingsSync,
-            child: ListTile(
+            title: l10n.settingsSecurity,
+            child: SwitchListTile(
               contentPadding: EdgeInsets.zero,
-              leading: const Icon(Icons.cloud_off_outlined),
-              title: Text(l10n.syncLocalOnly),
+              secondary: const Icon(Icons.fingerprint),
+              title: Text(l10n.settingsAppLock),
+              subtitle: Text(l10n.settingsAppLockBody),
+              value: lock.enabled,
+              onChanged: (v) async {
+                final notifier = ref.read(appLockProvider.notifier);
+                if (v && !await notifier.isSupported()) {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(l10n.lockUnsupported)));
+                  }
+                  return;
+                }
+                if (context.mounted) await notifier.setEnabled(v, reason: l10n.lockReason);
+              },
             ),
           ),
           const SizedBox(height: AppSpacing.md),
@@ -71,6 +108,7 @@ class MoreScreen extends ConsumerWidget {
               onTap: () => showAboutDialog(
                 context: context,
                 applicationName: l10n.appTitle,
+                applicationVersion: '1.0.0',
                 applicationLegalese: l10n.appTagline,
               ),
             ),

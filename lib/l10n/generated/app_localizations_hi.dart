@@ -55,6 +55,39 @@ class AppLocalizationsHi extends AppLocalizations {
   String get actionBack => 'पीछे';
 
   @override
+  String get actionOk => 'ठीक है';
+
+  @override
+  String get actionYes => 'हाँ';
+
+  @override
+  String get actionNotNow => 'अभी नहीं';
+
+  @override
+  String get actionAddAnyway => 'फिर भी जोड़ें';
+
+  @override
+  String get actionDismiss => 'हटाएँ';
+
+  @override
+  String get actionDone => 'हो गया';
+
+  @override
+  String get actionRestore => 'वापस लाएँ';
+
+  @override
+  String get actionSeeAll => 'सभी देखें';
+
+  @override
+  String get actionMeet => 'मुलाक़ात लिखें';
+
+  @override
+  String get actionCall => 'कॉल';
+
+  @override
+  String get actionWhatsApp => 'व्हाट्सऐप';
+
+  @override
   String get onboardingWelcomeTitle => 'परिचित में आपका स्वागत है';
 
   @override
@@ -83,6 +116,15 @@ class AppLocalizationsHi extends AppLocalizations {
   String get fieldFullNameAltHint => 'जैसे रमेश शर्मा';
 
   @override
+  String get fieldNickname => 'उपनाम / घर का नाम';
+
+  @override
+  String get fieldNicknameHint => 'जैसे पप्पू, बबलू';
+
+  @override
+  String get fieldSurname => 'कुलनाम';
+
+  @override
   String get fieldGender => 'लिंग';
 
   @override
@@ -104,16 +146,104 @@ class AppLocalizationsHi extends AppLocalizations {
   String get fieldPhoneHint => '10 अंकों का मोबाइल नंबर';
 
   @override
+  String get fieldEmail => 'ईमेल';
+
+  @override
+  String get fieldWhatsapp => 'व्हाट्सऐप पर है';
+
+  @override
   String get fieldNotes => 'नोट्स';
 
   @override
   String get fieldNotesHint => 'कहाँ मिले, क्या बात हुई…';
 
   @override
+  String get fieldFavorite => 'पसंदीदा';
+
+  @override
+  String get fieldBirthDate => 'जन्म तिथि';
+
+  @override
+  String get fieldDeathDate => 'देहांत की तिथि';
+
+  @override
+  String get fieldBirthOrder => 'भाई-बहनों में जन्म क्रम';
+
+  @override
+  String get fieldBirthOrderHelp => '1 = सबसे बड़े। जन्म तिथि न होने पर ताऊ/चाचा, जेठ/देवर तय करने में काम आता है।';
+
+  @override
+  String get fieldNotifyBirthday => 'जन्मदिन की याद दिलाएँ';
+
+  @override
+  String get fieldNativePlace => 'पैतृक गाँव / शहर';
+
+  @override
+  String get fieldGotra => 'गोत्र';
+
+  @override
+  String get fieldOccupation => 'व्यवसाय';
+
+  @override
+  String get fieldOrganization => 'संस्था / कारोबार';
+
+  @override
+  String get fieldDesignation => 'पद';
+
+  @override
+  String get fieldEducation => 'शिक्षा';
+
+  @override
+  String get statusLiving => 'जीवित';
+
+  @override
+  String get statusDeceased => 'स्वर्गवासी';
+
+  @override
+  String get dateYear => 'वर्ष';
+
+  @override
+  String get dateMonth => 'महीना';
+
+  @override
+  String get dateDay => 'दिन';
+
+  @override
+  String get dateUnknown => 'पता नहीं';
+
+  @override
+  String get dateApproximate => 'लगभग';
+
+  @override
   String get validationNameRequired => 'कृपया नाम लिखें';
 
   @override
   String get validationPhoneInvalid => 'कृपया सही फ़ोन नंबर लिखें';
+
+  @override
+  String ageYears(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count वर्ष',
+      one: '1 वर्ष',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get dayToday => 'आज';
+
+  @override
+  String get dayTomorrow => 'कल';
+
+  @override
+  String get dayYesterday => 'बीता कल';
+
+  @override
+  String dayInDays(int count) {
+    return '$count दिन में';
+  }
 
   @override
   String homeGreeting(String name) {
@@ -151,6 +281,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get homeRecentlyAdded => 'हाल ही में जोड़े गए';
 
   @override
+  String get homeToday => 'इस सप्ताह';
+
+  @override
+  String get homeReconnect => 'काफ़ी समय से नहीं मिले';
+
+  @override
   String get homeEmptyTitle => 'किसी जान-पहचान वाले से शुरू करें';
 
   @override
@@ -171,6 +307,26 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
+  String peopleCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count लोग',
+      one: '1 व्यक्ति',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get filterFavorites => 'पसंदीदा';
+
+  @override
+  String get filterFamily => 'परिवार';
+
+  @override
+  String get filterNotMet => '90 दिन से नहीं मिले';
+
+  @override
   String get quickAddTitle => 'जल्दी जोड़ें';
 
   @override
@@ -185,6 +341,30 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get personNotFound => 'यह व्यक्ति अब मौजूद नहीं है।';
+
+  @override
+  String get duplicateWarningTitle => 'पहले से सहेजे हैं?';
+
+  @override
+  String get duplicateCreateAnyway => 'फिर भी बनाएँ';
+
+  @override
+  String get editPersonTitle => 'जानकारी बदलें';
+
+  @override
+  String get editSectionBasic => 'मूल जानकारी';
+
+  @override
+  String get editSectionContacts => 'फ़ोन और ईमेल';
+
+  @override
+  String get editSectionLife => 'जीवन की घटनाएँ';
+
+  @override
+  String get editSectionOrigin => 'मूल स्थान';
+
+  @override
+  String get editSectionWork => 'काम और शिक्षा';
 
   @override
   String get relationYou => 'आप';
@@ -202,22 +382,411 @@ class AppLocalizationsHi extends AppLocalizations {
   String get personSectionFamily => 'परिवार';
 
   @override
-  String get personFamilyComingSoon => 'रिश्तेदार जोड़ने की सुविधा अगले चरण में आएगी।';
+  String get personSectionAbout => 'विवरण';
 
   @override
-  String get actionCall => 'कॉल';
+  String personSectionMeetings(int count) {
+    return 'मुलाक़ातें ($count)';
+  }
 
   @override
-  String get actionWhatsApp => 'व्हाट्सऐप';
+  String get personNoMeetings => 'अभी कोई मुलाक़ात दर्ज नहीं।';
 
   @override
-  String get comingSoonTitle => 'जल्द आ रहा है';
+  String get placeholderBadge => 'अज्ञात व्यक्ति — जानकारी भरें';
 
   @override
-  String get familyComingSoon => 'वंश वृक्ष और रिश्ता खोजक अगले चरण में बन रहे हैं।';
+  String get openProfile => 'प्रोफ़ाइल खोलें';
 
   @override
-  String get meetingsComingSoon => 'मुलाक़ातों का इतिहास और रिमाइंडर यहाँ दिखेंगे।';
+  String get familyParents => 'माता-पिता';
+
+  @override
+  String get familySpouse => 'जीवनसाथी';
+
+  @override
+  String get familyFormerSpouse => 'पूर्व जीवनसाथी';
+
+  @override
+  String get familySiblings => 'भाई-बहन';
+
+  @override
+  String get familyChildren => 'संतान';
+
+  @override
+  String familyExtended(int count) {
+    return 'विस्तृत परिवार ($count)';
+  }
+
+  @override
+  String get familyEmpty => 'अभी कोई रिश्तेदार नहीं जोड़ा गया।';
+
+  @override
+  String get addRelative => 'रिश्तेदार जोड़ें';
+
+  @override
+  String addRelativeTitle(String name) {
+    return '$name के परिवार में जोड़ें';
+  }
+
+  @override
+  String get moreRelations => 'और रिश्ते';
+
+  @override
+  String get searchRelationsHint => 'खोजें: चाचा, मामा, ससुर…';
+
+  @override
+  String get relationGroupDirect => 'निकट परिवार';
+
+  @override
+  String get relationGroupPaternal => 'पितृ पक्ष';
+
+  @override
+  String get relationGroupMaternal => 'मातृ पक्ष';
+
+  @override
+  String get relationGroupChildren => 'बच्चों का परिवार';
+
+  @override
+  String get relationGroupSiblings => 'भाई-बहनों का परिवार';
+
+  @override
+  String get relationGroupInLaws => 'ससुराल';
+
+  @override
+  String pickPersonTitle(String name, String relation, String gender) {
+    String _temp0 = intl.Intl.selectLogic(
+      gender,
+      {
+        'female': 'की',
+        'other': 'के',
+      },
+    );
+    return '$name $_temp0 $relation कौन हैं?';
+  }
+
+  @override
+  String get pickPersonSearchHint => 'सहेजे गए लोगों में खोजें';
+
+  @override
+  String get createNewPerson => 'नया व्यक्ति बनाएँ';
+
+  @override
+  String choosePersonTitle(String relation) {
+    return 'कौन से $relation?';
+  }
+
+  @override
+  String get someoneNotListed => 'कोई और (सूची में नहीं)';
+
+  @override
+  String relativeAdded(String name, String relation, String anchor) {
+    return '$name को $anchor के $relation के रूप में जोड़ा गया';
+  }
+
+  @override
+  String get suggestTitle => 'एक और बात';
+
+  @override
+  String suggestAlsoParent(String parent, String child) {
+    return 'क्या $parent भी $child के माता/पिता हैं?';
+  }
+
+  @override
+  String suggestParentOfSiblings(String parent, String names) {
+    return 'क्या $parent $names के भी माता/पिता हैं?';
+  }
+
+  @override
+  String get warningTitle => 'कृपया जाँचें';
+
+  @override
+  String get cannotAddTitle => 'यह रिश्ता नहीं जुड़ सकता';
+
+  @override
+  String get violationSelf => 'कोई व्यक्ति स्वयं का रिश्तेदार नहीं हो सकता।';
+
+  @override
+  String get violationCycle => 'इससे कोई व्यक्ति अपना ही पूर्वज बन जाएगा।';
+
+  @override
+  String get violationDuplicate => 'ये दोनों पहले से इसी तरह जुड़े हैं।';
+
+  @override
+  String get violationTooManyParents => 'इस व्यक्ति के पहले से दो माता-पिता हैं।';
+
+  @override
+  String get violationDuplicateParentGender => 'इस व्यक्ति के पहले से इस लिंग के पिता या माता हैं।';
+
+  @override
+  String get violationParentTooYoung => 'इस संतान के लिए माता/पिता की उम्र बहुत कम लगती है।';
+
+  @override
+  String get violationCloseBlood => 'ये दोनों निकट रक्त संबंधी हैं।';
+
+  @override
+  String get violationPartnerAncestor => 'कोई अपने ही पूर्वज या वंशज से विवाह नहीं कर सकता।';
+
+  @override
+  String get removeLink => 'यह संबंध हटाएँ';
+
+  @override
+  String get linkRemoved => 'संबंध हटाया गया';
+
+  @override
+  String get markDivorced => 'अलग / तलाक़शुदा चिह्नित करें';
+
+  @override
+  String get networkTitle => 'जान-पहचान';
+
+  @override
+  String get networkEmpty => 'अभी कोई मित्र या संपर्क नहीं जुड़ा।';
+
+  @override
+  String get addConnection => 'संपर्क जोड़ें';
+
+  @override
+  String get connectionTypeTitle => 'कैसे जुड़े हैं?';
+
+  @override
+  String get connFriend => 'मित्र';
+
+  @override
+  String get connColleague => 'सहकर्मी';
+
+  @override
+  String get connBusiness => 'व्यापार';
+
+  @override
+  String get connNeighbour => 'पड़ोसी';
+
+  @override
+  String get connClassmate => 'सहपाठी';
+
+  @override
+  String get connTeacher => 'शिक्षक';
+
+  @override
+  String get connMentor => 'मार्गदर्शक';
+
+  @override
+  String get connIntroduced => 'परिचय कराया';
+
+  @override
+  String get connPolitical => 'राजनीतिक';
+
+  @override
+  String get connCommunity => 'समाज';
+
+  @override
+  String get connOther => 'अन्य';
+
+  @override
+  String get familyTreeTitle => 'वंश वृक्ष';
+
+  @override
+  String get familyHubTreeBody => 'पीढ़ियाँ देखें; किसी पर भी टैप करके वृक्ष उन पर केंद्रित करें।';
+
+  @override
+  String get relationFinderTitle => 'रिश्ता खोजें';
+
+  @override
+  String get familyHubFinderBody => 'देखें कि कोई भी दो लोग आपस में कैसे जुड़े हैं।';
+
+  @override
+  String get familyClustersTitle => 'परिवार';
+
+  @override
+  String get familyClusterYours => 'आपका परिवार';
+
+  @override
+  String familyClusterOf(String name) {
+    return '$name का परिवार';
+  }
+
+  @override
+  String get treeChoosePerson => 'व्यक्ति चुनें';
+
+  @override
+  String get treeCenterOnMe => 'मुझ पर केंद्रित करें';
+
+  @override
+  String get treeModeTree => 'वृक्ष रूप';
+
+  @override
+  String get treeModeList => 'सूची रूप';
+
+  @override
+  String get treeGenerationsUp => 'ऊपर की पीढ़ियाँ';
+
+  @override
+  String get treeGenerationsDown => 'नीचे की पीढ़ियाँ';
+
+  @override
+  String get finderPersonA => 'पहला व्यक्ति';
+
+  @override
+  String get finderPersonB => 'दूसरा व्यक्ति';
+
+  @override
+  String get finderSelect => 'व्यक्ति चुनें';
+
+  @override
+  String get finderSwap => 'अदला-बदली';
+
+  @override
+  String get finderIncludeFriends => 'मित्र व संपर्क भी शामिल करें';
+
+  @override
+  String get finderNotConnected => 'ये दोनों अभी जुड़े नहीं हैं।';
+
+  @override
+  String get finderAlternatives => 'अन्य संबंध';
+
+  @override
+  String finderCommonAncestor(String name) {
+    return 'समान पूर्वज: $name';
+  }
+
+  @override
+  String get meetingsTimeline => 'समयरेखा';
+
+  @override
+  String get meetingsUpcoming => 'आगामी';
+
+  @override
+  String get meetingsEmptyTitle => 'अभी कोई मुलाक़ात नहीं';
+
+  @override
+  String get meetingsEmptyBody => 'किससे, कहाँ मिले और क्या बात हुई — लिख लें।';
+
+  @override
+  String get meetingEdit => 'मुलाक़ात';
+
+  @override
+  String get meetingWho => 'कौन-कौन थे?';
+
+  @override
+  String get meetingAddPerson => 'व्यक्ति जोड़ें';
+
+  @override
+  String get meetingNeedsPerson => 'कम से कम एक व्यक्ति जोड़ें।';
+
+  @override
+  String get meetingWhere => 'स्थान';
+
+  @override
+  String get meetingLocationDetail => 'स्थान का विवरण (वैकल्पिक)';
+
+  @override
+  String get meetingTitle => 'शीर्षक (वैकल्पिक)';
+
+  @override
+  String get meetingTitleHint => 'जैसे अमित की शादी';
+
+  @override
+  String get meetingNotesHint => 'क्या बात हुई?';
+
+  @override
+  String get meetingFollowUp => 'फ़ॉलो-अप की याद दिलाएँ';
+
+  @override
+  String get meetingFollowUpNote => 'फ़ॉलो-अप नोट';
+
+  @override
+  String get meetingTypeInPerson => 'आमने-सामने';
+
+  @override
+  String get meetingTypeVisit => 'घर जाना';
+
+  @override
+  String get meetingTypePhone => 'फ़ोन कॉल';
+
+  @override
+  String get meetingTypeVideo => 'वीडियो कॉल';
+
+  @override
+  String get meetingTypeMessage => 'संदेश';
+
+  @override
+  String get meetingTypeEvent => 'कार्यक्रम / समारोह';
+
+  @override
+  String get meetingTypeOther => 'अन्य';
+
+  @override
+  String placeCreate(String name) {
+    return '\"$name\" जोड़ें';
+  }
+
+  @override
+  String get upcomingNext60Days => 'अगले 60 दिन';
+
+  @override
+  String get upcomingNothing => 'कुछ आगामी नहीं।';
+
+  @override
+  String upcomingBirthday(String name, int years) {
+    String _temp0 = intl.Intl.pluralLogic(
+      years,
+      locale: localeName,
+      other: '$name का $yearsवाँ जन्मदिन',
+      zero: '$name का जन्मदिन',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String upcomingAnniversary(String names, int years) {
+    String _temp0 = intl.Intl.pluralLogic(
+      years,
+      locale: localeName,
+      other: '$names: विवाह के $years वर्ष',
+      zero: '$names: विवाह वर्षगाँठ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String upcomingBarsi(String names) {
+    return '$names: बरसी';
+  }
+
+  @override
+  String get reminderAdd => 'रिमाइंडर जोड़ें';
+
+  @override
+  String get reminderWhat => 'क्या याद रखना है';
+
+  @override
+  String get reminderRepeat => 'दोहराएँ';
+
+  @override
+  String get repeatNone => 'नहीं दोहराएँ';
+
+  @override
+  String get repeatWeekly => 'हर सप्ताह';
+
+  @override
+  String get repeatMonthly => 'हर महीने';
+
+  @override
+  String get repeatYearly => 'हर साल';
+
+  @override
+  String get tagsTitle => 'टैग';
+
+  @override
+  String get tagsEdit => 'टैग बदलें';
+
+  @override
+  String get tagsNone => 'कोई टैग नहीं।';
+
+  @override
+  String get tagsNew => 'नया टैग';
+
+  @override
+  String get moreData => 'आपका डेटा';
 
   @override
   String get settingsTitle => 'सेटिंग्स';
@@ -241,11 +810,202 @@ class AppLocalizationsHi extends AppLocalizations {
   String get themeDark => 'डार्क';
 
   @override
-  String get settingsSync => 'क्लाउड बैकअप';
+  String get settingsSecurity => 'सुरक्षा';
 
   @override
-  String get syncLocalOnly => 'अभी केवल इसी फ़ोन पर सहेजा गया है। क्लाउड सिंक अगले चरण में आएगा।';
+  String get settingsAppLock => 'ऐप लॉक';
+
+  @override
+  String get settingsAppLockBody => 'परिचित खोलते समय फ़िंगरप्रिंट, चेहरा या फ़ोन पिन।';
+
+  @override
+  String get lockTitle => 'परिचित लॉक है';
+
+  @override
+  String get lockUnlock => 'अनलॉक करें';
+
+  @override
+  String get lockReason => 'परिचित अनलॉक करें';
+
+  @override
+  String get lockUnsupported => 'इस फ़ोन पर फ़िंगरप्रिंट, चेहरा या स्क्रीन लॉक सेट नहीं है।';
+
+  @override
+  String get settingsSync => 'क्लाउड बैकअप और सिंक';
 
   @override
   String get settingsAbout => 'परिचित के बारे में';
+
+  @override
+  String get syncLocal => 'इसी फ़ोन पर';
+
+  @override
+  String get syncSyncing => 'सिंक हो रहा है…';
+
+  @override
+  String get syncOffline => 'ऑफ़लाइन';
+
+  @override
+  String get syncError => 'सिंक में समस्या';
+
+  @override
+  String get syncDone => 'सिंक हो गया';
+
+  @override
+  String syncPending(int count) {
+    return '$count बाक़ी';
+  }
+
+  @override
+  String get syncNotConfiguredTitle => 'क्लाउड सिंक सेट नहीं है';
+
+  @override
+  String get syncNotConfiguredBody =>
+      'इस बिल्ड में Supabase प्रोजेक्ट नहीं जुड़ा है, इसलिए सब कुछ इसी फ़ोन पर रहता है। कॉपी रखने के लिए बैकअप और एक्सपोर्ट का उपयोग करें।';
+
+  @override
+  String get syncSignInTitle => 'क्लाउड बैकअप चालू करें';
+
+  @override
+  String get syncSignInBody =>
+      'बैकअप और फ़ोनों के बीच सिंक के लिए ईमेल से साइन इन करें। हम आपको 6 अंकों का कोड भेजेंगे।';
+
+  @override
+  String get syncSendCode => 'कोड भेजें';
+
+  @override
+  String get syncCode => '6 अंकों का कोड';
+
+  @override
+  String get syncVerify => 'जाँचें और साइन इन करें';
+
+  @override
+  String get syncAccount => 'खाता';
+
+  @override
+  String get syncSignOut => 'साइन आउट';
+
+  @override
+  String get syncStatus => 'स्थिति';
+
+  @override
+  String get syncNow => 'अभी सिंक करें';
+
+  @override
+  String syncPendingChanges(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count बदलाव अपलोड होने बाक़ी हैं।',
+      one: '1 बदलाव अपलोड होना बाक़ी है।',
+      zero: 'सब कुछ अपलोड हो गया है।',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String syncLastSynced(String time) {
+    return 'पिछला सिंक: $time';
+  }
+
+  @override
+  String get syncOfflineBody => 'इंटरनेट नहीं है — बदलाव सहेजे गए हैं और अपने-आप अपलोड हो जाएँगे।';
+
+  @override
+  String syncIssues(int count) {
+    return 'अपलोड नहीं हो सके ($count)';
+  }
+
+  @override
+  String get backupTitle => 'बैकअप और एक्सपोर्ट';
+
+  @override
+  String get backupEncrypted => 'एन्क्रिप्टेड बैकअप';
+
+  @override
+  String get backupCreate => 'बैकअप फ़ाइल बनाएँ';
+
+  @override
+  String get backupCreateBody => 'सब कुछ, आपके पासफ़्रेज़ से एन्क्रिप्टेड। ड्राइव में सहेजें या स्वयं को भेजें।';
+
+  @override
+  String get backupRestore => 'बैकअप से वापस लाएँ';
+
+  @override
+  String get backupRestoreBody => 'हर रिकॉर्ड का नया संस्करण रखा जाता है।';
+
+  @override
+  String backupRestored(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count रिकॉर्ड वापस लाए गए।',
+      one: '1 रिकॉर्ड वापस लाया गया।',
+      zero: 'वापस लाने को कुछ नया नहीं।',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get backupPassphrase => 'पासफ़्रेज़';
+
+  @override
+  String get backupPassphraseRepeat => 'पासफ़्रेज़ दोबारा लिखें';
+
+  @override
+  String get backupPassphraseHelp =>
+      'एक पासफ़्रेज़ चुनें (कम से कम 6 अक्षर)। इसके बिना बैकअप नहीं खुलेगा — इसे लिखकर रखें।';
+
+  @override
+  String get backupPassphraseEnter => 'इस बैकअप का पासफ़्रेज़ लिखें।';
+
+  @override
+  String get backupPassphraseTooShort => 'पासफ़्रेज़ में कम से कम 6 अक्षर होने चाहिए।';
+
+  @override
+  String get backupPassphraseMismatch => 'दोनों पासफ़्रेज़ मेल नहीं खाते।';
+
+  @override
+  String get backupWrongPassphrase => 'पासफ़्रेज़ ग़लत है, या यह परिचित बैकअप नहीं है।';
+
+  @override
+  String get exportTitle => 'एक्सपोर्ट';
+
+  @override
+  String get exportCsv => 'लोग (CSV / Excel)';
+
+  @override
+  String get exportCsvBody => 'सभी लोगों की सूची — फ़ोन, गाँव और रिश्तों सहित।';
+
+  @override
+  String get exportGedcom => 'वंश वृक्ष (GEDCOM)';
+
+  @override
+  String get exportGedcomBody => 'अपना वृक्ष Ancestry, MyHeritage, FamilySearch या Gramps में खोलें।';
+
+  @override
+  String get duplicatesTitle => 'दोहराए गए लोग';
+
+  @override
+  String get duplicatesNone => 'कोई दोहराव नहीं मिला।';
+
+  @override
+  String get duplicatesNotSame => 'ये अलग हैं';
+
+  @override
+  String get mergeAction => 'मिलाएँ';
+
+  @override
+  String get mergeKeepWhich => 'किसकी जानकारी रखें?';
+
+  @override
+  String mergeDone(String merged, String survivor) {
+    return '$merged को $survivor में मिलाया गया';
+  }
+
+  @override
+  String get trashTitle => 'ट्रैश';
+
+  @override
+  String get trashEmpty => 'ट्रैश ख़ाली है।';
 }

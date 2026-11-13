@@ -2,13 +2,20 @@ import 'kin_step.dart';
 import 'relation_side.dart';
 
 /// A readable path from one person to another, e.g. father → younger
-/// brother → daughter (`F.yB.D`, चचेरी बहन).
+/// brother → daughter (`F.yB.D`, चचेरी बहन). Describes "the last person is
+/// the first person's …".
 final class KinPath {
-  const KinPath(this.steps);
+  const KinPath(this.steps, {this.commonAncestorId});
 
   final List<KinStep> steps;
 
+  /// For blood relations: the nearest shared ancestor (null otherwise).
+  final String? commonAncestorId;
+
   bool get isEmpty => steps.isEmpty;
+
+  /// Ids of everyone on the path after the start person.
+  List<String> get personIds => [for (final s in steps) s.toPersonId];
 
   /// Dictionary key, e.g. `F.yB.D`.
   String get key => steps.map((s) => s.token).join('.');
@@ -25,6 +32,11 @@ final class KinPath {
       _ => sum,
     };
   });
+
+  /// True when only parent/child/sibling steps are involved.
+  bool get isBlood =>
+      steps.isNotEmpty &&
+      steps.every((s) => s.kind == StepKind.parent || s.kind == StepKind.child || s.kind == StepKind.sibling);
 
   /// Side of the family the relation is reached through.
   RelationSide get side {

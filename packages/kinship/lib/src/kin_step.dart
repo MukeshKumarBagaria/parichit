@@ -25,6 +25,7 @@ final class KinStep {
     this.seniority = Seniority.unknown,
     this.half = false,
     this.step = false,
+    this.socialType,
   });
 
   final StepKind kind;
@@ -40,13 +41,16 @@ final class KinStep {
   /// Step-parent / step-child edge (`parent_child.kind = 'step'`).
   final bool step;
 
+  /// For [StepKind.social]: `social_connections.connection_type`.
+  final String? socialType;
+
   /// Compact token used to build dictionary keys, e.g. `F`, `M`, `eB`, `W`.
   String get token => switch (kind) {
     StepKind.parent => toGender.pick('F', 'M', 'P'),
     StepKind.child => toGender.pick('S', 'D', 'C'),
     StepKind.spouse => toGender.pick('H', 'W', 'Sp'),
     StepKind.sibling => '${seniority.prefix}${toGender.pick('B', 'Z', 'Sb')}',
-    StepKind.social => 'Fr',
+    StepKind.social => '~${socialType ?? 'other'}',
   };
 
   /// Token without elder/younger information, used as a lookup fallback.
@@ -63,10 +67,11 @@ final class KinStep {
       other.toGender == toGender &&
       other.seniority == seniority &&
       other.half == half &&
-      other.step == step;
+      other.step == step &&
+      other.socialType == socialType;
 
   @override
-  int get hashCode => Object.hash(kind, toPersonId, toGender, seniority, half, step);
+  int get hashCode => Object.hash(kind, toPersonId, toGender, seniority, half, step, socialType);
 
   @override
   String toString() => 'KinStep($token → $toPersonId)';

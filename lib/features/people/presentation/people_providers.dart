@@ -28,6 +28,19 @@ final peopleListProvider = StreamProvider.autoDispose<List<Person>>(
   (ref) => ref.watch(peopleRepositoryProvider).watchAll(query: ref.watch(peopleQueryProvider)),
 );
 
+/// Search used by pickers (independent of the People tab's query).
+final peopleSearchProvider = StreamProvider.autoDispose.family<List<Person>, String>(
+  (ref, query) => ref.watch(peopleRepositoryProvider).watchAll(query: query),
+);
+
+final deletedPeopleProvider = StreamProvider.autoDispose<List<Person>>(
+  (ref) => ref.watch(peopleRepositoryProvider).watchDeleted(),
+);
+
+final contactsProvider = StreamProvider.autoDispose.family<List<ContactMethod>, String>(
+  (ref, personId) => ref.watch(peopleRepositoryProvider).watchContacts(personId),
+);
+
 final recentPeopleProvider = StreamProvider.autoDispose<List<Person>>(
   (ref) => ref.watch(peopleRepositoryProvider).watchRecent(),
 );
