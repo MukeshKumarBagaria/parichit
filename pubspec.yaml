@@ -1,0 +1,65 @@
+name: parichit
+description: "Parichit - private family tree and personal network manager"
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Local packages
+  kinship:
+    path: packages/kinship
+
+  # State management & navigation
+  flutter_riverpod: ^3.5.0
+  go_router: ^18.1.4
+
+  # Local database (offline-first source of truth)
+  drift: ^2.35.4
+  drift_flutter: ^0.3.1
+
+  # Cloud backend (sync & backup, milestone 6)
+  supabase_flutter: ^2.18.3
+
+  # Security
+  flutter_secure_storage: ^11.2.0
+
+  # Utilities
+  intl: ^0.20.3
+  uuid: ^4.6.0
+  meta: ^1.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  build_runner: ^2.17.1
+  drift_dev: ^2.35.3
+
+# Native build options for package:sqlite3.
+hooks:
+  user_defines:
+    sqlite3:
+      # Android / iOS (the app's targets): SQLite3MultipleCiphers, i.e. SQLite
+      # with encryption (`PRAGMA key`), so the on-device database is encrypted
+      # at rest. See blueprint §13.
+      #
+      # Windows is not an app target; it is only used to run tests/tools on a
+      # developer PC. There we load Windows' own Microsoft-signed SQLite so it
+      # works with Smart App Control (which blocks the downloaded DLL).
+      source:
+        windows: system
+        default: sqlite3mc
+      name:
+        windows: winsqlite3
+
+flutter:
+  uses-material-design: true
+  generate: true

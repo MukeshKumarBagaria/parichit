@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      drift_dev:
+        options:
+          # ISO-8601 text keeps full precision and timezone, matching
+          # Postgres `timestamptz`, which last-write-wins sync relies on.
+          store_date_time_values_as_text: true
+          # Snake_case JSON keys, identical to the Supabase column names.
+          use_sql_column_name_as_json_key: true
+          databases:
+            app_database: lib/core/database/app_database.dart
+          schema_dir: drift_schemas/
+          test_dir: test/drift/

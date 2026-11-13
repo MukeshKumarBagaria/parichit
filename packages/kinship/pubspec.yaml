@@ -1,0 +1,14 @@
+name: kinship
+description: >-
+  Pure-Dart kinship engine for Parichit: family graph, path finding and
+  bilingual (Hindi/English) relation naming. Has no Flutter or database
+  dependencies so it can be tested exhaustively and in milliseconds.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.7
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.0
