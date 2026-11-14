@@ -46,4 +46,34 @@ jobs:
           dart run build_runner build
           git diff --exit-code -- '*.g.dart' lib/l10n/generated
       - run: flutter analyze --fatal-infos
-      - run: flutter test --coverage
+      - name: Test
+        run: flutter test --coverage --file-reporter json:build/test-results.json
+      - name: Annotate failed tests
+        # Turns each failing test into a GitHub annotation (name, error and
+        # stack trace), visible on the run page and through the checks API.
+        if: failure()
+        run: |
+          python3 - <<'EOF'
+          import json, os
+          path = 'build/test-results.json'
+          if not os.path.exists(path):
+              raise SystemExit(0)
+          suites, tests = {}, {}
+          for line in open(path, encoding='utf-8'):
+              try:
+                  e = json.loads(line)
+              except ValueError:
+                  continue
+              kind = e.get('type')
+              if kind == 'suite':
+                  suites[e['suite']['id']] = e['suite'].get('path', '?')
+              elif kind == 'testStart':
+                  tests[e['test']['id']] = e['test']
+              elif kind == 'error':
+                  test = tests.get(e.get('testID'), {})
+                  file = suites.get(test.get('suiteID'), '?')
+                  title = f"{file} :: {test.get('name', '?')}".replace('%', '%25').replace(':', '%3A').replace(',', '%2C')
+                  body = (e.get('error', '') + '\n' + e.get('stackTrace', ''))[:3000]
+                  body = body.replace('%', '%25').replace('\r', '').replace('\n', '%0A')
+                  print(f'::error title={title}::{body}')
+          EOF
