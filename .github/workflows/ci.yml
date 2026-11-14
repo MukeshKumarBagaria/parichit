@@ -58,7 +58,7 @@ jobs:
           path = 'build/test-results.json'
           if not os.path.exists(path):
               raise SystemExit(0)
-          suites, tests = {}, {}
+          suites, tests, prints = {}, {}, {}
           for line in open(path, encoding='utf-8'):
               try:
                   e = json.loads(line)
@@ -69,11 +69,15 @@ jobs:
                   suites[e['suite']['id']] = e['suite'].get('path', '?')
               elif kind == 'testStart':
                   tests[e['test']['id']] = e['test']
+              elif kind == 'print':
+                  # Flutter reports widget-test exceptions as printed output.
+                  prints.setdefault(e.get('testID'), []).append(e.get('message', ''))
               elif kind == 'error':
                   test = tests.get(e.get('testID'), {})
-                  file = suites.get(test.get('suiteID'), '?')
+                  file = suites.get(test.get('suiteID'), '?').split('/test/')[-1]
                   title = f"{file} :: {test.get('name', '?')}".replace('%', '%25').replace(':', '%3A').replace(',', '%2C')
-                  body = (e.get('error', '') + '\n' + e.get('stackTrace', ''))[:3000]
+                  output = '\n'.join(prints.get(e.get('testID'), []))
+                  body = (output[:3500] + '\n---\n' + e.get('error', '') + '\n' + e.get('stackTrace', ''))[:6000]
                   body = body.replace('%', '%25').replace('\r', '').replace('\n', '%0A')
                   print(f'::error title={title}::{body}')
           EOF
