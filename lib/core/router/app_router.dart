@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../features/auth/presentation/sign_in_screen.dart';
 import '../../features/backup/presentation/backup_screen.dart';
 import '../../features/duplicates/presentation/duplicates_screen.dart';
 import '../../features/family/presentation/family_screen.dart';
@@ -18,7 +19,7 @@ import '../../features/relationships/presentation/relation_finder_screen.dart';
 import '../../features/settings/presentation/more_screen.dart';
 import '../../features/settings/presentation/settings_providers.dart';
 import '../../features/settings/presentation/trash_screen.dart';
-import '../../features/sync/presentation/sync_screen.dart';
+import '../../features/sync/presentation/sync_issues_screen.dart';
 import 'app_shell.dart';
 import 'routes.dart';
 
@@ -46,13 +47,18 @@ final appRouterProvider = Provider<GoRouter>((ref) {
     refreshListenable: onboardingDone,
     redirect: (context, state) {
       final atOnboarding = state.matchedLocation == Routes.onboarding;
-      if (!onboardingDone.value) return atOnboarding ? null : Routes.onboarding;
+      // Signing in is allowed during onboarding so a new phone can restore.
+      if (!onboardingDone.value) {
+        return (atOnboarding || state.matchedLocation == Routes.signIn) ? null : Routes.onboarding;
+      }
       if (atOnboarding) return Routes.home;
       return null;
     },
     routes: [
       GoRoute(path: Routes.onboarding, builder: (context, state) => const OnboardingScreen()),
       fullScreen(Routes.addPerson, (_) => const QuickAddScreen(), dialog: true),
+      fullScreen(Routes.signIn, (_) => const SignInScreen()),
+      fullScreen(Routes.syncIssues, (_) => const SyncIssuesScreen()),
       StatefulShellRoute.indexedStack(
         builder: (context, state, shell) => AppShell(navigationShell: shell),
         branches: [
@@ -122,7 +128,6 @@ final appRouterProvider = Provider<GoRouter>((ref) {
                   GoRoute(path: 'trash', builder: (context, state) => const TrashScreen()),
                   GoRoute(path: 'duplicates', builder: (context, state) => const DuplicatesScreen()),
                   GoRoute(path: 'backup', builder: (context, state) => const BackupScreen()),
-                  GoRoute(path: 'sync', builder: (context, state) => const SyncScreen()),
                 ],
               ),
             ],

@@ -831,92 +831,6 @@ class AppLocalizationsHi extends AppLocalizations {
   String get lockUnsupported => 'इस फ़ोन पर फ़िंगरप्रिंट, चेहरा या स्क्रीन लॉक सेट नहीं है।';
 
   @override
-  String get settingsSync => 'क्लाउड बैकअप और सिंक';
-
-  @override
-  String get settingsAbout => 'परिचित के बारे में';
-
-  @override
-  String get syncLocal => 'इसी फ़ोन पर';
-
-  @override
-  String get syncSyncing => 'सिंक हो रहा है…';
-
-  @override
-  String get syncOffline => 'ऑफ़लाइन';
-
-  @override
-  String get syncError => 'सिंक में समस्या';
-
-  @override
-  String get syncDone => 'सिंक हो गया';
-
-  @override
-  String syncPending(int count) {
-    return '$count बाक़ी';
-  }
-
-  @override
-  String get syncNotConfiguredTitle => 'क्लाउड सिंक सेट नहीं है';
-
-  @override
-  String get syncNotConfiguredBody =>
-      'इस बिल्ड में Supabase प्रोजेक्ट नहीं जुड़ा है, इसलिए सब कुछ इसी फ़ोन पर रहता है। कॉपी रखने के लिए बैकअप और एक्सपोर्ट का उपयोग करें।';
-
-  @override
-  String get syncSignInTitle => 'क्लाउड बैकअप चालू करें';
-
-  @override
-  String get syncSignInBody =>
-      'बैकअप और फ़ोनों के बीच सिंक के लिए ईमेल से साइन इन करें। हम आपको 6 अंकों का कोड भेजेंगे।';
-
-  @override
-  String get syncSendCode => 'कोड भेजें';
-
-  @override
-  String get syncCode => '6 अंकों का कोड';
-
-  @override
-  String get syncVerify => 'जाँचें और साइन इन करें';
-
-  @override
-  String get syncAccount => 'खाता';
-
-  @override
-  String get syncSignOut => 'साइन आउट';
-
-  @override
-  String get syncStatus => 'स्थिति';
-
-  @override
-  String get syncNow => 'अभी सिंक करें';
-
-  @override
-  String syncPendingChanges(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count बदलाव अपलोड होने बाक़ी हैं।',
-      one: '1 बदलाव अपलोड होना बाक़ी है।',
-      zero: 'सब कुछ अपलोड हो गया है।',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String syncLastSynced(String time) {
-    return 'पिछला सिंक: $time';
-  }
-
-  @override
-  String get syncOfflineBody => 'इंटरनेट नहीं है — बदलाव सहेजे गए हैं और अपने-आप अपलोड हो जाएँगे।';
-
-  @override
-  String syncIssues(int count) {
-    return 'अपलोड नहीं हो सके ($count)';
-  }
-
-  @override
   String get backupTitle => 'बैकअप और एक्सपोर्ट';
 
   @override
@@ -1008,4 +922,124 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get trashEmpty => 'ट्रैश ख़ाली है।';
+
+  @override
+  String get settingsSync => 'क्लाउड बैकअप';
+
+  @override
+  String get syncLocalOnly => 'अभी केवल इसी फ़ोन पर सहेजा गया है। इस बिल्ड में क्लाउड बैकअप चालू नहीं है।';
+
+  @override
+  String get syncSignedOutBody =>
+      'अपना पारिवारिक डेटा बैकअप करने और दूसरे फ़ोन पर इस्तेमाल करने के लिए साइन इन करें। ऐप ऑफ़लाइन भी चलता रहेगा।';
+
+  @override
+  String get syncSignInButton => 'बैकअप के लिए साइन इन करें';
+
+  @override
+  String syncSignedInAs(String email) {
+    return '$email से साइन इन';
+  }
+
+  @override
+  String get syncSignOut => 'साइन आउट';
+
+  @override
+  String get syncNow => 'अभी सिंक करें';
+
+  @override
+  String get syncStatusSynced => 'सिंक हो गया';
+
+  @override
+  String get syncStatusSyncing => 'सिंक हो रहा है…';
+
+  @override
+  String syncStatusPending(int count) {
+    return '$count बदलाव सिंक के इंतज़ार में';
+  }
+
+  @override
+  String get syncStatusOffline => 'ऑफ़लाइन';
+
+  @override
+  String get syncStatusError => 'सिंक में समस्या';
+
+  @override
+  String get syncStatusSignedOut => 'बैकअप नहीं हुआ';
+
+  @override
+  String syncLastSynced(String time) {
+    return 'आख़िरी सिंक $time';
+  }
+
+  @override
+  String get syncNeverSynced => 'अभी सिंक नहीं हुआ';
+
+  @override
+  String get syncIssuesTitle => 'सिंक समस्याएँ';
+
+  @override
+  String syncIssuesCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count बदलाव अस्वीकार हुए',
+      one: '1 बदलाव अस्वीकार हुआ',
+      zero: 'कोई सिंक समस्या नहीं',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get syncIssuesEmpty => 'कुछ ठीक करने की ज़रूरत नहीं। सभी बदलाव स्वीकार हो गए।';
+
+  @override
+  String get syncIssuesHelp =>
+      'क्लाउड ने ये बदलाव स्वीकार नहीं किए। ये इसी फ़ोन पर सुरक्षित हैं; जाँचने के बाद इन्हें हटा दें।';
+
+  @override
+  String get syncDiscard => 'हटाएँ';
+
+  @override
+  String get signInTitle => 'साइन इन';
+
+  @override
+  String get signInBody => 'अपना ईमेल दर्ज करें। हम आपको साइन-इन कोड भेजेंगे।';
+
+  @override
+  String get signInEmailLabel => 'ईमेल';
+
+  @override
+  String get signInEmailInvalid => 'सही ईमेल पता दर्ज करें';
+
+  @override
+  String get signInSendCode => 'कोड भेजें';
+
+  @override
+  String signInCodeSent(String email) {
+    return 'हमने $email पर कोड भेजा है।';
+  }
+
+  @override
+  String get signInCodeLabel => 'ईमेल में आया कोड';
+
+  @override
+  String get signInCodeInvalid => 'ईमेल में आया कोड दर्ज करें';
+
+  @override
+  String get signInVerify => 'जाँचें और साइन इन करें';
+
+  @override
+  String get signInChangeEmail => 'दूसरा ईमेल इस्तेमाल करें';
+
+  @override
+  String signInFailed(String error) {
+    return 'साइन इन नहीं हो सका: $error';
+  }
+
+  @override
+  String get onboardingRestore => 'पहले से परिचित इस्तेमाल करते हैं? बहाल करने के लिए साइन इन करें';
+
+  @override
+  String get settingsAbout => 'परिचित के बारे में';
 }

@@ -11,10 +11,11 @@ abstract final class Routes {
 
   // Full-screen flows
   static const addPerson = '/add-person';
+  static const signIn = '/sign-in';
+  static const syncIssues = '/sync-issues';
   static const trash = '/more/trash';
   static const duplicates = '/more/duplicates';
   static const backup = '/more/backup';
-  static const sync = '/more/sync';
 
   static String person(String id) => '/people/$id';
   static String editPerson(String id) => '/people/$id/edit';

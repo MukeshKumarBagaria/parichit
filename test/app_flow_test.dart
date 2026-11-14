@@ -69,6 +69,8 @@ void main() {
     expect(find.text('Quick add'), findsWidgets);
 
     await tester.enterText(find.byType(TextFormField).first, 'Ramesh Sharma');
+    await tester.ensureVisible(find.text('Save'));
+    await tester.pumpAndSettle();
     await tester.tap(find.text('Save'));
     await tester.pumpAndSettle();
 
@@ -82,6 +84,8 @@ void main() {
     await pumpApp(tester, settings: const AppSettings(languageCode: 'en', onboardingComplete: true));
 
     await tester.tap(find.byType(FloatingActionButton));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Save'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Save'));
     await tester.pumpAndSettle();

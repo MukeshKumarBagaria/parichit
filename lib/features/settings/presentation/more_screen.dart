@@ -7,7 +7,7 @@ import '../../../core/router/routes.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../shared/widgets/section_card.dart';
 import '../../security/app_lock.dart';
-import '../../sync/presentation/sync_pill.dart';
+import '../../sync/presentation/sync_widgets.dart';
 import 'settings_providers.dart';
 
 /// "More" tab: data tools and settings.
@@ -34,11 +34,12 @@ class MoreScreen extends ConsumerWidget {
       body: ListView(
         padding: const EdgeInsets.all(AppSpacing.md),
         children: [
+          SectionCard(title: l10n.settingsSync, child: const SyncSettingsBody()),
+          const SizedBox(height: AppSpacing.md),
           SectionCard(
             title: l10n.moreData,
             child: Column(
               children: [
-                nav(Icons.cloud_outlined, l10n.settingsSync, Routes.sync, trailing: const SyncPill()),
                 nav(Icons.save_alt, l10n.backupTitle, Routes.backup),
                 nav(Icons.merge_type, l10n.duplicatesTitle, Routes.duplicates),
                 nav(Icons.delete_outline, l10n.trashTitle, Routes.trash),

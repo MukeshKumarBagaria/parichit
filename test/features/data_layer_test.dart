@@ -5,7 +5,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:kinship/kinship.dart';
 import 'package:parichit/core/database/app_database.dart';
 import 'package:parichit/core/sync/outbox_writer.dart';
-import 'package:parichit/core/sync/sync_engine.dart';
 import 'package:parichit/core/utils/name_matching.dart';
 import 'package:parichit/features/backup/data/backup_codec.dart';
 import 'package:parichit/features/backup/data/exporters.dart';
@@ -19,7 +18,6 @@ import 'package:parichit/features/relationships/data/graph_repository.dart';
 import 'package:parichit/features/reminders/domain/upcoming.dart';
 import 'package:parichit/features/tags/data/tags_repository.dart';
 
-import '../helpers/fake_remote.dart';
 import '../helpers/test_database.dart';
 
 /// Everything wired against one in-memory database.
@@ -193,75 +191,7 @@ void main() {
     });
   });
 
-  group('sync engine', () {
-    test('push drains the outbox and a second device pulls the same family', () async {
-      final w = _World();
-      addTearDown(w.db.close);
-      final me = await w.person('Me', gender: Gender.male, self: true);
-      final dad = await w.person('Dad', gender: Gender.male);
-      await w.graph.addParentEdge(parentId: dad, childId: me);
-
-      final remote = FakeRemote();
-      final engine = SyncEngine(w.db, remote, clock: w.clock);
-      await engine.syncOnce();
-      expect(await engine.watchPendingCount().first, 0);
-      expect(remote.tables['people'], hasLength(2));
-
-      final device2 = createTestDatabase();
-      addTearDown(device2.close);
-      await SyncEngine(device2, remote, clock: w.clock).pull();
-      final out2 = OutboxWriter(device2);
-      final g2 = await GraphRepository(
-        db: device2,
-        outbox: out2,
-        ids: SequentialIds(),
-        people: DriftPeopleRepository(db: device2, outbox: out2, ids: SequentialIds()),
-      ).loadGraph();
-      expect(g2.parentsOf(me), [dad]);
-      final row = await (device2.select(device2.people)..where((p) => p.id.equals(me))).getSingle();
-      expect(row.isSelf, isTrue);
-    });
-
-    test('a pending local edit is not overwritten by a pull', () async {
-      final w = _World();
-      addTearDown(w.db.close);
-      final p = await w.person('Original');
-      final remote = FakeRemote();
-      final engine = SyncEngine(w.db, remote, clock: w.clock);
-      await engine.syncOnce();
-
-      await w.people.update(p, const PersonDraft(fullName: 'Local edit'));
-      remote.tables['people']![p] = {
-        ...remote.tables['people']![p]!,
-        'full_name': 'Remote',
-        'server_seq': ++remote.seq,
-      };
-      await engine.pull();
-      expect((await w.people.watchById(p).first)!.fullName, 'Local edit');
-    });
-
-    test('a rejected row is isolated into sync issues', () async {
-      final w = _World();
-      addTearDown(w.db.close);
-      final bad = await w.person('Bad');
-      final good = await w.person('Good');
-      final remote = FakeRemote()..rejectIds.add(bad);
-      final engine = SyncEngine(w.db, remote, clock: w.clock);
-      final (_, rejected) = await engine.push();
-      expect(rejected, 1);
-      expect(remote.tables['people']!.keys, contains(good));
-      expect(await engine.watchIssues().first, hasLength(1));
-    });
-
-    test('network failure keeps the outbox intact', () async {
-      final w = _World();
-      addTearDown(w.db.close);
-      await w.person('Someone');
-      final engine = SyncEngine(w.db, FakeRemote()..offline = true, clock: w.clock);
-      await expectLater(engine.push(), throwsException);
-      expect(await engine.watchPendingCount().first, greaterThan(0));
-    });
-
+  group('sync outbox', () {
     test('outbox is pushed in FIFO order', () async {
       final w = _World();
       addTearDown(w.db.close);

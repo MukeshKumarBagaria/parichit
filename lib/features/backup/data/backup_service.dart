@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 
 import '../../../core/database/app_database.dart';
 import '../../../core/sync/row_applier.dart';
-import '../../../core/sync/sync_engine.dart';
+import '../../../core/sync/sync_tables.dart';
 import 'backup_codec.dart';
 import 'exporters.dart';
 
@@ -22,9 +22,9 @@ class BackupService {
   /// All synced tables (including soft-deleted rows, so restores are exact).
   Future<Map<String, List<Map<String, Object?>>>> snapshot() async {
     final out = <String, List<Map<String, Object?>>>{};
-    for (final name in SyncEngine.tables) {
-      final info = _db.allTables.firstWhere((t) => t.actualTableName == name);
-      final rows = await _db.select(info).get();
+    for (final spec in syncTables(_db)) {
+      final name = spec.name;
+      final rows = await _db.select(spec.table).get();
       out[name] = [
         for (final r in rows)
           {
@@ -49,10 +49,11 @@ class BackupService {
     var applied = 0;
     final people = <String>{};
     await _db.transaction(() async {
-      for (final name in SyncEngine.tables) {
+      for (final spec in syncTables(_db)) {
+        final name = spec.name;
         final rows = tables[name];
         if (rows == null) continue;
-        final info = _db.allTables.firstWhere((t) => t.actualTableName == name);
+        final info = spec.table;
         for (final row in rows) {
           if (await applier.apply(info, row)) {
             applied++;

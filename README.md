@@ -15,9 +15,18 @@ flutter run --dart-define-from-file=env/dev.json   # with Supabase sync configur
 Toolchain: **Flutter 3.47.9 / Dart 3.13.7** (pinned in CI). Android Studio + Android SDK are needed to run on a
 phone or emulator.
 
-Cloud setup (optional, milestone 6): create a Supabase project, run
-[supabase/migrations](supabase/migrations) in the SQL editor, copy `env/example.json` to `env/dev.json` and fill in
-the project URL and publishable key. `env/*.json` is git-ignored.
+Cloud sync (milestone 6) is wired to the project in `lib/core/config/app_config.dart` (URL + publishable key, safe to
+ship because RLS protects every row). To use another project, run
+[supabase/migrations](supabase/migrations) in its SQL editor and pass `--dart-define-from-file=env/dev.json`
+(copy `env/example.json`; `env/*.json` is git-ignored).
+
+Supabase dashboard settings the app depends on:
+- **Auth → Email templates → Magic Link**: include `{{ .Token }}` so the email carries the 6-digit code the app asks for.
+- **Auth → Providers**: after creating your own account, turn **off new sign-ups** (single-owner app).
+
+How sync works: every local write also lands in `sync_outbox`; `lib/core/sync/sync_engine.dart` pushes it FIFO (batched
+upsert, last-write-wins on the server) and pulls changes by `server_seq`. It runs after sign-in, on app resume, 5 s after
+an edit, every 15 min and from Settings → Cloud backup → Sync now. Rejected changes appear under Sync issues.
 
 ## Architecture
 
