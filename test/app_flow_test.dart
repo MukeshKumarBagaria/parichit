@@ -27,6 +27,17 @@ void main() {
     await tester.pumpAndSettle();
   }
 
+  /// Widget tests run on fake time, but saving goes through the real
+  /// database, whose futures need real async turns to complete. Alternate
+  /// real waits with frames until the UI has caught up.
+  Future<void> settleAfterSave(WidgetTester tester) async {
+    for (var i = 0; i < 20; i++) {
+      await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 20)));
+      await tester.pump(const Duration(milliseconds: 50));
+    }
+    await tester.pumpAndSettle();
+  }
+
   /// Unmount before closing the database so no stream query outlives it.
   Future<void> tearDownApp(WidgetTester tester) async {
     await tester.pumpWidget(const SizedBox());
@@ -43,8 +54,10 @@ void main() {
     await tester.pumpAndSettle();
 
     await tester.enterText(find.byType(TextFormField).first, 'Asha');
-    await tester.tap(find.text('Get started'));
+    await tester.ensureVisible(find.text('Get started'));
     await tester.pumpAndSettle();
+    await tester.tap(find.text('Get started'));
+    await settleAfterSave(tester);
 
     expect(find.text('Namaste, Asha'), findsOneWidget);
     expect(find.byType(NavigationBar), findsOneWidget);
@@ -72,7 +85,7 @@ void main() {
     await tester.ensureVisible(find.text('Save'));
     await tester.pumpAndSettle();
     await tester.tap(find.text('Save'));
-    await tester.pumpAndSettle();
+    await settleAfterSave(tester);
 
     await tester.tap(find.text('People'));
     await tester.pumpAndSettle();
