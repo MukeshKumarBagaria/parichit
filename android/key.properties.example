@@ -1,0 +1,6 @@
+# Copy to android/key.properties (git-ignored) to sign release builds locally.
+# Never commit the real file or the .jks keystore.
+storeFile=C:/Users/YOU/keys/parichit-upload.jks
+storePassword=CHANGE_ME
+keyAlias=upload
+keyPassword=CHANGE_ME

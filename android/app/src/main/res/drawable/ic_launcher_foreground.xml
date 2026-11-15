@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Parichit launcher mark: a family of three joined by a marigold arc.
+     108dp adaptive-icon canvas; artwork stays inside the 66dp safe zone. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Left and right people (behind) -->
+    <path android:fillColor="#FBF8F3" android:pathData="M38,46m-5.5,0a5.5,5.5 0,1 1,11 0a5.5,5.5 0,1 1,-11 0" />
+    <path android:fillColor="#FBF8F3" android:pathData="M29,68V63A9,8 0,0 1,47 63V68Z" />
+    <path android:fillColor="#FBF8F3" android:pathData="M70,46m-5.5,0a5.5,5.5 0,1 1,11 0a5.5,5.5 0,1 1,-11 0" />
+    <path android:fillColor="#FBF8F3" android:pathData="M61,68V63A9,8 0,0 1,79 63V68Z" />
+    <!-- Centre person (in front, outlined in the background colour to separate) -->
+    <path android:fillColor="#FBF8F3" android:strokeColor="#0F6E6E" android:strokeWidth="2.5"
+        android:pathData="M42,68V60A12,10 0,0 1,66 60V68Z" />
+    <path android:fillColor="#FBF8F3" android:strokeColor="#0F6E6E" android:strokeWidth="2.5"
+        android:pathData="M54,40m-7.5,0a7.5,7.5 0,1 1,15 0a7.5,7.5 0,1 1,-15 0" />
+    <!-- Connection arc -->
+    <path android:fillColor="#00000000" android:strokeColor="#E8913A" android:strokeWidth="3.5"
+        android:strokeLineCap="round" android:pathData="M31,74Q54,88 77,74" />
+</vector>

@@ -6,6 +6,7 @@ import '../../../core/l10n/l10n.dart';
 import '../../../core/router/routes.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../shared/widgets/section_card.dart';
+import '../../account/account_actions.dart';
 import '../../security/app_lock.dart';
 import '../../sync/presentation/sync_widgets.dart';
 import 'settings_providers.dart';
@@ -43,6 +44,12 @@ class MoreScreen extends ConsumerWidget {
                 nav(Icons.save_alt, l10n.backupTitle, Routes.backup),
                 nav(Icons.merge_type, l10n.duplicatesTitle, Routes.duplicates),
                 nav(Icons.delete_outline, l10n.trashTitle, Routes.trash),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: Icon(Icons.phonelink_erase, color: Theme.of(context).colorScheme.error),
+                  title: Text(l10n.eraseDeviceButton, style: TextStyle(color: Theme.of(context).colorScheme.error)),
+                  onTap: () => eraseThisPhone(context, ref),
+                ),
               ],
             ),
           ),

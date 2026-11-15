@@ -28,6 +28,25 @@ jobs:
       - run: dart analyze --fatal-infos
       - run: dart test
 
+  android-release-build:
+    name: Android release build (smoke test)
+    # Proves the release pipeline (R8, plugins, signing config) still works.
+    # Without the upload-key secrets it signs with the debug key — not uploadable.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.9
+          channel: stable
+          cache: true
+      - run: flutter pub get
+      - run: flutter build appbundle --release
+
   app:
     name: App (analyze + test)
     runs-on: ubuntu-latest

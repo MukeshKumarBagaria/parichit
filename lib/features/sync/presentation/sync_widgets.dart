@@ -7,6 +7,7 @@ import '../../../core/l10n/l10n.dart';
 import '../../../core/router/routes.dart';
 import '../../../core/sync/sync_providers.dart';
 import '../../../core/theme/app_tokens.dart';
+import '../../account/account_actions.dart';
 
 /// Small status chip (blueprint §10): Synced ✓ / Offline / 3 pending / Issue.
 /// Hidden when cloud backup is not available at all.
@@ -120,6 +121,13 @@ class SyncSettingsBody extends ConsumerWidget {
                 onTap: () => context.push(Routes.syncIssues),
               ),
             ],
+            const SizedBox(height: AppSpacing.xs),
+            TextButton.icon(
+              style: TextButton.styleFrom(foregroundColor: Theme.of(context).colorScheme.error),
+              onPressed: () => deleteCloudAccount(context, ref),
+              icon: const Icon(Icons.person_remove_outlined),
+              label: Text(l10n.accountDeleteButton),
+            ),
           ],
         );
     }

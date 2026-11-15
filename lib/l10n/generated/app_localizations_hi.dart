@@ -1042,4 +1042,40 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get settingsAbout => 'परिचित के बारे में';
+
+  @override
+  String get accountConfirmWord => 'DELETE';
+
+  @override
+  String accountConfirmHint(String word) {
+    return 'पुष्टि के लिए $word लिखें';
+  }
+
+  @override
+  String get accountDeleteButton => 'मेरा क्लाउड खाता हटाएँ';
+
+  @override
+  String get accountDeleteTitle => 'क्लाउड खाता हटाएँ?';
+
+  @override
+  String get accountDeleteBody =>
+      'इससे आपका परिचित खाता और क्लाउड में रखा हर रिकॉर्ड हमेशा के लिए हट जाएगा। इस फ़ोन का डेटा तब तक रहेगा जब तक आप उसे न मिटाएँ। यह वापस नहीं होगा।';
+
+  @override
+  String get accountDeleted => 'आपका क्लाउड खाता और उसका डेटा हटा दिया गया।';
+
+  @override
+  String accountDeleteFailed(String error) {
+    return 'खाता नहीं हट सका: $error';
+  }
+
+  @override
+  String get eraseDeviceButton => 'इस फ़ोन का सारा डेटा मिटाएँ';
+
+  @override
+  String get eraseDeviceTitle => 'इस फ़ोन का डेटा मिटाएँ?';
+
+  @override
+  String get eraseDeviceBody =>
+      'इस फ़ोन पर रखे सभी लोग, रिश्ते, मुलाक़ातें और सेटिंग्स मिट जाएँगी और आप साइन आउट हो जाएँगे। आपका क्लाउड बैकअप (यदि है) प्रभावित नहीं होगा। यह वापस नहीं होगा।';
 }

@@ -1927,6 +1927,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'About Parichit'**
   String get settingsAbout;
+
+  /// No description provided for @accountConfirmWord.
+  ///
+  /// In en, this message translates to:
+  /// **'DELETE'**
+  String get accountConfirmWord;
+
+  /// No description provided for @accountConfirmHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Type {word} to confirm'**
+  String accountConfirmHint(String word);
+
+  /// No description provided for @accountDeleteButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete my cloud account'**
+  String get accountDeleteButton;
+
+  /// No description provided for @accountDeleteTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete cloud account?'**
+  String get accountDeleteTitle;
+
+  /// No description provided for @accountDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'This permanently deletes your Parichit account and every record stored in the cloud. Data on this phone stays until you erase it. This cannot be undone.'**
+  String get accountDeleteBody;
+
+  /// No description provided for @accountDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Your cloud account and its data were deleted.'**
+  String get accountDeleted;
+
+  /// No description provided for @accountDeleteFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not delete the account: {error}'**
+  String accountDeleteFailed(String error);
+
+  /// No description provided for @eraseDeviceButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Erase all data on this phone'**
+  String get eraseDeviceButton;
+
+  /// No description provided for @eraseDeviceTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Erase this phone?'**
+  String get eraseDeviceTitle;
+
+  /// No description provided for @eraseDeviceBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyone, every relation, meeting and setting stored on this phone will be deleted and you will be signed out. Your cloud backup (if any) is not affected. This cannot be undone.'**
+  String get eraseDeviceBody;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

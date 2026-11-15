@@ -23,6 +23,9 @@ class AppSettingsController extends Notifier<AppSettings> {
 
   Future<void> completeOnboarding() => _update(state.copyWith(onboardingComplete: true));
 
+  /// Used after erasing all data: the router returns to onboarding.
+  Future<void> resetOnboarding() => _update(state.copyWith(onboardingComplete: false));
+
   Future<void> _update(AppSettings next) async {
     state = next;
     await ref.read(settingsRepositoryProvider).save(next);

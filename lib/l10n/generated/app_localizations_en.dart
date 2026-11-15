@@ -1036,4 +1036,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsAbout => 'About Parichit';
+
+  @override
+  String get accountConfirmWord => 'DELETE';
+
+  @override
+  String accountConfirmHint(String word) {
+    return 'Type $word to confirm';
+  }
+
+  @override
+  String get accountDeleteButton => 'Delete my cloud account';
+
+  @override
+  String get accountDeleteTitle => 'Delete cloud account?';
+
+  @override
+  String get accountDeleteBody =>
+      'This permanently deletes your Parichit account and every record stored in the cloud. Data on this phone stays until you erase it. This cannot be undone.';
+
+  @override
+  String get accountDeleted => 'Your cloud account and its data were deleted.';
+
+  @override
+  String accountDeleteFailed(String error) {
+    return 'Could not delete the account: $error';
+  }
+
+  @override
+  String get eraseDeviceButton => 'Erase all data on this phone';
+
+  @override
+  String get eraseDeviceTitle => 'Erase this phone?';
+
+  @override
+  String get eraseDeviceBody =>
+      'Everyone, every relation, meeting and setting stored on this phone will be deleted and you will be signed out. Your cloud backup (if any) is not affected. This cannot be undone.';
 }

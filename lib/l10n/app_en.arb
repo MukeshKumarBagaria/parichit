@@ -361,5 +361,18 @@
   "signInFailed": "Could not sign in: {error}",
   "@signInFailed": { "placeholders": { "error": { "type": "String" } } },
   "onboardingRestore": "Already use Parichit? Sign in to restore",
-  "settingsAbout": "About Parichit"
+  "settingsAbout": "About Parichit",
+
+  "accountConfirmWord": "DELETE",
+  "accountConfirmHint": "Type {word} to confirm",
+  "@accountConfirmHint": { "placeholders": { "word": { "type": "String" } } },
+  "accountDeleteButton": "Delete my cloud account",
+  "accountDeleteTitle": "Delete cloud account?",
+  "accountDeleteBody": "This permanently deletes your Parichit account and every record stored in the cloud. Data on this phone stays until you erase it. This cannot be undone.",
+  "accountDeleted": "Your cloud account and its data were deleted.",
+  "accountDeleteFailed": "Could not delete the account: {error}",
+  "@accountDeleteFailed": { "placeholders": { "error": { "type": "String" } } },
+  "eraseDeviceButton": "Erase all data on this phone",
+  "eraseDeviceTitle": "Erase this phone?",
+  "eraseDeviceBody": "Everyone, every relation, meeting and setting stored on this phone will be deleted and you will be signed out. Your cloud backup (if any) is not affected. This cannot be undone."
 }

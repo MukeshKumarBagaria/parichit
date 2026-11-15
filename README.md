@@ -22,7 +22,9 @@ ship because RLS protects every row). To use another project, run
 
 Supabase dashboard settings the app depends on:
 - **Auth → Email templates → Magic Link**: include `{{ .Token }}` so the email carries the 6-digit code the app asks for.
-- **Auth → Providers**: after creating your own account, turn **off new sign-ups** (single-owner app).
+- **Auth → Providers**: for a private, single-person setup you may turn **off new sign-ups** after creating your own
+  account. Keep them **on** if the app is published for others (see [docs/PLAY_STORE.md](docs/PLAY_STORE.md)).
+- Run every file in `supabase/migrations` (including `…_delete_my_account.sql`, used by in-app account deletion).
 
 How sync works: every local write also lands in `sync_outbox`; `lib/core/sync/sync_engine.dart` pushes it FIFO (batched
 upsert, last-write-wins on the server) and pulls changes by `server_seq`. It runs after sign-in, on app resume, 5 s after
@@ -72,6 +74,13 @@ drift_schemas/         # snapshots of each local schema version (migration safet
    `dart run drift_dev schema dump lib/core/database/app_database.dart drift_schemas/drift_schema_vN.json`, and add a
    matching Supabase migration.
 8. **Inject, don't construct.** Clock, id generator and database come from providers so tests can override them.
+
+## Releasing to Google Play
+
+Release builds are signed with the upload key from `android/key.properties` (see `android/key.properties.example`) or,
+on GitHub, from repository secrets; the **Release** workflow (`.github/workflows/release.yml`) produces the signed
+`.aab`. Full checklist — Play Console, store listing, Data safety answers, privacy policy and Supabase settings — in
+[docs/PLAY_STORE.md](docs/PLAY_STORE.md). Brand images: `tool/generate_brand_assets.ps1` → `store/`.
 
 ## Quality checks
 
